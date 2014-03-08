@@ -1,0 +1,93 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[acronym,footnote,description]{glossaries}
+\graphicspath{ {images/} }
+
+\makeglossaries
+
+\makeatletter
+\defglsdisplayfirst[\acronymtype]{%
+  \firstacronymfont{#1}#4%
+    \protect\footnote{%
+      \glslink[\@gls@link@opts]{\@gls@link@label}{#3}: #2}}%
+\makeatother
+
+\author{H\aa vard A. Heggheim\\[1cm]
+Supervisors: Lars Petter Helland\\Anders Øvreseth}
+\date{\today}
+
+\title{
+ {\huge Live Streaming of Audio and Video through the Browser in an Enterprise}\\[0.4cm]
+ {\large Bergen University College and University of Bergen}\\
+ {\large Joint Master's Programme in Software Engineering}\\[1cm]
+ {\includegraphics[height=4cm]{hib_small.jpg}}
+ %{\includegraphics[height=3.8cm]{uiblogo.png}}%
+}	
+
+
+\begin{document}
+
+
+% TITLE %
+\maketitle
+
+
+% PRE SECTION %
+\chapter*{Abstract}
+\input{chapters/abstract}
+
+\tableofcontents
+
+\chapter*{List of Figures}
+%\input{chapters/figures}%
+
+\chapter*{Acronyms}
+\input{chapters/acronyms}
+
+
+
+% MAIN SECTION %
+\chapter{Introduction}
+%\input{chapters/introduction}%
+
+\chapter{Background Research}
+%\input{chapters/backgroundResearch}
+
+\chapter{Industrial Case}
+%\input{chapters/industrialcase}
+
+\chapter{Problem Description}
+\input{chapters/problem}
+
+\chapter{WebRTC and Virtual Arena}
+\input{chapters/webrtcvirtualarena}
+
+\chapter{What is the current state of support of Real-time Communication Between Browsers}
+%\input{chapters/currentstate}%
+
+\chapter{How well does Real-time Communcation scale on mobile devices?}
+
+\chapter{What will happen with the support of Real-time Communications in the near future?}
+
+\chapter{HTML5}
+% \input{chapters/html5}%
+
+\chapter{The Approach(experiments)}%
+
+\chapter{The Implementation(how implemented approach)}%
+
+\chapter{Evaluation}%
+
+\chapter{Conclusion}
+\input{chapters/conclusion}
+
+
+% END SECTION %
+\appendix
+\chapter{Appendix Title}
+%\input{chapters/appendix}%
+
+\printglossaries
+
+\end{document}

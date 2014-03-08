@@ -1,0 +1,49 @@
+%!TEX root = ../main.tex
+
+This chapter gives an introduction to the new HTML5 <video> element and it’s Javascript API. With HTML5 Video you can embed video into your web page, without the need for external plugins like Adobe Flash, Microsoft Silverlight or Apple Quicktime. It’s natively integrated into the browser, which allows for you to have full control over the element. The need to have video in web pages will be discussed also how we never before had a uniform implementation in all major browsers.
+
+\section{History}
+The <video> element was first mentioned in 2005, then the first browser rolled out a nightly build in November 2007. Before the introduction a web developer could include video only through  embed elements, which required browser plugins. Initially these plugins would launch an external video player that was installed on the users system. Later with the release of the Flash Player, Macromedia introduced video support into its browser plug-in. Flash later became the major plug-in for providing rich Internet Applications which led to many users having it installed on their system. It became the standard for publishing video online without having to encode in three different codecs. YouTube launched in May 2005, and it was natural for them to choose using Macromedia Flash. Adobe later bought Flash and was therefore known as Adobe Flash. The discussion continued on the <video> element and the need for a standard baseline encoding format. Apple refused to implement Flash on their mobile platforms simply because they would no support using closed platforms that are dependant on third parties. With the HTML5 open standards, developers will be able to have full control over all layers of web applications, including the DOM, CSS, and JavaScript. This includes the need for all major browser to implement a common standard.
+
+\section{A Common Standard}
+YouTube used Adobe Flash with MP4 H.264/AAC codecs. Choosing the same codecs as Adobe Flash would allow for a simple migration. But there has been many concerns around H.264 that it uses a lot of hardware resources, therefore not being ideal to run on mobile devices. The situation changed when Google announced the WebM project. A new open-source royalty-free video file format, which included the VP8 video codec together with the Vorbis audio codec placed inside a Matroska container. Google has worked hard to encourage using their format as the baseline standard. As of now the current implementation status is like this:
+
+\section{TCP vs UDP}
+what they are + differences
+
+\section{Adaptive streaming}
+Adaptive streaming is a core component of online video. It enables buffer control to reduce waste of bandwidth, fast seeking, quality adjustments and live streaming which is most important to this report. Currently only Apple’s platform support HTTP Live Streaming using the HLS protocol. But the W3C is working on developing MPEG-DASH standard and Media Source Extensions that will allow for custom adaptive streaming applications. Chrome supports this API today, with the others working on implementations. The specification will allow JavaScript to construct media streams independant of how the media is fetched.
+Other proprietary technologies are Microsoft Smooth Streaming and Adobe HTTP Dynamic Streaming.
+\\
+MPEG-DASH is a fragmented HTTP streaming protocol. A single video file is divided into many discrete chunks of video/audio data. These fragments can then be loaded as needed by the player and fed into a video buffer using the HTML5 MediaSource Extensions.
+
+\section{Streaming Using RTP/RTSP vs HTTP}
+Streaming media differs from ordinary media by the fact that streaming media is played out (almost) as soon as it is received. The traditional way of delivering video over the internet is to wait for the entire video file to be downloaded. The reason for developing streaming services was to enable a sender to transmit live content.
+
+A huge increase in network capacity has made streaming audio and video over the Internet feasible. There is a set of standardized protocols for streaming real-time media over computer networks defined by the \gls{ietf}. This section will discuss the abilities of these protocols. For this thesis RTP and HTTP are the most important protocols, almost all protocols are based on these, but with added security layers.
+
+\subsection{RTP}
+RTP, the Real Time Streaming Protocol is the most used today. There is a need for browsers to also support this protocol, but currently there is very limited support. Live streaming can also be achieved using HTTP or HTTPS using adaptive streaming technologies. A problem with RTP is that it requires connection on specific ports. The problem is that unless these specific ports are opened - the firewall will block traffic from them. RTP uses UDP which allows live connection, if the network gets congested, RTP will lose the data. But RTP can also be run over TCP, this would be almost the same as HTTP which uses TCP. You will not lose data, but there can be a delay in the stream. It is used in situations where live communication with low latency is required. Adobe Flash Media Server is very similar to RTP.
+
+\subsubsection{WebRTC}
+\ac is an effort in collaboration amongst the different web browser vendors to add real-time voice and video communication capabilities to browsers. These new standards will bring phone, TV and computer all on a common platform. It is based on \ac{udp} communication with \ac{srtp} on top with \ac{dtls} for security. The specification is divided in three \ac{API}s:
+
+MediaStream(aka getUserMedia)
+represents syncronized streams of media taken from the camera and microphone of a media device.
+
+RTCPeerConnection
+is the component that handles stable and efficient communication of streaming data between peers.
+
+RTCDataChannel
+specification is still under heavy development, but this will allow for \ac{p2p} exchange of arbitrary data, such as file transfer.
+
+Signaling
+\ac{webrtc} uses RTCPeerConnection to communicate streaming data between browsers, but also needs a mechanism to initialize and coordinate communication, a process known as signaling. Signaling protocols are not specified by \ac{webrtc}. Instead developers can choose whatever messaging protocol they prefer, such as \ac{sip} or \ac{xmpp}. So while one of the ideas of \ac{webrtc} was that the browser would be able to send information, without going through the server. A server will still be needed for signaling purposes.
+
+
+
+
+\subsection{HTTP}
+HTTP over TCP has never really been used as a way of delivering live content, because the protocol requires the user to redownload faulty packets, which causes a delay in the delivery. But with the adoption of adaptive streaming technologies this is now an option that needs to explored.
+
+Clients can join and leave any time they want. Seeking is not possible on live streams. Traditionally streaming servers are used to deliver video. 

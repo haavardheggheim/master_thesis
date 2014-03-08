@@ -1,0 +1,66 @@
+%!TEX root = ../main.tex
+
+\section{How can we integrate RTC in the Web with Virtual Arena?}
+
+This chapter is about the challenges of making two different media systems work together. It will discuss a possible solution and the pros and cons of this. Then we will look at how Visual Solutions can best integrate this solution and how their vision can be solved.
+
+\subsection{How does Virtual Arena work?}
+
+Virtual Arena supports one-to-one, one-to-many and many-to-many collaborative scenarios. The application uses a \gls{mcu} that acts as a media server. With this server Virtual Arena can support a lot more incoming and outgoing streams than in a simple peer-to-peer scenario. It also applies mitigation strategies for scenarios with limited bandwidth. Without going into too much detail of how the application is actually put together the main setup looks something like this: 
+\\
+\includegraphics[scale=0.6]{mediaserver.png}
+\\
+\\
+Communication between peers and the media server is pure \gls{rtp} streams with all the information that is needed provided in the header of the packets being sent. The most important piece of information is the \gls{ssrc} with this, the media server can identify the incoming stream and mix it in with the other streams and forward it to all the other peers.
+
+So basically all we need is to be able to listen for incoming \gls{rtp} streams on the receiving end. And the other way we have to deliver pure \gls{rtp} streams with the correct header information included, most importantly the \gls{ssrc}.
+
+\subsection{How does WebRTC work?}
+WebRTC is a very complex synergy of components and protocols. But from a frontend developers point of view, all of this is packaged into three main Javascript API's: getUserMedia, RTCPeerConnection and RTCDataChannel. These are defined by the \gls{w3c}. 
+
+The exchange of real-time media between two browsers follows a process like this:
+\\
+\\
+1 Input devices are opened for capture as the media source. This is done using the getUserMedia API.
+\\
+\\
+2 Now we have to signal the other users that we want to connect to them. using RTCPeerConnection we send an \gls{sdp} offer to the other clients, which generates an \gls{sdp} Answer.The \gls{sdp} here includes \gls{ice} candidates. Which opens ports in the firewall. There is a fallback if both clients are on symmetric \gls{nat}'s and a connection isn't possible to use a \gls{turn} server that acts like a packet mirror, channeling all the packets through the \gls{turn} server.
+\\
+\\
+3 Once connection is successful, a \gls{dtls} connection is opened and all the media from input devices are encoded into packets and transmitted using \gls{srtp}-\gls{dtls} streams.
+\\
+\\
+4 At the destination, the packets are decoded and formatted into a MediaStream.
+\\
+\\
+5 The MediaStream is sent to output devices
+\\
+\\
+
+\subsection{What are the differences?}
+While Virtual Arena provides a very simple and not so secure solution media level. This because in a closed enterprised environemnt this is not needed. Most of the security will lie in the firewall anyways.
+
+But since \gls{wrtc} is a very open solution and is supposed to work with public users firwall configurations, a lot more complex security architecture is needed.
+
+So while \gls{wrtc} packages all their streams in a new format called a MediaStream. At the transport level everything is encrypted using \gls{dtls} on top of \gls{srtp}.
+
+\subsection{What do we need?}
+There are several problems here. Since Virtual Arena operates on a low-level not much is needed. All we need is to listen to a specific ip-address on a specific port on UDP transmitted data. In the packet headers we will find an \gls{ssrc} that we use to identify the incoming packets.
+
+With WebRTC on the other hand, we are only allowed to work on a higher level. We cannot access MediaStreams directly without first opening a connection with another peer. This is a problem. This means that we first have to iniate a normal RTC Connection before we can look at any identifiers such as the \gls{ssrc}. We cannot listen on specific ports for incoming RTC connections, and we cannot specify a specific port to transmit data. Also as of now the current implementation of WebRTC is not designed to add local external streams to the connection. This means that getting WebRTC to work with any external application, we have create some sort of gateway server.
+\\
+\\
+\textbf{By having done tons of experiments I propose this solution:}
+\\
+\\
+One gateway server that can listen to UDP-packets from the Visual Solutions \gls{mcu} and acts as a peer in WebRTC. This is not an ideal approach, but the most viable at the moment. Ideally one would integrate WebRTC over the whole spectrum, which is both inconveniant and leads to complications.
+
+For a single person that acts as a PeerConnection in WebRTC to listen in on a conversation from Virtual Arena, one would need to initiate a fake RTC Connection using two peers, then create a MediaStream from the incoming UDP packets and inject that MediaStream into the RTC Connection. On the returning side one would have to take the MediaStreams and break them into pure RTC packets with an SSRC identifier in the header and send them in return to the \gls{mcu}.
+
+First problem is receiving the incoming conversation from Virtual Arena this can be done setting up a socket that listens for incoming UDP packets. This is not a problem and can even be done in a pure Javascript environment using node.js
+
+Then one would have to create a MediaStream Object from these packets. This is not currently possibly using chrome API's or Firefox. In chrome it is possible to create a pure audio MediaStream using the new WebAudio API, and in Firefox it should be possible to create a MediaStream from video using getStreamUntilEnded(), but this is currently broken. In the future however this should be possible using the drafted captureMedia API.
+
+It is however possible to inject external MediaStreams into an RTC Connection.
+
+For returning data from a PeerConnection to the \gls{mcu} on would have to record the stream and return the data over a an \gls{udp} connection. This should be done using the proposed MediaStream Recording APIs, but none of the browser have currently implemented these yet.
