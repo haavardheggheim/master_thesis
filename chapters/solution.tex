@@ -1,0 +1,37 @@
+%!TEX root = ../main.tex
+
+\section{How can we integrate RTC in the Web with Virtual Arena?}
+There are two solutions to this problem the way I see it. The first is very obvious and complicated, but probably the best solution. The second is more of an experimental hack rather than a viable solution.
+
+\subsection{The Gateway solution}
+The obvious solution is to create a gateway using WebRTC and Visual Arena to turn any webrtc enabled browser into a client. The gateway will allow the web browser on your preferred device to make and receive connections from Virtual Arena. The gateway would have to contain three modules:
+a Signaling Proxy, a Transport Proxy, and a Media Transcoder.
+
+The global architecture would look something like this:
+
+image
+
+\subsubsection{The Signaling Proxy}
+Since WebRTC does not define any signaling protocol, one is free to use something custom made. But in this approach, the key information that needs to be exchanged is the \gls{sdp}, which specifies the necessary transport and media configuration information necessary to establish a connection. This approach is outlined by \gls{JSEP}. So the role of the Signaling Proxy module would be to extend the custom signaling protocol already used in Virtual Arena to include the necessary metadata provided in the \gls{sdp}. It would go something lke this:
+
+The \gls{mcu} sends an offer via the signaling method, then on the client the remote party would install it using the setRemoteDescription() API.
+
+image
+
+code showing ssrc
+
+specify connection to go via mcu
+
+\subsubsection{The Transport Proxy}
+The WebRTC specification make support for ICE and SRTP-DTLS mandatory. The problem here is that Virtual Arena uses raw RTP streams, it does not need the added security layers that WebRTC defines. It is up to the Transport Proxy to convert the media streams to allow these two worlds to interoperate. 
+
+image
+
+\subsubsection{The Media Transcoder}
+The RTCWeb specification defines these mandatory codecs:
+for audio: opus and g.711
+for video there are still discussions. The choice is between VP8 and H.264. The H.264 codec by Cisco was made free last october, so now both choices are royalty free. H.264 is the most widely deployed, but both Google and Firefox has decided to use VP8 in their WebRTC implementations.
+
+Virtual Arena uses speex for audio and theora for video. So these would have to be transcoded to the appropriate formats.
+
+This is one of the advantages of utilizing a \gls{mcu} because u can add support for both H.264 and VP8 and be able to create a session between Chrome, Virtual Arena and Bowser.

@@ -11,9 +11,17 @@ Virtual Arena supports one-to-one, one-to-many and many-to-many collaborative sc
 \includegraphics[scale=0.6]{mediaserver.png}
 \\
 \\
-Communication between peers and the media server is pure \gls{rtp} streams with all the information that is needed provided in the header of the packets being sent. The most important piece of information is the \gls{ssrc} with this, the media server can identify the incoming stream and mix it in with the other streams and forward it to all the other peers.
+Communication between peers and the media server is done by opening up ports in the firewall to listen for incoming tcp and udp connections. The media server can receives incoming streams and mix it in with the other streams and forward it to all the other peers. All the streams are identified using an SSRC.
 
-So basically all we need is to be able to listen for incoming \gls{rtp} streams on the receiving end. And the other way we have to deliver pure \gls{rtp} streams with the correct header information included, most importantly the \gls{ssrc}.
+\subsubsection{Signaling}
+Virtual Arena uses a proprietary way of doing signaling over RTCP.
+
+\subsubsection{Transport}
+Raw RTP stream over UDP.
+
+\subsubsection{Media}
+Speex for audio and theora for video.
+
 
 \subsection{How does WebRTC work?}
 WebRTC is a very complex synergy of components and protocols. But from a frontend developers point of view, all of this is packaged into three main Javascript API's: getUserMedia, RTCPeerConnection and RTCDataChannel. These are defined by the \gls{w3c}. 
