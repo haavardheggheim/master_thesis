@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.11.5)  10 MAR 2014 16:00
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.11.5)  13 MAR 2014 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -386,44 +386,68 @@ Package: supertabular 2004/02/20 v4.1e the supertabular environment
 Package: glossary-tree 2011/03/28 v3.0 (NLCT)
 \glstreeindent=\skip54
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count99
+\lst@gtempboxa=\box31
+\lst@token=\toks28
+\lst@length=\count100
+\lst@currlwidth=\dimen118
+\lst@column=\count101
+\lst@pos=\count102
+\lst@lostspace=\dimen119
+\lst@width=\dimen120
+\lst@newlines=\count103
+\lst@lineno=\count104
+\lst@maxwidth=\dimen121
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count105
+\lst@skipnumbers=\count106
+\lst@framebox=\box32
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
 \glo@main@file=\write4
 \openout4 = `main.glo'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 7.
+Package glossaries Info: Writing glossary file main.glo on input line 8.
 \glo@acronym@file=\write5
 \openout5 = `main.acn'.
 
-Package glossaries Info: Writing glossary file main.acn on input line 7.
+Package glossaries Info: Writing glossary file main.acn on input line 8.
 
 (/home/haavard/projects/master/master_thesis/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
-\scratchdimen=\dimen118
-\scratchbox=\box31
-\nofMPsegments=\count100
-\nofMParguments=\count101
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count102
-\MPscratchDim=\dimen119
-\MPnumerator=\count103
-\makeMPintoPDFobject=\count104
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count107
+\scratchdimen=\dimen122
+\scratchbox=\box33
+\nofMPsegments=\count108
+\nofMParguments=\count109
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen123
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
+\everyMPtoPDFconversion=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -472,18 +496,20 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+\c@lstlisting=\count113
+
 <images/hib_small.jpg, id=1, 11780.01pt x 8311.05pt>
 File: images/hib_small.jpg Graphic file (type jpg)
 
 <use images/hib_small.jpg>
-Package pdftex.def Info: images/hib_small.jpg used on input line 33.
+Package pdftex.def Info: images/hib_small.jpg used on input line 34.
 (pdftex.def)             Requested size: 161.23418pt x 113.81102pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 33.
+(Font)              <12> on input line 34.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 33.
+(Font)              <8> on input line 34.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 33.
+(Font)              <6> on input line 34.
  [1
 
 \openout3 = `main.ist'.
@@ -550,107 +576,145 @@ Chapter 5.
 File: images/mediaserver.png Graphic file (type png)
 
 <use images/mediaserver.png>
-Package pdftex.def Info: images/mediaserver.png used on input line 11.
+Package pdftex.def Info: images/mediaserver.png used on input line 9.
 (pdftex.def)             Requested size: 345.0919pt x 259.57176pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--15
+Underfull \hbox (badness 10000) in paragraph at lines 7--13
 
  []
 
 [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 21--39
+Underfull \hbox (badness 10000) in paragraph at lines 27--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--39
+Underfull \hbox (badness 10000) in paragraph at lines 27--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--39
+Underfull \hbox (badness 10000) in paragraph at lines 27--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--39
+Underfull \hbox (badness 10000) in paragraph at lines 27--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--39
+Underfull \hbox (badness 10000) in paragraph at lines 27--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--39
+Underfull \hbox (badness 10000) in paragraph at lines 27--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--39
+Underfull \hbox (badness 10000) in paragraph at lines 27--45
 
  []
 
-[14 <./images/mediaserver.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 50--57
+[14 <./images/mediaserver.png>] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 56--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--57
+Underfull \hbox (badness 10000) in paragraph at lines 56--63
 
  []
 
-[15]) [16]
+) [16] [17]
 Chapter 6.
-[17
+(/home/haavard/projects/master/master_thesis/chapters/solution.tex
+<images/gateway_architecture.png, id=72, 586.19pt x 288.07625pt>
+File: images/gateway_architecture.png Graphic file (type png)
 
-]
-Chapter 7.
+<use images/gateway_architecture.png>
+Package pdftex.def Info: images/gateway_architecture.png used on input line 11.
+
+(pdftex.def)             Requested size: 351.7167pt x 172.84708pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--12
+
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 14--14
+[][][]\OT1/cmr/m/n/9 JavaScript Ses-sion Es-tab-lish-ment Pro-to-col: http://to
+ols.ietf.org/html/draft-ietf-
+ []
+
 [18
 
-]
-Chapter 8.
-[19
+ <./images/gateway_architecture.png>]
+Overfull \hbox (47.34424pt too wide) in paragraph at lines 29--30
+[][][][][][][][][][] 
+ []
 
-]
-Chapter 9.
-[20
 
-]
-Chapter 10.
+Overfull \hbox (34.2041pt too wide) in paragraph at lines 30--31
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--41
+
+ []
+
+[19]) [20]
+Chapter 7.
 [21
 
 ]
-Chapter 11.
+Chapter 8.
 [22
 
 ]
-Chapter 12.
+Chapter 9.
 [23
 
 ]
+Chapter 10.
+[24
+
+]
+Chapter 11.
+[25
+
+]
+Chapter 12.
+[26
+
+]
 Chapter 13.
-(./chapters/conclusion.tex) [24
+[27
+
+]
+Chapter 14.
+(./chapters/conclusion.tex) [28
 
 ]
 Appendix A.
 No file main.gls.
 No file main.acr.
-[25
+[29
 
 ] (/home/haavard/projects/master/master_thesis/main.aux) ) 
 Here is how much of TeX's memory you used:
- 4454 strings out of 493485
- 63365 string characters out of 3143526
- 134127 words of memory out of 3000000
- 7664 multiletter control sequences out of 15000+200000
+ 6144 strings out of 493485
+ 85930 string characters out of 3143526
+ 161983 words of memory out of 3000000
+ 9337 multiletter control sequences out of 15000+200000
  10935 words of font info for 38 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,8n,38p,1494b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,8n,38p,1489b,974s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fo
@@ -660,11 +724,11 @@ ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /home/haavard/projects/master/master_thesis/main.pdf (26 page
-s, 171277 bytes).
+Output written on /home/haavard/projects/master/master_thesis/main.pdf (30 page
+s, 196686 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 142 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

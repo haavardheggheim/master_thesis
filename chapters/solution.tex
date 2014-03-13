@@ -3,35 +3,52 @@
 \section{How can we integrate RTC in the Web with Virtual Arena?}
 There are two solutions to this problem the way I see it. The first is very obvious and complicated, but probably the best solution. The second is more of an experimental hack rather than a viable solution.
 
-\subsection{The Gateway solution}
-The obvious solution is to create a gateway using WebRTC and Visual Arena to turn any webrtc enabled browser into a client. The gateway will allow the web browser on your preferred device to make and receive connections from Virtual Arena. The gateway would have to contain three modules:
-a Signaling Proxy, a Transport Proxy, and a Media Transcoder.
-
-The global architecture would look something like this:
-
-image
+\subsection{The Gateway Solution}
+The obvious solution is to create a gateway using \gls{wrtc} and Visual Arena to turn any \gls{wrtc} enabled browser into a client. The gateway will allow the web browser on your preferred device to make and receive connections from Virtual Arena. The gateway would have to contain three modules:
+a Signaling Proxy, a Transport Proxy, and a Media Transcoder. The global architecture would look something like this:
+\\
+\\
+\centerline{\includegraphics[scale=0.6]{gateway_architecture.png}}
 
 \subsubsection{The Signaling Proxy}
-Since WebRTC does not define any signaling protocol, one is free to use something custom made. But in this approach, the key information that needs to be exchanged is the \gls{sdp}, which specifies the necessary transport and media configuration information necessary to establish a connection. This approach is outlined by \gls{JSEP}. So the role of the Signaling Proxy module would be to extend the custom signaling protocol already used in Virtual Arena to include the necessary metadata provided in the \gls{sdp}. It would go something lke this:
+Since \gls{wrtc} does not define any signaling protocol, one is free to use something custom made. But in this approach, the key information that needs to be exchanged is the \gls{sdp}, which specifies the necessary transport and media configuration information necessary to establish a connection. This approach is outlined by \gls{jsep}. So the role of the Signaling Proxy module would be to extend the custom signaling protocol already used in Virtual Arena to include the necessary metadata provided in the \gls{sdp}. It would go something lke this:
 
 The \gls{mcu} sends an offer via the signaling method, then on the client the remote party would install it using the setRemoteDescription() API.
 
-image
-
-code showing ssrc
-
-specify connection to go via mcu
+\begin{lstlisting}
+...snip...
+m=audio 1 RTP/SAVPF 111 103 104 0 8 106 105 13 126
+c=IN IP4 0.0.0.0
+a=rtcp:1 IN IP4 0.0.0.0
+a=ice-ufrag:fAYfQM/iWMQPqiHs
+a=ice-pwd:pgbuPPRdpKq+obC0lyRxVDe/
+a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level
+a=rtpmap:111 opus/48000/2
+a=maxptime:60
+a=ssrc:2209464108 cname:7oIEPieg3XZzHJdN
+a=ssrc:2209464108 mslabel:uWu6kVvHhYbbkOtNalf5E2LFgjx4cpGMhnfo
+a=ssrc:2209464108 label:2b626a18-c54c-4c1b-9f42-03519a9b63f2
+m=video 1 RTP/SAVPF 100 116 117
+...snip...
+\end{lstlisting}
 
 \subsubsection{The Transport Proxy}
-The WebRTC specification make support for ICE and SRTP-DTLS mandatory. The problem here is that Virtual Arena uses raw RTP streams, it does not need the added security layers that WebRTC defines. It is up to the Transport Proxy to convert the media streams to allow these two worlds to interoperate. 
+The \gls{wrtc} specification make support for \gls{ice} and \gls{srtp}-{dtls} mandatory. The problem here is that Virtual Arena uses raw \gls{rtp} streams, it does not need the added security layers that \gls{wrtc} defines. It is up to the Transport Proxy to convert the media streams to allow these two worlds to interoperate. 
+\\
+\\
+\textbf{Ice and Security:}
+By modifying a constraint in the IceTransport object we can modify which candidates the ICE engine is allowed to use. We can indicate that the engine must use only relay candidates. This can be used to prevent leakage of IP addresses.
 
-image
 
 \subsubsection{The Media Transcoder}
-The RTCWeb specification defines these mandatory codecs:
-for audio: opus and g.711
-for video there are still discussions. The choice is between VP8 and H.264. The H.264 codec by Cisco was made free last october, so now both choices are royalty free. H.264 is the most widely deployed, but both Google and Firefox has decided to use VP8 in their WebRTC implementations.
+The \gls{wrtc} specification defines these mandatory codecs:
+\\
+\textbf{audio: opus and g.711}
+\\
+\textbf{video: ?}
+\\
+There are still discussions on the topic of which video codec should be standard. The choice is between VP8 and H.264. The H.264 codec was recently made free by Cisco, so now both choices are royalty free. H.264 is the most widely deployed and currently has the best hardware support, but both Google and Firefox has decided to use VP8 in their WebRTC implementations.
 
 Virtual Arena uses speex for audio and theora for video. So these would have to be transcoded to the appropriate formats.
 
-This is one of the advantages of utilizing a \gls{mcu} because u can add support for both H.264 and VP8 and be able to create a session between Chrome, Virtual Arena and Bowser.
+This is one of the advantages of utilizing a \gls{mcu} because you can add support for both H.264 and VP8 and be able to create a session between  both Chrome, Virtual Arena, and Bowser.
