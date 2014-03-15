@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage[acronym,footnote,description]{glossaries}
 \usepackage{listings}
+\usepackage[parfill]{parskip}
 \graphicspath{ {images/} }
 
 \makeglossaries
@@ -15,16 +16,17 @@
 \makeatother
 
 \author{H\aa vard A. Heggheim\\[1cm]
-Supervisors: Lars Petter Helland\\Anders Øvreseth}
+Supervisors: Lars Petter Helland \&\\ Anders Øvreseth}
 \date{\today}
 
-\title{
- {\huge Live Streaming of Audio and Video through the Browser in an Enterprise}\\[0.4cm]
+\title{\vspace{-4cm}{
+ {\huge Interworking WebRTC with Enterprise Multimedia Communications}\\[0.4cm]
  {\large Bergen University College and University of Bergen}\\
  {\large Joint Master's Programme in Software Engineering}\\[1cm]
- {\includegraphics[height=4cm]{hib_small.jpg}}
- %{\includegraphics[height=3.8cm]{uiblogo.png}}%
-}	
+ {\vspace{+5cm}\includegraphics[height=3cm]{uiblogo.png}}
+ {\includegraphics[height=3cm]{hib_small.jpg}}
+ \vspace{+4cm}
+}}
 
 
 \begin{document}
@@ -52,14 +54,23 @@ Supervisors: Lars Petter Helland\\Anders Øvreseth}
 \chapter{Introduction}
 %\input{chapters/introduction}%
 
-\chapter{Background Research}
+\chapter{Background}
 %\input{chapters/backgroundResearch}
 
 \chapter{Industrial Case}
-%\input{chapters/industrialcase}
+\input{chapters/industrialcase}
 
 \chapter{Problem Description}
 \input{chapters/problem}
+
+%\chapter{HTML5}
+% \input{chapters/html5}%
+
+\chapter{WebRTC}
+\input{chapters/webrtc}
+
+\chapter{What is the current state of support of Real-time Communication Between Browsers}
+%\input{chapters/currentstate}%
 
 \chapter{WebRTC and Virtual Arena}
 \input{chapters/webrtcvirtualarena}
@@ -67,23 +78,17 @@ Supervisors: Lars Petter Helland\\Anders Øvreseth}
 \chapter{The Solution}
 \input{chapters/solution.tex}
 
-\chapter{What is the current state of support of Real-time Communication Between Browsers}
-%\input{chapters/currentstate}%
-
-\chapter{How well does Real-time Communcation scale on mobile devices?}
+%\chapter{How well does Real-time Communcation scale on mobile devices?}
 
 \chapter{What will happen with the support of Real-time Communications in the near future?}
 
-\chapter{HTML5}
-% \input{chapters/html5}%
+%\chapter{The Approach(experiments)}%
 
-\chapter{The Approach(experiments)}%
+%\chapter{The Implementation(how implemented approach)}%
 
-\chapter{The Implementation(how implemented approach)}%
+%\chapter{Evaluation}%
 
-\chapter{Evaluation}%
-
-\chapter{Conclusion}
+\chapter{Discussions and Conclusion}
 \input{chapters/conclusion}
 
 

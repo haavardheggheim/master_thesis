@@ -53,10 +53,10 @@ Looking at trends in the development, this thesis will also be predicting suppor
 \section{Existing work}
 There exists a lot of tutorials on creating very simple implementations of \gls{wrtc} on the client side, usually setting up one-to-one connections using a third-party service such as Pusher or OpenTOK for doing signaling. More advanced guides shows how you can setup a Node.js server to do signaling using WebSockets.
 
-This is great, but to be able to do what we need, we need to create an advanced server that acts like a client. While most commercial solutions that could potentially be of some help most are closed. But there is one open source project called Licode which utilizes the WebRTCs native libraries and is compatible with the standard and protocols. It's written in C++ and is acts like a \gls{mcu}. It's open source, but not very well documented. It also doesn't offer what we need in terms of including external \gls{rtp} streams, but it says in their roadmap that this is planned for the future.
+This is great, but to be able to do what we need, we need to create an advanced server that acts like a client. While most commercial solutions that could potentially be of some help most are closed. But there is one open source project called Licode which utilizes the WebRTCs native libraries and is compatible with the standard and protocols. It's written in C++ and it acts like a \gls{mcu}. It's open source, but not very well documented. It also doesn't offer what we need in terms of including external \gls{rtp} streams, but it says in their roadmap that this is planned for the future.
 
 There is no good service on the web that provides live data on how far the support has come on different browsers. There is one service that will check for WebRTC and WebSockets connectivity on http://www.check-connectivity.com/
-You will find blogs and articles that provide tables showing who has implemented which APIs, but most will be outdated. The best solution is to test yourself using your own code.
+You will find blogs and articles that provide tables showing who has implemented which APIs, but most will be outdated. The best solution is to test yourself using your own code or read the different browsers roadmaps.
 
 If WebRTC is not supported in a users browser, there may be possible for the user to either update their browser or adjust a flag in the browsers experimental settings.
 

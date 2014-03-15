@@ -1,2 +1,36 @@
-This chapter will take a look at the new \ac{html5} \ac{webrtc} API that utilizes UDP for doing live streaming in the browser. The goal is to allow real-time communication in the browser. The specifications are still in draft, but there is a lot of experiments using this new API publicly available. This thesis will aid in doing such experiments. How we can use WebRTC interworking in an enterprise setting. What other APIs can we use alongside WebRTC within the web browser.
+%!TEX root = ../main.tex
+
+This chapter gives an introduction to the new \gls{wrtc} APIs.
+
+\gls{wrtc} is a collection of standards, protocols, and Javascript APIs. The combination of these enables web browsers to do peer-to-peer audio, video and data sharing between browsers. There is no plugin or third-party software required. Real-time communication is now becoming a standard feature in browsers that any web site can use via simple APIs.
+
+Delivering such functionality such as live audio and video sharing and data exchange requires a lot of new processing capabilities in the browser. This is abstracted behind three primary APIs:
+
+\begin{itemize}
+\item MediaStream: capturing audio and video streams
+\item RTCPeerConnection: communication of audio and video data
+\item RTCDataChannel: communication of arbitrary application data
+\end{itemize}
+
+With the above APIs you can: capture media from a camera on your device, do signaling, peer discovery, connection negotiations and security to name a few.
+
+\section{Standards and Development}
+The \gls{wrtc} architecture consists of different standards, covering both native and browser APIs:
+
+\begin{itemize}
+\item All the different protocols and data formats required to make \gls{wrtc} work is defined by the IETF Working Group \gls{rtcweb}. They are responsible for defining protocols, data formats, security, and all other aspects to enable peer-to-peer communication in the browser.
+\item The \gls{wrtc} \gls{w3c} Working Group is responsible for defining the browser APIs.
+\end{itemize}
+
+WebRTC is the first open standard to tranport data over \gls{udp}. However doing this in the browser requires a lot more than raw \gls{udp} to do real-time communication:
+
+
+
+
+
+
+
+
+
+This chapter will take a look at the new {html5} {webrtc} API that utilizes UDP for doing live streaming in the browser. The goal is to allow real-time communication in the browser. The specifications are still in draft, but there is a lot of experiments using this new API publicly available. This thesis will aid in doing such experiments. How we can use WebRTC interworking in an enterprise setting. What other APIs can we use alongside WebRTC within the web browser.
 

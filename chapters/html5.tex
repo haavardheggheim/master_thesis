@@ -1,6 +1,22 @@
 %!TEX root = ../main.tex
 
-This chapter gives an introduction to the new HTML5 <video> element and it’s Javascript API. With HTML5 Video you can embed video into your web page, without the need for external plugins like Adobe Flash, Microsoft Silverlight or Apple Quicktime. It’s natively integrated into the browser, which allows for you to have full control over the element. The need to have video in web pages will be discussed also how we never before had a uniform implementation in all major browsers.
+This chapter gives an introduction to the new \gls{wrtc} APIs.
+
+\gls{wrtc} is a collection of standards, protocols, and Javascript APIs. The combination of these enables web browsers to do peer-to-peer audio, video and data sharing between browsers. There is no plugin or third-party software required. Real-time communication is now becoming a standard feature in browsers that any web site can use via simple APIs.
+
+Delivering such functionality such as live audio and video sharing and data exchange requires a lot of new processing capabilities in the browser. This is abstracted behind three primary APIs:
+
+\begin{itemize}
+\item MediaStream: capturing audio and video streams
+\item RTCPeerConnection: communication of audio and video data
+\item RTCDataChannel: communication of arbitrary application data
+
+
+
+
+
+
+With HTML5 Video you can embed video into your web page, without the need for external plugins like Adobe Flash, Microsoft Silverlight or Apple Quicktime. It’s natively integrated into the browser, which allows for you to have full control over the element. The need to have video in web pages will be discussed also how we never before had a uniform implementation in all major browsers.
 
 \section{History}
 The <video> element was first mentioned in 2005, then the first browser rolled out a nightly build in November 2007. Before the introduction a web developer could include video only through  embed elements, which required browser plugins. Initially these plugins would launch an external video player that was installed on the users system. Later with the release of the Flash Player, Macromedia introduced video support into its browser plug-in. Flash later became the major plug-in for providing rich Internet Applications which led to many users having it installed on their system. It became the standard for publishing video online without having to encode in three different codecs. YouTube launched in May 2005, and it was natural for them to choose using Macromedia Flash. Adobe later bought Flash and was therefore known as Adobe Flash. The discussion continued on the <video> element and the need for a standard baseline encoding format. Apple refused to implement Flash on their mobile platforms simply because they would no support using closed platforms that are dependant on third parties. With the HTML5 open standards, developers will be able to have full control over all layers of web applications, including the DOM, CSS, and JavaScript. This includes the need for all major browser to implement a common standard.

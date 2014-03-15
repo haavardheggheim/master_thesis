@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.11.5)  13 MAR 2014 14:25
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.11.5)  15 MAR 2014 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -410,30 +410,34 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
 \glo@main@file=\write4
 \openout4 = `main.glo'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 8.
+Package glossaries Info: Writing glossary file main.glo on input line 9.
 \glo@acronym@file=\write5
 \openout5 = `main.acn'.
 
-Package glossaries Info: Writing glossary file main.acn on input line 8.
+Package glossaries Info: Writing glossary file main.acn on input line 9.
 
 (/home/haavard/projects/master/master_thesis/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -498,29 +502,35 @@ e
 ))
 \c@lstlisting=\count113
 
-<images/hib_small.jpg, id=1, 11780.01pt x 8311.05pt>
+<images/uiblogo.png, id=1, 57.013pt x 57.013pt>
+File: images/uiblogo.png Graphic file (type png)
+ <use images/uiblogo.png>
+Package pdftex.def Info: images/uiblogo.png used on input line 36.
+(pdftex.def)             Requested size: 85.36528pt x 85.35826pt.
+
+<images/hib_small.jpg, id=3, 11780.01pt x 8311.05pt>
 File: images/hib_small.jpg Graphic file (type jpg)
 
 <use images/hib_small.jpg>
-Package pdftex.def Info: images/hib_small.jpg used on input line 34.
-(pdftex.def)             Requested size: 161.23418pt x 113.81102pt.
+Package pdftex.def Info: images/hib_small.jpg used on input line 36.
+(pdftex.def)             Requested size: 120.97057pt x 85.35826pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 34.
+(Font)              <12> on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 34.
+(Font)              <8> on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 34.
+(Font)              <6> on input line 36.
  [1
 
 \openout3 = `main.ist'.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/hib_small.jpg>] (
-./chapters/abstract.tex) [1
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/uiblogo.png> <./i
+mages/hib_small.jpg>] (./chapters/abstract.tex)
+[1
 
-]
-(/home/haavard/projects/master/master_thesis/main.toc
+] (/home/haavard/projects/master/master_thesis/main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 5.
+(Font)              <10.95> on input line 4.
  [2
 
 ])
@@ -542,22 +552,33 @@ Chapter 2.
 
 ]
 Chapter 3.
-[8
+(./chapters/industrialcase.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 12.
+ [8
 
-]
+])
+Underfull \hbox (badness 10000) in paragraph at lines 16--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--62
+
+ []
+
+[9]
 Chapter 4.
 (./chapters/problem.tex
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 3.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 3.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
- [9
+ [10
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 28--35
@@ -569,10 +590,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--35
 
  []
 
-[10] [11]) [12]
+[11] [12]) [13]
 Chapter 5.
+(./chapters/webrtc.tex [14
+
+]) [15]
+Chapter 6.
+[16
+
+]
+Chapter 7.
 (./chapters/webrtcvirtualarena.tex
-<images/mediaserver.png, id=54, 575.14874pt x 432.61626pt>
+<images/mediaserver.png, id=69, 575.14874pt x 432.61626pt>
 File: images/mediaserver.png Graphic file (type png)
 
 <use images/mediaserver.png>
@@ -583,57 +612,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--13
 
  []
 
-[13
+[17
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 27--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--45
-
- []
-
-[14 <./images/mediaserver.png>] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 56--63
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--63
-
- []
-
-) [16] [17]
-Chapter 6.
+] [18 <./images/mediaserver.png>] [19]) [20]
+Chapter 8.
 (/home/haavard/projects/master/master_thesis/chapters/solution.tex
-<images/gateway_architecture.png, id=72, 586.19pt x 288.07625pt>
+<images/gateway_architecture.png, id=84, 586.19pt x 288.07625pt>
 File: images/gateway_architecture.png Graphic file (type png)
 
 <use images/gateway_architecture.png>
@@ -646,12 +630,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--12
  []
 
 
+Overfull \hbox (30.0pt too wide) in paragraph at lines 7--12
+[] 
+ []
+
+
 Underfull \hbox (badness 1237) in paragraph at lines 14--14
 [][][]\OT1/cmr/m/n/9 JavaScript Ses-sion Es-tab-lish-ment Pro-to-col: http://to
 ols.ietf.org/html/draft-ietf-
  []
 
-[18
+[21
 
  <./images/gateway_architecture.png>]
 Overfull \hbox (47.34424pt too wide) in paragraph at lines 29--30
@@ -663,55 +652,26 @@ Overfull \hbox (34.2041pt too wide) in paragraph at lines 30--31
 [][][][][][][][][][][][][][][][][][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--41
-
- []
-
-[19]) [20]
-Chapter 7.
-[21
-
-]
-Chapter 8.
-[22
-
-]
+[22] [23]) [24]
 Chapter 9.
-[23
-
-]
-Chapter 10.
-[24
-
-]
-Chapter 11.
 [25
 
 ]
-Chapter 12.
-[26
-
-]
-Chapter 13.
-[27
-
-]
-Chapter 14.
-(./chapters/conclusion.tex) [28
+Chapter 10.
+(./chapters/conclusion.tex) [26
 
 ]
 Appendix A.
 No file main.gls.
 No file main.acr.
-[29
+[27
 
 ] (/home/haavard/projects/master/master_thesis/main.aux) ) 
 Here is how much of TeX's memory you used:
- 6144 strings out of 493485
- 85930 string characters out of 3143526
- 161983 words of memory out of 3000000
- 9337 multiletter control sequences out of 15000+200000
+ 6192 strings out of 493485
+ 86879 string characters out of 3143526
+ 161720 words of memory out of 3000000
+ 9375 multiletter control sequences out of 15000+200000
  10935 words of font info for 38 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,8n,38p,1489b,974s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -724,11 +684,11 @@ ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /home/haavard/projects/master/master_thesis/main.pdf (30 page
-s, 196686 bytes).
+Output written on /home/haavard/projects/master/master_thesis/main.pdf (28 page
+s, 203489 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 138 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
