@@ -1,30 +1,31 @@
-\contentsline {chapter}{\numberline {1}Introduction}{6}
-\contentsline {chapter}{\numberline {2}Background}{7}
-\contentsline {chapter}{\numberline {3}Industrial Case}{8}
-\contentsline {section}{\numberline {3.1}Visual Solution's Vison}{8}
-\contentsline {chapter}{\numberline {4}Problem Description}{10}
-\contentsline {section}{\numberline {4.1}Problem statement}{10}
-\contentsline {section}{\numberline {4.2}Research question}{11}
-\contentsline {section}{\numberline {4.3}Research method}{11}
-\contentsline {section}{\numberline {4.4}Existing work}{12}
-\contentsline {section}{\numberline {4.5}Expected results}{13}
-\contentsline {chapter}{\numberline {5}WebRTC}{14}
-\contentsline {section}{\numberline {5.1}Standards and Development}{14}
-\contentsline {chapter}{\numberline {6}What is the current state of support of Real-time Communication Between Browsers}{16}
-\contentsline {chapter}{\numberline {7}WebRTC and Virtual Arena}{17}
-\contentsline {section}{\numberline {7.1}How does Virtual Arena work?}{17}
-\contentsline {subsection}{\numberline {7.1.1}Signaling}{18}
-\contentsline {subsection}{\numberline {7.1.2}Transport}{18}
-\contentsline {subsection}{\numberline {7.1.3}Media}{18}
-\contentsline {section}{\numberline {7.2}How does WebRTC work?}{19}
-\contentsline {section}{\numberline {7.3}What are the differences?}{19}
-\contentsline {section}{\numberline {7.4}What do we need?}{20}
-\contentsline {chapter}{\numberline {8}The Solution}{21}
-\contentsline {section}{\numberline {8.1}The Gateway Solution}{21}
-\contentsline {subsection}{\numberline {8.1.1}The Signaling Proxy}{22}
-\contentsline {subsection}{\numberline {8.1.2}The Transport Proxy}{22}
-\contentsline {subsection}{\numberline {8.1.3}The Media Transcoder}{23}
-\contentsline {section}{\numberline {8.2}The Experimental Solution//TO DO}{23}
-\contentsline {chapter}{\numberline {9}What will happen with the support of Real-time Communications in the near future?}{25}
-\contentsline {chapter}{\numberline {10}Discussions and Conclusion}{26}
-\contentsline {chapter}{\numberline {A}Appendix Title}{27}
+\contentsline {chapter}{\numberline {1}Introduction}{5}
+\contentsline {chapter}{\numberline {2}Background}{6}
+\contentsline {chapter}{\numberline {3}Industrial Case}{7}
+\contentsline {section}{\numberline {3.1}Visual Solution's Vison}{7}
+\contentsline {chapter}{\numberline {4}Problem Description}{9}
+\contentsline {section}{\numberline {4.1}Problem statement}{9}
+\contentsline {section}{\numberline {4.2}Research question}{10}
+\contentsline {section}{\numberline {4.3}Research method}{10}
+\contentsline {section}{\numberline {4.4}Existing work}{11}
+\contentsline {section}{\numberline {4.5}Expected results}{12}
+\contentsline {chapter}{\numberline {5}WebRTC}{13}
+\contentsline {section}{\numberline {5.1}Standards and Development}{13}
+\contentsline {section}{\numberline {5.2}ICE}{14}
+\contentsline {chapter}{\numberline {6}What is the current state of support of Real-time Communication Between Browsers}{15}
+\contentsline {chapter}{\numberline {7}WebRTC and Virtual Arena}{16}
+\contentsline {section}{\numberline {7.1}How does Virtual Arena work?}{16}
+\contentsline {subsection}{\numberline {7.1.1}Signaling}{17}
+\contentsline {subsection}{\numberline {7.1.2}Transport}{17}
+\contentsline {subsection}{\numberline {7.1.3}Media}{17}
+\contentsline {section}{\numberline {7.2}How does WebRTC work?}{18}
+\contentsline {section}{\numberline {7.3}What are the differences?}{18}
+\contentsline {section}{\numberline {7.4}What do we need?}{19}
+\contentsline {chapter}{\numberline {8}The Solution}{20}
+\contentsline {section}{\numberline {8.1}The Gateway Solution}{20}
+\contentsline {subsection}{\numberline {8.1.1}The Signaling Proxy}{21}
+\contentsline {subsection}{\numberline {8.1.2}The Transport Proxy}{21}
+\contentsline {subsection}{\numberline {8.1.3}The Media Transcoder}{22}
+\contentsline {section}{\numberline {8.2}The Experimental Solution//TO DO}{22}
+\contentsline {chapter}{\numberline {9}What will happen with the support of Real-time Communications in the near future?}{24}
+\contentsline {chapter}{\numberline {10}Discussions and Conclusion}{25}
+\contentsline {chapter}{\numberline {A}Appendix Title}{26}

@@ -4,6 +4,7 @@
 \usepackage[acronym,footnote,description]{glossaries}
 \usepackage{listings}
 \usepackage[parfill]{parskip}
+\usepackage{natbib}
 \graphicspath{ {images/} }
 
 \makeglossaries
@@ -94,9 +95,12 @@ Supervisors: Lars Petter Helland \&\\ Anders Øvreseth}
 
 % END SECTION %
 \appendix
-\chapter{Appendix Title}
+\chapter{Appendix Title}b
 %\input{chapters/appendix}%
 
 \printglossaries
+
+\bibliographystyle{plainnat}
+\bibliography{Remote}
 
 \end{document}

@@ -14,6 +14,8 @@ Delivering such functionality such as live audio and video sharing and data exch
 
 With the above APIs you can: capture media from a camera on your device, do signaling, peer discovery, connection negotiations and security to name a few.
 
+NAT traversal, media encryption, port multiplexing
+
 \section{Standards and Development}
 The \gls{wrtc} architecture consists of different standards, covering both native and browser APIs:
 
@@ -26,7 +28,8 @@ WebRTC is the first open standard to tranport data over \gls{udp}. However doing
 
 
 
-
+\section{ICE}
+What \gls{ice} does is to gather all possible addresses it can in address:port and transport triplets\cite{Ivov2013Ice}. ICE calls these `candidates' and this is what we will call them as well. Once candidates have been gathered, they are ordered in a list based on priority. Highest priorities are assigned to candidates with the least overhead: those that you get from the device itself, the IP `host' candidates. Next in line are STUN candidates, which are f.ex obtained with \gls{upnp}. Finally the `relayed' candidates that is obtained from TURN servers come, this route is only available when no other route is possible.
 
 
 

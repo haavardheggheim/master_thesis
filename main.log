@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.11.5)  15 MAR 2014 17:01
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.11.5)  17 MAR 2014 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -414,43 +414,49 @@ Package: listings 2007/02/22 1.4 (Carsten Heinz)
 (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
 )
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip55
+\bibsep=\skip56
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count107
+)
 \glo@main@file=\write4
 \openout4 = `main.glo'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 9.
+Package glossaries Info: Writing glossary file main.glo on input line 10.
 \glo@acronym@file=\write5
 \openout5 = `main.acn'.
 
-Package glossaries Info: Writing glossary file main.acn on input line 9.
+Package glossaries Info: Writing glossary file main.acn on input line 10.
 
-(/home/haavard/projects/master/master_thesis/main.aux)
+No file main.aux.
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count107
+\scratchcounter=\count108
 \scratchdimen=\dimen122
 \scratchbox=\box33
-\nofMPsegments=\count108
-\nofMParguments=\count109
+\nofMPsegments=\count109
+\nofMParguments=\count110
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count110
+\MPscratchCnt=\count111
 \MPscratchDim=\dimen123
-\MPnumerator=\count111
-\makeMPintoPDFobject=\count112
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
 \everyMPtoPDFconversion=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -500,26 +506,26 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count113
+\c@lstlisting=\count114
 
 <images/uiblogo.png, id=1, 57.013pt x 57.013pt>
 File: images/uiblogo.png Graphic file (type png)
  <use images/uiblogo.png>
-Package pdftex.def Info: images/uiblogo.png used on input line 36.
+Package pdftex.def Info: images/uiblogo.png used on input line 37.
 (pdftex.def)             Requested size: 85.36528pt x 85.35826pt.
 
 <images/hib_small.jpg, id=3, 11780.01pt x 8311.05pt>
 File: images/hib_small.jpg Graphic file (type jpg)
 
 <use images/hib_small.jpg>
-Package pdftex.def Info: images/hib_small.jpg used on input line 36.
+Package pdftex.def Info: images/hib_small.jpg used on input line 37.
 (pdftex.def)             Requested size: 120.97057pt x 85.35826pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 36.
+(Font)              <12> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 36.
+(Font)              <8> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 36.
+(Font)              <6> on input line 37.
  [1
 
 \openout3 = `main.ist'.
@@ -528,48 +534,47 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 mages/hib_small.jpg>] (./chapters/abstract.tex)
 [1
 
-] (/home/haavard/projects/master/master_thesis/main.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 4.
- [2
-
-])
+]
+No file main.toc.
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [3] [4
+[2
 
-]
-(./chapters/acronyms.tex) [5
+] [3
+
+] (./chapters/acronyms.tex) [4
 
 ]
 Chapter 1.
-[6
+[5
 
 ]
 Chapter 2.
-[7
+[6
 
 ]
 Chapter 3.
 (./chapters/industrialcase.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 12.
- [8
+ [7
 
 ])
-Underfull \hbox (badness 10000) in paragraph at lines 16--62
+Underfull \hbox (badness 10000) in paragraph at lines 16--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--62
+Underfull \hbox (badness 10000) in paragraph at lines 16--63
 
  []
 
-[9]
+[8]
 Chapter 4.
 (./chapters/problem.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
@@ -578,7 +583,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
- [10
+ [9
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 28--35
@@ -590,18 +595,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--35
 
  []
 
-[11] [12]) [13]
+[10] [11]) [12]
 Chapter 5.
-(./chapters/webrtc.tex [14
+(./chapters/webrtc.tex [13
 
-]) [15]
+]
+
+Package natbib Warning: Citation `Ivov2013Ice' on page 14 undefined on input li
+ne 32.
+
+) [14]
 Chapter 6.
-[16
+[15
 
 ]
 Chapter 7.
 (./chapters/webrtcvirtualarena.tex
-<images/mediaserver.png, id=69, 575.14874pt x 432.61626pt>
+<images/mediaserver.png, id=66, 575.14874pt x 432.61626pt>
 File: images/mediaserver.png Graphic file (type png)
 
 <use images/mediaserver.png>
@@ -612,12 +622,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--13
 
  []
 
-[17
+[16
 
-] [18 <./images/mediaserver.png>] [19]) [20]
+] [17 <./images/mediaserver.png>] [18]) [19]
 Chapter 8.
 (/home/haavard/projects/master/master_thesis/chapters/solution.tex
-<images/gateway_architecture.png, id=84, 586.19pt x 288.07625pt>
+<images/gateway_architecture.png, id=81, 586.19pt x 288.07625pt>
 File: images/gateway_architecture.png Graphic file (type png)
 
 <use images/gateway_architecture.png>
@@ -640,7 +650,7 @@ Underfull \hbox (badness 1237) in paragraph at lines 14--14
 ols.ietf.org/html/draft-ietf-
  []
 
-[21
+[20
 
  <./images/gateway_architecture.png>]
 Overfull \hbox (47.34424pt too wide) in paragraph at lines 29--30
@@ -652,26 +662,30 @@ Overfull \hbox (34.2041pt too wide) in paragraph at lines 30--31
 [][][][][][][][][][][][][][][][][][] 
  []
 
-[22] [23]) [24]
+[21] [22]) [23]
 Chapter 9.
-[25
+[24
 
 ]
 Chapter 10.
-(./chapters/conclusion.tex) [26
+(./chapters/conclusion.tex) [25
 
 ]
 Appendix A.
 No file main.gls.
 No file main.acr.
-[27
+No file main.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[26
 
 ] (/home/haavard/projects/master/master_thesis/main.aux) ) 
 Here is how much of TeX's memory you used:
- 6192 strings out of 493485
- 86879 string characters out of 3143526
- 161720 words of memory out of 3000000
- 9375 multiletter control sequences out of 15000+200000
+ 6549 strings out of 493485
+ 91030 string characters out of 3143526
+ 167502 words of memory out of 3000000
+ 9731 multiletter control sequences out of 15000+200000
  10935 words of font info for 38 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,8n,38p,1489b,974s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -684,11 +698,11 @@ ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /home/haavard/projects/master/master_thesis/main.pdf (28 page
-s, 203489 bytes).
+Output written on /home/haavard/projects/master/master_thesis/main.pdf (27 page
+s, 200176 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 135 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
