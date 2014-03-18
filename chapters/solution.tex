@@ -15,7 +15,7 @@ Since \gls{wrtc} does not define any signaling protocol, one is free to use some
 
 The \gls{mcu} sends an offer via the signaling method, then on the client the remote party would install it using the setRemoteDescription() API.
 
-\begin{lstlisting}
+\begin{lstlisting}[frame=single]
 ...snip...
 m=audio 1 RTP/SAVPF 111 103 104 0 8 106 105 13 126
 c=IN IP4 0.0.0.0
