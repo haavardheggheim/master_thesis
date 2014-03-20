@@ -1,111 +1,110 @@
-\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{8}
-\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{8}
-\glossaryentry{API?\glossaryentryfield{api}{\glsnamefont{\acronymfont {API}}}{Specifies how some software components should interact with each other}{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{10}
-\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{10}
-\glossaryentry{API?\glossaryentryfield{api}{\glsnamefont{\acronymfont {API}}}{Specifies how some software components should interact with each other}{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{10}
-\glossaryentry{HTTP?\glossaryentryfield{http}{\glsnamefont{\acronymfont {HTTP}}}{}{Hypertext Transfer Protocol}|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{RTCWEB?\glossaryentryfield{rtcweb}{\glsnamefont{\acronymfont {RTCWEB}}}{https://tools.ietf.org/wg/rtcweb/}{Web Real-Time Communications}|setentrycounter[]{page}\glsnumberformat}{10}
 \glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{10}
 \glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{10}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{10}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{10}
-\glossaryentry{API?\glossaryentryfield{api}{\glsnamefont{\acronymfont {API}}}{Specifies how some software components should interact with each other}{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{10}
-\glossaryentry{HTTP?\glossaryentryfield{http}{\glsnamefont{\acronymfont {HTTP}}}{}{Hypertext Transfer Protocol}|setentrycounter[]{page}\glsnumberformat}{10}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{RTCWEB?\glossaryentryfield{rtcweb}{\glsnamefont{\acronymfont {RTCWEB}}}{https://tools.ietf.org/wg/rtcweb/}{Web Real-Time Communications}|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{11}
+\glossaryentry{TCP?\glossaryentryfield{tcp}{\glsnamefont{\acronymfont {TCP}}}{http://www.ietf.org/rfc/rfc793.txt}{Transmission Control Protocol}|setentrycounter[]{page}\glsnumberformat}{11}
+\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{11}
 \glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{11}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{11}
-\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{11}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{11}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{11}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{11}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{11}
-\glossaryentry{API?\glossaryentryfield{api}{\glsnamefont{\acronymfont {API}}}{Specifies how some software components should interact with each other}{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{11}
-\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{11}
+\glossaryentry{TCP?\glossaryentryfield{tcp}{\glsnamefont{\acronymfont {TCP}}}{http://www.ietf.org/rfc/rfc793.txt}{Transmission Control Protocol}|setentrycounter[]{page}\glsnumberformat}{11}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{STUN?\glossaryentryfield{stun}{\glsnamefont{\acronymfont {STUN}}}{RFC 5389}{Session Traversal Utilities for NAT}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{TURN?\glossaryentryfield{turn}{\glsnamefont{\acronymfont {TURN}}}{RFC 5766}{Traversal Using Relays around NAT}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
 \glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{12}
-\glossaryentry{API?\glossaryentryfield{api}{\glsnamefont{\acronymfont {API}}}{Specifies how some software components should interact with each other}{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{12}
 \glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{12}
-\glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{12}
-\glossaryentry{RTP?\glossaryentryfield{rtp}{\glsnamefont{\acronymfont {RTP}}}{defines a standard packet format for delivering audio and video over IP networks.}{Real Time Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
-\glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{12}
-\glossaryentry{RTP?\glossaryentryfield{rtp}{\glsnamefont{\acronymfont {RTP}}}{defines a standard packet format for delivering audio and video over IP networks.}{Real Time Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{14}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{14}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{14}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{14}
-\glossaryentry{RTCWEB?\glossaryentryfield{rtcweb}{\glsnamefont{\acronymfont {RTCWEB}}}{https://tools.ietf.org/wg/rtcweb/}{Web Real-Time Communications}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{SCTP?\glossaryentryfield{sctp}{\glsnamefont{\acronymfont {SCTP}}}{RFC 4960}{Stream Control Transport Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{NAT?\glossaryentryfield{nat}{\glsnamefont{\acronymfont {NAT}}}{}{Network Address Translator}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{NAT?\glossaryentryfield{nat}{\glsnamefont{\acronymfont {NAT}}}{}{Network Address Translator}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{TURN?\glossaryentryfield{turn}{\glsnamefont{\acronymfont {TURN}}}{RFC 5766}{Traversal Using Relays around NAT}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{TURN?\glossaryentryfield{turn}{\glsnamefont{\acronymfont {TURN}}}{RFC 5766}{Traversal Using Relays around NAT}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{STUN?\glossaryentryfield{stun}{\glsnamefont{\acronymfont {STUN}}}{RFC 5389}{Session Traversal Utilities for NAT}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{TURN?\glossaryentryfield{turn}{\glsnamefont{\acronymfont {TURN}}}{RFC 5766}{Traversal Using Relays around NAT}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{SCTP?\glossaryentryfield{sctp}{\glsnamefont{\acronymfont {SCTP}}}{RFC 4960}{Stream Control Transport Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{NAT?\glossaryentryfield{nat}{\glsnamefont{\acronymfont {NAT}}}{}{Network Address Translator}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{12}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{JSEP?\glossaryentryfield{jsep}{\glsnamefont{\acronymfont {JSEP}}}{http://tools.ietf.org/html/draft-ietf-rtcweb-jsep-03}{JavaScript Session Establishment Protocol}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{JSEP?\glossaryentryfield{jsep}{\glsnamefont{\acronymfont {JSEP}}}{http://tools.ietf.org/html/draft-ietf-rtcweb-jsep-03}{JavaScript Session Establishment Protocol}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{14}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{14}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{14}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{14}
+\glossaryentry{UPnP?\glossaryentryfield{upnp}{\glsnamefont{\acronymfont {UPnP}}}{https://tools.ietf.org/html/rfc6970}{Universal Plug and Play}|setentrycounter[]{page}\glsnumberformat}{14}
+\glossaryentry{UPnP?\glossaryentryfield{upnp}{\glsnamefont{\acronymfont {UPnP}}}{https://tools.ietf.org/html/rfc6970}{Universal Plug and Play}|setentrycounter[]{page}\glsnumberformat}{14}
+\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{15}
 \glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{15}
 \glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{RTCWEB?\glossaryentryfield{rtcweb}{\glsnamefont{\acronymfont {RTCWEB}}}{https://tools.ietf.org/wg/rtcweb/}{Web Real-Time Communications}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{TCP?\glossaryentryfield{tcp}{\glsnamefont{\acronymfont {TCP}}}{http://www.ietf.org/rfc/rfc793.txt}{Transmission Control Protocol}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{STUN?\glossaryentryfield{stun}{\glsnamefont{\acronymfont {STUN}}}{RFC 5389}{Session Traversal Utilities for NAT}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{TURN?\glossaryentryfield{turn}{\glsnamefont{\acronymfont {TURN}}}{RFC 5766}{Traversal Using Relays around NAT}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{SCTP?\glossaryentryfield{sctp}{\glsnamefont{\acronymfont {SCTP}}}{RFC 4960}{Stream Control Transport Protocol}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{TCP?\glossaryentryfield{tcp}{\glsnamefont{\acronymfont {TCP}}}{http://www.ietf.org/rfc/rfc793.txt}{Transmission Control Protocol}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{STUN?\glossaryentryfield{stun}{\glsnamefont{\acronymfont {STUN}}}{RFC 5389}{Session Traversal Utilities for NAT}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{TURN?\glossaryentryfield{turn}{\glsnamefont{\acronymfont {TURN}}}{RFC 5766}{Traversal Using Relays around NAT}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{SCTP?\glossaryentryfield{sctp}{\glsnamefont{\acronymfont {SCTP}}}{RFC 4960}{Stream Control Transport Protocol}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{NAT?\glossaryentryfield{nat}{\glsnamefont{\acronymfont {NAT}}}{}{Network Address Translator}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{NAT?\glossaryentryfield{nat}{\glsnamefont{\acronymfont {NAT}}}{}{Network Address Translator}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{TURN?\glossaryentryfield{turn}{\glsnamefont{\acronymfont {TURN}}}{RFC 5766}{Traversal Using Relays around NAT}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{TURN?\glossaryentryfield{turn}{\glsnamefont{\acronymfont {TURN}}}{RFC 5766}{Traversal Using Relays around NAT}|setentrycounter[]{page}\glsnumberformat}{17}
+\glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{17}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{17}
 \glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{17}
 \glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{NAT?\glossaryentryfield{nat}{\glsnamefont{\acronymfont {NAT}}}{}{Network Address Translator}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{18}
-\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{18}
-\glossaryentry{JSEP?\glossaryentryfield{jsep}{\glsnamefont{\acronymfont {JSEP}}}{http://tools.ietf.org/html/draft-ietf-rtcweb-jsep-03}{JavaScript Session Establishment Protocol}|setentrycounter[]{page}\glsnumberformat}{18}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{18}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{18}
-\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{18}
-\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{18}
-\glossaryentry{JSEP?\glossaryentryfield{jsep}{\glsnamefont{\acronymfont {JSEP}}}{http://tools.ietf.org/html/draft-ietf-rtcweb-jsep-03}{JavaScript Session Establishment Protocol}|setentrycounter[]{page}\glsnumberformat}{18}
-\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{19}
-\glossaryentry{UPnP?\glossaryentryfield{upnp}{\glsnamefont{\acronymfont {UPnP}}}{https://tools.ietf.org/html/rfc6970}{Universal Plug and Play}|setentrycounter[]{page}\glsnumberformat}{19}
-\glossaryentry{UPnP?\glossaryentryfield{upnp}{\glsnamefont{\acronymfont {UPnP}}}{https://tools.ietf.org/html/rfc6970}{Universal Plug and Play}|setentrycounter[]{page}\glsnumberformat}{19}
-\glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{21}
-\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{NAT?\glossaryentryfield{nat}{\glsnamefont{\acronymfont {NAT}}}{}{Network Address Translator}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{TURN?\glossaryentryfield{turn}{\glsnamefont{\acronymfont {TURN}}}{RFC 5766}{Traversal Using Relays around NAT}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{TURN?\glossaryentryfield{turn}{\glsnamefont{\acronymfont {TURN}}}{RFC 5766}{Traversal Using Relays around NAT}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{DTLS?\glossaryentryfield{dtls}{\glsnamefont{\acronymfont {DTLS}}}{RFC 6347}{Datagram Transport Layer Security}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{SSRC?\glossaryentryfield{ssrc}{\glsnamefont{\acronymfont {SSRC}}}{}{Secure Real-time Transport Protocol}|setentrycounter[]{page}\glsnumberformat}{24}
-\glossaryentry{SSRC?\glossaryentryfield{ssrc}{\glsnamefont{\acronymfont {SSRC}}}{}{Secure Real-time Transport Protocol}|setentrycounter[]{page}\glsnumberformat}{24}
-\glossaryentry{SSRC?\glossaryentryfield{ssrc}{\glsnamefont{\acronymfont {SSRC}}}{}{Secure Real-time Transport Protocol}|setentrycounter[]{page}\glsnumberformat}{24}
+\glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{17}
+\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{18}
+\glossaryentry{API?\glossaryentryfield{api}{\glsnamefont{\acronymfont {API}}}{Specifies how some software components should interact with each other}{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{API?\glossaryentryfield{api}{\glsnamefont{\acronymfont {API}}}{Specifies how some software components should interact with each other}{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{HTTP?\glossaryentryfield{http}{\glsnamefont{\acronymfont {HTTP}}}{}{Hypertext Transfer Protocol}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{API?\glossaryentryfield{api}{\glsnamefont{\acronymfont {API}}}{Specifies how some software components should interact with each other}{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{HTTP?\glossaryentryfield{http}{\glsnamefont{\acronymfont {HTTP}}}{}{Hypertext Transfer Protocol}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{API?\glossaryentryfield{api}{\glsnamefont{\acronymfont {API}}}{Specifies how some software components should interact with each other}{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{W3C?\glossaryentryfield{w3c}{\glsnamefont{\acronymfont {W3C}}}{}{World Wide Web Consortium}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{22}
+\glossaryentry{API?\glossaryentryfield{api}{\glsnamefont{\acronymfont {API}}}{Specifies how some software components should interact with each other}{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{22}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{22}
+\glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{22}
+\glossaryentry{RTP?\glossaryentryfield{rtp}{\glsnamefont{\acronymfont {RTP}}}{defines a standard packet format for delivering audio and video over IP networks.}{Real Time Protocol}|setentrycounter[]{page}\glsnumberformat}{22}
+\glossaryentry{RTP?\glossaryentryfield{rtp}{\glsnamefont{\acronymfont {RTP}}}{defines a standard packet format for delivering audio and video over IP networks.}{Real Time Protocol}|setentrycounter[]{page}\glsnumberformat}{22}
 \glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{25}
 \glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{25}
 \glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{26}
@@ -113,15 +112,15 @@
 \glossaryentry{JSEP?\glossaryentryfield{jsep}{\glsnamefont{\acronymfont {JSEP}}}{http://tools.ietf.org/html/draft-ietf-rtcweb-jsep-03}{JavaScript Session Establishment Protocol}|setentrycounter[]{page}\glsnumberformat}{26}
 \glossaryentry{SDP?\glossaryentryfield{sdp}{\glsnamefont{\acronymfont {SDP}}}{RFC 4566}{Session Description Protocol}|setentrycounter[]{page}\glsnumberformat}{26}
 \glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{RTP?\glossaryentryfield{rtp}{\glsnamefont{\acronymfont {RTP}}}{defines a standard packet format for delivering audio and video over IP networks.}{Real Time Protocol}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{26}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{SRTP?\glossaryentryfield{srtp}{\glsnamefont{\acronymfont {SRTP}}}{RFC 3711}{Secure Real-time Protocol}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{RTP?\glossaryentryfield{rtp}{\glsnamefont{\acronymfont {RTP}}}{defines a standard packet format for delivering audio and video over IP networks.}{Real Time Protocol}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{ICE?\glossaryentryfield{ice}{\glsnamefont{\acronymfont {ICE}}}{RFC 5245}{Interactive Connectivity Establishment}|setentrycounter[]{page}\glsnumberformat}{27}
 \glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{27}
 \glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{WebRTC?\glossaryentryfield{wrtc}{\glsnamefont{\acronymfont {WebRTC}}}{http://www.w3.org/TR/webrtc/}{Web Real-Time Communication}|setentrycounter[]{page}\glsnumberformat}{28}
+\glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{28}
 \glossaryentry{MCU?\glossaryentryfield{mcu}{\glsnamefont{\acronymfont {MCU}}}{}{Media Control Unit}|setentrycounter[]{page}\glsnumberformat}{28}
 \glossaryentry{UDP?\glossaryentryfield{udp}{\glsnamefont{\acronymfont {UDP}}}{}{User Datagram Protocol}|setentrycounter[]{page}\glsnumberformat}{28}

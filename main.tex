@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{report}
+\documentclass[11pt, a4paper, oneside]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[acronym,footnote,description]{glossaries}
@@ -98,7 +98,7 @@ Supervisors: Lars Petter Helland \&\\ Anders Øvreseth}
  {\large Bergen University College and University of Bergen}\\
  {\large Joint Master's Programme in Software Engineering}\\[1cm]
  {\vspace{+5cm}\includegraphics[height=3cm]{uiblogo.png}}
- {\includegraphics[height=3cm]{hib_small.jpg}}
+ {\hspace{+2cm}\includegraphics[height=3cm]{ny_hib_logo.jpg}}
  \vspace{+4cm}
 }}
 
@@ -109,18 +109,22 @@ Supervisors: Lars Petter Helland \&\\ Anders Øvreseth}
 \maketitle
 
 
+
 % PRE SECTION %
 \chapter*{Abstract}
 \input{chapters/abstract}
+
+\chapter{Acknowledgments}
 
 \tableofcontents
 
 \chapter*{List of Figures}
 %\input{chapters/figures}%
 
+\chapter{List of Tables}
+
 \chapter*{Acronyms}
 \input{chapters/acronyms}
-
 
 
 % MAIN SECTION %
@@ -128,7 +132,13 @@ Supervisors: Lars Petter Helland \&\\ Anders Øvreseth}
 %\input{chapters/introduction}%
 
 \chapter{Background}
-%\input{chapters/backgroundResearch}
+\input{chapters/background}
+
+%\chapter{WebRTC}
+%\input{chapters/webrtc}
+
+%\chapter{Virtual Arena}
+%\input{chapters/webrtcvirtualarena}
 
 \chapter{Industrial Case}
 \input{chapters/industrialcase}
@@ -139,16 +149,12 @@ Supervisors: Lars Petter Helland \&\\ Anders Øvreseth}
 %\chapter{HTML5}
 % \input{chapters/html5}%
 
-\chapter{WebRTC}
-\input{chapters/webrtc}
 
 \chapter{What is the current state of support of Real-time Communication Between Browsers}
 %\input{chapters/currentstate}%
 
-\chapter{WebRTC and Virtual Arena}
-\input{chapters/webrtcvirtualarena}
 
-\chapter{The Solution}
+\chapter{How can we integrate WebRTC with Virtual Arena?}
 \input{chapters/solution.tex}
 
 %\chapter{How well does Real-time Communcation scale on mobile devices?}
@@ -167,12 +173,12 @@ Supervisors: Lars Petter Helland \&\\ Anders Øvreseth}
 
 % END SECTION %
 \appendix
-\chapter{Appendix Title}b
+\chapter{Appendix Title}
 %\input{chapters/appendix}%
 
 \printglossaries
 
 \bibliographystyle{plainnat}
-\bibliography{Remote}
+\bibliography{Remote,References}
 
 \end{document}
