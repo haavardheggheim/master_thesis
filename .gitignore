@@ -6,3 +6,5 @@
 *.log
 *.stdout.log
 *.toc
+*.acn
+*.synctex.gz

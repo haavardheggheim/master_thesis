@@ -71,7 +71,7 @@ When it comes to real-time communication, synchronization and low latency is mor
 \gls{ice}, \gls{stun}, and \gls{turn} are needed to establish a connection in over \gls{udp} in \gls{wrtc}. Encryption is mandatory in \gls{wrtc}, \gls{dtls} is used to secure all transfers between peers. \gls{srtp} and \gls{sctp} are used to multiplex the different streams, provide congestion and flow control, and provide delivery on top of \gls{udp}.
 
 \subsection{RTCPeerConnection}
-The RTCPeerConnection is responsible for managing the peer-to-peer connection. It manages the \gls{ice} for \gls{nat} traversal, keeps track of streams, triggers renegotiation when required. It provides an API for generating offer and answer.
+The RTCPeerConnection is responsible for managing the peer-to-peer connection. It manages the \gls{ice} for NAT traversal, keeps track of streams, triggers renegotiation when required. It provides an API for generating offer and answer.
 
 To be able to understand RTCPeerConnection we need to understand signaling and \gls{ice}.
 
@@ -79,7 +79,7 @@ To be able to understand RTCPeerConnection we need to understand signaling and \
 
 \begin{enumerate}
 \item Input devices are opened for capture as the media source. This is done using the getUserMedia API.
-\item Now we have to signal the other users that we want to connect to them. using RTCPeerConnection we send an \gls{sdp} offer to the other clients, which generates an \gls{sdp} Answer.The \gls{sdp} here includes \gls{ice} candidates. Which allows for firewall traversal. There is a fallback if both clients are on symmetric \gls{nat}'s and a connection isn't possible to use a \gls{turn} server that acts like a packet mirror, channeling all the packets through the \gls{turn} server.
+\item Now we have to signal the other users that we want to connect to them. using RTCPeerConnection we send an \gls{sdp} offer to the other clients, which generates an \gls{sdp} Answer.The \gls{sdp} here includes \gls{ice} candidates. Which allows for firewall traversal. There is a fallback if both clients are on symmetric NATs and a connection isn't possible to use a \gls{turn} server that acts like a packet mirror, channeling all the packets through the \gls{turn} server.
 \item Once connection is successful, a \gls{dtls} connection is opened and all the media from input devices are encoded into packets and transmitted using \gls{srtp}-\gls{dtls} streams.
 \item At the destination, the packets are decoded and formatted into a MediaStream.
 \item The MediaStream is sent to output devices
@@ -174,10 +174,10 @@ Raw RTP stream over UDP.
 Speex for audio and theora for video.
 
 \subsection{Application sharing}
-For doing application sharing the application itself is divided into smaller subsets of rectangles, which are then captured as images. Depending on the bandwidth available, these are sent to the \gls{mcu}
+For doing application sharing the application window itself is divided into smaller subsets of rectangles, which are then captured as images. Depending on the bandwidth available, these are sent to the \gls{mcu}. Then other clients can subscribe to the stream, and decode the images on the client side.
 
-\section{WebRTC vs Virtual Arena}
-While \gls{wrtc} provides security such as \gls{dtls} on top of \gls{srtp}, Virtual Arena only uses raw \gls{udp} streams because nothin more is needed. It operates in a closed business environement.
+\subsection{Security}
+While \gls{wrtc} provides security such as \gls{dtls} on top of \gls{srtp}, Virtual Arena only uses raw \gls{udp} streams because nothing more is needed. It operates in a closed business environement, so transport level encryption is not needed, because unidentified peers are not allowed inside the network anyways.  The closed environment makes technologies like \gls{ice}, \gls{dtls}, and {srtp} unnecessary.
 
 \section{Summary}
 
