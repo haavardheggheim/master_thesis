@@ -20,7 +20,7 @@ With the above APIs you can: capture media from a camera on your device, do sign
 
 NAT traversal, media encryption, port multiplexing
 
-\subsection{Standards and Development}
+\subsection{Standards and development}
 The \gls{wrtc} architecture consists of different standards, covering both native and browser APIs:
 
 \begin{itemize}
@@ -30,7 +30,7 @@ The \gls{wrtc} architecture consists of different standards, covering both nativ
 
 WebRTC is the first open standard to tranport data over \gls{udp}. However doing this in the browser requires a lot more than raw \gls{udp} to do real-time communication:
 
-\subsection{Audio and Video}
+\subsection{Audio and video}
 Doing live audio and video sharing requires processing to enhance image quality, doing synchronization, echo cancellation, noise reduction and packet loss concealment\cite{Grigorik2013High}. On the transmitting end the bitrate must be adjusted to fluctuating bandwidth and latency between clients. On the receiving end the client must decode the streams in real-time and be able to adjust network jitter and latency delays. These are complex problems, but WebRTC includes fully featured engines in the browser, which takes care of all the signal processing for us. All of the processing is done directly by the browser.
 
 \subsection{getUserMedia()}
@@ -63,7 +63,7 @@ Once a stream is acquired we can feed them into other APIs such as Web Audio for
 Simplified the getUserMedia() is an API to acquire audio and video streams. The media is automatically optimized, encoded and decoded by the audio and video engines. Then we can display the media locally in an audio or video element in the browser.
 
 
-\subsection{Real-Time Transports}
+\subsection{Real-time transports}
 When it comes to real-time communication, synchronization and low latency is more important than reliability. This is the reason why the \gls{udp} protocol is preferred for doing real-time communication. While \gls{tcp} delivers a reliable communication, there can be delays. If a packet is lost, it is re-requested. The human brain does't handle latency in communication very well, but we are good at filling in the gaps. Therefore we use UDP, which is a connectionless solution. It doesn't check the state of the message. So part of the message could be lost, and we wouldn't know, but the connection would run without delay.
 
 \gls{udp} is the foundation for doing real-time communication, but to meet all the specified requirements of \gls{wrtc}, we need to support a lot of protocols and services on top of that.
@@ -75,7 +75,7 @@ The RTCPeerConnection is responsible for managing the peer-to-peer connection. I
 
 To be able to understand RTCPeerConnection we need to understand signaling and \gls{ice}.
 
-\subsubsection{Establishing a Connection}
+\subsubsection{Establishing a connection}
 
 \begin{enumerate}
 \item Input devices are opened for capture as the media source. This is done using the getUserMedia API.
@@ -146,7 +146,7 @@ To summarize the process of creating a peer-to-peer connection:
 \end{enumerate} 
 
 
-\subsection{Secure Communication}
+\subsection{Secure communication}
 Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of \gls{udp}, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This all taken care of by \gls{wrtc}, and once we have everyting else in place, we are ready to establish peer-to-peer connections.
 
 \section{Mobile devices}

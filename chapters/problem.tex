@@ -15,9 +15,9 @@ By looking over the drafts done by \gls{w3c}, \gls{wrtc} seems to be well suited
 \section{Problem statement}
 \gls{wrtc} seems to be the best solution for doing video conferencing on the web, and both desktop and mobile web browsers have some degree of support which improves on a nightly basis.
 
-While other solutions like Flash may have better support at the moment, there is a clear indication that the web is moving towards open standards. A lot of effort is being put into \gls{wrtc} at the moment by the big players like Google and Mozilla to create this technology, however there are still disagreements about which audio/video codecs is going to be used\cite{philippe_video_2014}.
+While other solutions like Flash may have better support at the moment, there is a clear indication that the web is moving towards open standards\cite{jennings_real-time_2013}. A lot of effort is being put into \gls{wrtc} at the moment by big companies like Google and Mozilla to create this technology, however there are still disagreements about which audio/video codecs is going to be used\cite{philippe_video_2014}.
 
-All the browsers that support \gls{wrtc} only support different subsets of the features specified by the \gls{w3c}. Therefore a lot of experiments have to be conducted to see what kind of features work and which does not. It is also necessary to test different codecs, to see which ones are allowed to use in the different browsers.
+All the browsers that support \gls{wrtc} only support different subsets of the features specified by the \gls{w3c}. Therefore a lot of experiments had to be conducted to see what kind of features worked and which did not. It was also necessary to test different codecs, to see which ones was allowed to use in the different browsers.
 
 Visual Solutions is interested to see if this technology is mature and usable enough to work in a business environment. We also have to see what features are planned for the future of \gls{wrtc}, and if support for more platforms are coming.
 
@@ -33,30 +33,26 @@ Supporting questions:
 
 \begin{itemize}
     \item What is the current support for \gls{wrtc} in the different browsers?
-    \item How well does \gls{wrtc} connections scale with more MediaStreams and peers, and if this can be improved using other models than the standard P2P model
+    \item How well does \gls{wrtc} connections scale with more MediaStreams and peers, and if this can be improved using other models than the standard P2P model?
     \item How will the support for this technology improve in the near future?
 \end{itemize}
 
 
 \section{Research method}
-The research method used in this thesis, is a quantitative experimental method, using systematic investigation and analysis of the different implementations in browsers of the drafted APIs by the \gls{w3c}. Experiments was done to examine the actual workings of the implementations to uncover support for the features.
+The research method used in this thesis, was a quantitative experimental method, using systematic investigation and analysis of the different implementations in browsers of the drafted APIs by the \gls{w3c}. Experiments was done to examine the actual workings of the implementations to uncover support for the different features.
 
-Practical experiments consists of test cases that was run in Chrome, Firefox, and Chrome for Android. These experiments were performed because there is a lot of incomplete information on the current support.
+Practical experiments was run in Chrome, Firefox, and Chrome for Android. These experiments were performed because there is a lot of incomplete information on the current support.
 
-Many smaller experiments were conducted in the beginning to gain knowledge of the workings of \gls{wrtc}. Lots of articles, blogs, books and papers were read.
-
-Looking at trends in the development, this thesis will also be predicting support for the APIs in the near future. 
+Looking at trends in the development, this thesis will also be predicting support for the APIs in the near future.
 
 
 \section{Existing work}
-There exists a lot of tutorials on creating very simple implementations of \gls{wrtc} on the client side, usually setting up one-to-one connections using a third-party service such as Pusher or OpenTOK for doing signaling. More advanced guides shows how you can setup a Node.js server to do signaling using WebSockets.
+There exist's a lot of tutorials on creating very simple implementations of \gls{wrtc} on the client side, usually setting up one-to-one connections using a third-party service for doing signaling. More advanced guides shows how you can setup your own server to do signaling using WebSockets\footnote{WebSocket is a protocol providing full-duplex communications channels over a single TCP connection}.
 
-This is great, but to be able to do what we need, we need to create an advanced server that acts like a client. While most commercial solutions that could potentially be of some help most are closed. But there is one open source project called Licode which utilizes the WebRTCs native libraries and is compatible with the standard and protocols. It's written in C++ and it acts like a \gls{mcu}. It's open source, but not very well documented. It also doesn't offer what we need in terms of including external \gls{rtp} streams, but it says in their roadmap that this is planned for the future.
+This is great, but to be able to do what we need, we need to create an advanced server that acts like a gateway between \gls{wrtc} and Virtual Arena. Looking at commercial solutions that could potentially be of some help, most of them are closed. But there is one open source project named webrtc2sip\cite{doubango_telecom_webrtc2sip_2014} which acts like a gateway between \gls{wrtc} and \gls{sip} to allow a browser to create and receive calls from a legacy \gls{sip} network. It's written in C++ and it's open source, but not very well documented. It also doesn't offer exactly what we need, as it is designed to work with \gls{sip} systems. An other interesting project is an open-source \gls{mcu} called Licode\cite{lynckia_licode_2014}, this one is not designed to include external \gls{rtp} streams, but if this functionality could be implemented server side along with a proxy for doing signaling, it could be a very interesting project.
 
-There is no good service on the web that provides live data on how far the support has come on different browsers. There is one service that will check for WebRTC and WebSockets connectivity on http://www.check-connectivity.com/
-You will find blogs and articles that provide tables showing who has implemented which APIs, but most will be outdated. The best solution is to test yourself using your own code or read the different browsers roadmaps.
+There is no good service on the web that provides live data on how far the support has come on different browsers. There is one service that will check for WebRTC and WebSockets connectivity on \url{http://www.check-connectivity.com/}. There are blogs and articles that provide tables showing who has implemented which APIs, but most will be outdated.
 
-If WebRTC is not supported in a users browser, there may be possible for the user to either update their browser or adjust a flag in the browsers experimental settings.
 
 \section{Expected results}
 
