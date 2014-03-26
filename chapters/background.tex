@@ -155,6 +155,7 @@ Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we h
 \section{Related technologies}
 
 \section{Current implementations}
+\input{currentImplementations.tex}
 
 \section{Virtual Arena}
 Virtual Arena is the application that Visual Solutions has created to do visual collaboration\cite{VirtualArena}. It supports one-to-one, one-to-many and many-to-many collaborative scenarios. The application uses a \gls{mcu} that acts as a media server. With this server Virtual Arena can support a lot more incoming and outgoing streams than in a simple peer-to-peer scenario. It also applies mitigation strategies for scenarios with limited bandwidth. Without going into too much detail of how the application is actually put together the main setup looks something like this: 
@@ -180,4 +181,4 @@ For doing application sharing the application window itself is divided into smal
 While \gls{wrtc} provides security such as \gls{dtls} on top of \gls{srtp}, Virtual Arena only uses raw \gls{udp} streams because nothing more is needed. It operates in a closed business environement, so transport level encryption is not needed, because unidentified peers are not allowed inside the network anyways.  The closed environment makes technologies like \gls{ice}, \gls{dtls}, and {srtp} unnecessary.
 
 \section{Summary}
-
+To summarize \gls{wrtc} does not bring any new technologies to the table. But it
