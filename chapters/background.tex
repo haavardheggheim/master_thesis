@@ -1,6 +1,6 @@
 %!TEX root = ../main.tex
 
-This chapter will explain the background for the thesis, starting with the introduction of \gls{wrtc}. Then we will look at the use of \gls{wrtc} on mobile devices and also take a look at similar technologies. We will also take at current use cases and implementations of \gls{wrtc}. We will last look at Visual Solution's application Virtual Arena for doing collaboration such as audio, video, and application sharing.
+This chapter will explain the background for the thesis, starting with the introduction of \gls{wrtc}. Then we will look at the use of \gls{wrtc} on mobile devices, look at similar technologies, and current use cases and implementations of \gls{wrtc}. We will last look at Visual Solution's application Virtual Arena for doing collaboration such as audio, video, and application sharing.
 
 \section{Introduction to WebRTC}
 
@@ -150,12 +150,13 @@ To summarize the process of creating a peer-to-peer connection:
 Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of \gls{udp}, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This all taken care of by \gls{wrtc}, and once we have everyting else in place, we are ready to establish peer-to-peer connections.
 
 \section{Mobile devices}
+\input{chapters/mobile.tex}
 
 
 \section{Related technologies}
 
 \section{Current implementations}
-\input{currentImplementations.tex}
+\input{chapters/currentImplementations.tex}
 
 \section{Virtual Arena}
 Virtual Arena is the application that Visual Solutions has created to do visual collaboration\cite{VirtualArena}. It supports one-to-one, one-to-many and many-to-many collaborative scenarios. The application uses a \gls{mcu} that acts as a media server. With this server Virtual Arena can support a lot more incoming and outgoing streams than in a simple peer-to-peer scenario. It also applies mitigation strategies for scenarios with limited bandwidth. Without going into too much detail of how the application is actually put together the main setup looks something like this: 
