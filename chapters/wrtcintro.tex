@@ -1,4 +1,3 @@
-%!TEX root = ../main.tex
 
 This section gives an introduction to the new \gls{wrtc} APIs.
 
@@ -16,7 +15,7 @@ With the above APIs you can: capture media from a camera on your device, do sign
 
 NAT traversal, media encryption, port multiplexing
 
-\section{Standards and Development}
+\subsection{Standards and development}
 The \gls{wrtc} architecture consists of different standards, covering both native and browser APIs:
 
 \begin{itemize}
@@ -26,10 +25,10 @@ The \gls{wrtc} architecture consists of different standards, covering both nativ
 
 WebRTC is the first open standard to tranport data over \gls{udp}. However doing this in the browser requires a lot more than raw \gls{udp} to do real-time communication:
 
-\section{Audio and Video}
+\subsection{Audio and video}
 Doing live audio and video sharing requires processing to enhance image quality, doing synchronization, echo cancellation, noise reduction and packet loss concealment\cite{Grigorik2013High}. On the transmitting end the bitrate must be adjusted to fluctuating bandwidth and latency between clients. On the receiving end the client must decode the streams in real-time and be able to adjust network jitter and latency delays. These are complex problems, but WebRTC includes fully featured engines in the browser, which takes care of all the signal processing for us. All of the processing is done directly by the browser.
 
-\section{getUserMedia()}
+\subsection{getUserMedia()}
 Acquiring audio and video is done by usig JavaScript APIs that enables the browser to acquire audio and video from a physical device such as a webcam or microphone. Incoming streams from remote network peers are also captured and everything is packaged in a MediaStream object. Inside the MediaStream object we have one or more individual tracks that are synchronized with one another. The output can be sent to a local audio or video element, post-processing scripts or remote peers.
 
 The MediaStream object represents a real-time media stream and allows the application to manipulate individual tracks and specify outputs.
@@ -59,30 +58,30 @@ Once a stream is acquired we can feed them into other APIs such as Web Audio for
 Simplified the getUserMedia() is an API to acquire audio and video streams. The media is automatically optimized, encoded and decoded by the audio and video engines. Then we can display the media locally in an audio or video element in the browser.
 
 
-\section{Real-Time Transports}
+\subsection{Real-time transports}
 When it comes to real-time communication, synchronization and low latency is more important than reliability. This is the reason why the \gls{udp} protocol is preferred for doing real-time communication. While \gls{tcp} delivers a reliable communication, there can be delays. If a packet is lost, it is re-requested. The human brain does't handle latency in communication very well, but we are good at filling in the gaps. Therefore we use UDP, which is a connectionless solution. It doesn't check the state of the message. So part of the message could be lost, and we wouldn't know, but the connection would run without delay.
 
 \gls{udp} is the foundation for doing real-time communication, but to meet all the specified requirements of \gls{wrtc}, we need to support a lot of protocols and services on top of that.
 
 \gls{ice}, \gls{stun}, and \gls{turn} are needed to establish a connection in over \gls{udp} in \gls{wrtc}. Encryption is mandatory in \gls{wrtc}, \gls{dtls} is used to secure all transfers between peers. \gls{srtp} and \gls{sctp} are used to multiplex the different streams, provide congestion and flow control, and provide delivery on top of \gls{udp}.
 
-\section{RTCPeerConnection}
-The RTCPeerConnection is responsible for managing the peer-to-peer connection. It manages the \gls{ice} for \gls{nat} traversal, keeps track of streams, triggers renegotiation when required. It provides an API for generating offer and answer.
+\subsection{RTCPeerConnection}
+The RTCPeerConnection is responsible for managing the peer-to-peer connection. It manages the \gls{ice} for NAT traversal, keeps track of streams, triggers renegotiation when required. It provides an API for generating offer and answer.
 
 To be able to understand RTCPeerConnection we need to understand signaling and \gls{ice}.
 
-\subsection{Establishing a Connection}
+\subsubsection{Establishing a connection}
 
 \begin{enumerate}
 \item Input devices are opened for capture as the media source. This is done using the getUserMedia API.
-\item Now we have to signal the other users that we want to connect to them. using RTCPeerConnection we send an \gls{sdp} offer to the other clients, which generates an \gls{sdp} Answer.The \gls{sdp} here includes \gls{ice} candidates. Which allows for firewall traversal. There is a fallback if both clients are on symmetric \gls{nat}'s and a connection isn't possible to use a \gls{turn} server that acts like a packet mirror, channeling all the packets through the \gls{turn} server.
+\item Now we have to signal the other users that we want to connect to them. using RTCPeerConnection we send an \gls{sdp} offer to the other clients, which generates an \gls{sdp} Answer.The \gls{sdp} here includes \gls{ice} candidates. Which allows for firewall traversal. There is a fallback if both clients are on symmetric NATs and a connection isn't possible to use a \gls{turn} server that acts like a packet mirror, channeling all the packets through the \gls{turn} server.
 \item Once connection is successful, a \gls{dtls} connection is opened and all the media from input devices are encoded into packets and transmitted using \gls{srtp}-\gls{dtls} streams.
 \item At the destination, the packets are decoded and formatted into a MediaStream.
 \item The MediaStream is sent to output devices
 \end{enumerate}
 
 
-\subsection{Signaling}
+\subsubsection{Signaling}
 While \gls{wrtc} does all the routing and connectivity check for us with the \gls{ice} protocol. We have to do session negotiation ourselves. To do this we must extend an offer to the receiving peer and we need an answer in return. How can we do this if the other peer is not listening for incoming packets? Choice of signaling application is up to us. The \gls{wrtc} standard does not define a signaling protocol, but the key information that needs to be exchanged is the \gls{sdp}, which specifies the necessary transport and media configuration information necessary to establish a connection. This approach is outlined by \gls{jsep}. Assuming we have a shared signaling channel, we can initiate a \gls{wrtc} connection.
 
 \begin{lstlisting}
@@ -125,10 +124,10 @@ m=video 1 RTP/SAVPF 100 116 117
 \end{lstlisting}
 
 
-\subsection{ICE}
+\subsubsection{ICE}
 In order to establish a peer-to-peer connection, the peers must be able to send packets to each other. This is easy when you know which ip and port to listen to for incoming messages, but hard when you don't know. Normally there would be firewalls and NAT devices between most peers. In a local environment where there is no firewall, we could establish a connection between two peers by appending the IP and port number to the \gls{sdp}, and forward it to the other peer. What \gls{ice} does is getting around these restrictions by doing connectivity checks and route planning between peers. \gls{ice} gathers all possible addresses it can in address:port and transport triplets\cite{Ivov2013Ice}. \gls{ice} calls these `candidates', and once candidates have been gathered, they are ordered in a list based on priority. Highest priorities are assigned to candidates with the least overhead: those that you get from the device itself, the IP `host' candidates. Next in line are STUN candidates, which are f.ex obtained via \gls{upnp}. Finally the `relayed' candidates that is obtained from TURN servers come, this route is only available when no other route is possible.
 
-\section{Summary}
+\subsection{Bringing it all together}
 To summarize the process of creating a peer-to-peer connection:
 
 \begin{enumerate}
@@ -142,5 +141,5 @@ To summarize the process of creating a peer-to-peer connection:
 \end{enumerate} 
 
 
-\section{Secure Communication}
+\subsection{Secure communication}
 Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of \gls{udp}, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This all taken care of by \gls{wrtc}, and once we have everyting else in place, we are ready to establish peer-to-peer connections.

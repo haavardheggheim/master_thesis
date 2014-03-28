@@ -1,5 +1,4 @@
-\section{Virtual Arena}
-Virtual Arena is the application that Visual Solutions has created to do visual collaboration. it supports one-to-one, one-to-many and many-to-many collaborative scenarios. The application uses a \gls{mcu} that acts as a media server. With this server Virtual Arena can support a lot more incoming and outgoing streams than in a simple peer-to-peer scenario. It also applies mitigation strategies for scenarios with limited bandwidth. Without going into too much detail of how the application is actually put together the main setup looks something like this: 
+Virtual Arena is the application that Visual Solutions has created to do visual collaboration\cite{VirtualArena}. It supports one-to-one, one-to-many and many-to-many collaborative scenarios. The application uses a \gls{mcu} that acts as a media server. With this server Virtual Arena can support a lot more incoming and outgoing streams than in a simple peer-to-peer scenario. It also applies mitigation strategies for scenarios with limited bandwidth. Without going into too much detail of how the application is actually put together the main setup looks something like this: 
 \\
 \includegraphics[scale=0.6]{mediaserver.png}
 \\
@@ -15,5 +14,8 @@ Raw RTP stream over UDP.
 \subsection{Media}
 Speex for audio and theora for video.
 
-\section{WebRTC vs Virtual Arena}
-While \gls{wrtc} provides security such as \gls{dtls} on top of \gls{srtp}, Virtual Arena only uses raw \gls{udp} streams because nothin more is needed. It operates in a closed business environement.
+\subsection{Application sharing}
+For doing application sharing the application window itself is divided into smaller subsets of rectangles, which are then captured as images. Depending on the bandwidth available, these are sent to the \gls{mcu}. Then other clients can subscribe to the stream, and decode the images on the client side.
+
+\subsection{Security}
+While \gls{wrtc} provides security such as \gls{dtls} on top of \gls{srtp}, Virtual Arena only uses raw \gls{udp} streams because nothing more is needed. It operates in a closed business environement, so transport level encryption is not needed, because unidentified peers are not allowed inside the network anyways.  The closed environment makes technologies like \gls{ice}, \gls{dtls}, and {srtp} unnecessary.
