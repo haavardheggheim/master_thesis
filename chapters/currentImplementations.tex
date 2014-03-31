@@ -1,5 +1,15 @@
 %!TEX root = ../main.tex
 
-Actually parts of the \gls{wrtc} stack is implemented in Hangout's code base. Hangout is not a pure \gls{wrtc} implementation yet, simply beacause it needs to work on every browser, therefore it is packaged in a browser extension, but the underlying works relies heavily on \gls{wrtc} technologies.
+There are some quite popular implementations of \gls{wrtc} today, although very few of these use \gls{wrtc} exclusively, we will mention a couple of the most popular ones, along with some platforms for simplifying \gls{wrtc}.
 
-Chromecast uses \gls{wrtc} as well, but in a different way than Hangout's. It is only used for one-way streaming from you device to a TV. Such 
+\subsection{Hangout}
+Google's Hangout\footnote{http://www.google.com/hangouts/} is competing with Skype in the desktop videoconferencing space. Parts of the \gls{wrtc} stack is implemented in Hangout's code base, but Hangout is not a pure \gls{wrtc} implementation yet, simply because it needs to work on every browser, therefore it is packaged in a browser extension, but the underlying works relies heavily on \gls{wrtc} technologies.
+
+\subsection{Chromecast}
+Google's Chromecast\footnote{http://www.google.com/intl/en/chrome/devices/chromecast/index.html} uses \gls{wrtc} as well, but in a different way than Hangout. It is only used for one-way streaming from you device to a TV. Other services in the live broadcasting space such as Twitch\footnote{http://www.twitch.tv/} could be seeing competetion from \gls{wrtc} in the near future.
+
+\subsection{WeCam and API platforms}
+The app WeCam\footnote{http://wecamchat.com/} let's you video chat with your Twitter, Google+, and Facebook friends. It uses an API platform called OpenTok that simplifies much of the \gls{wrtc} setup, such as signaling. By leveraging platforms you suddenly get access to a lot more features on top of \gls{wrtc}, but these platforms cost money. Then again they add important functionality that's missing from \gls{wrtc}, such as being able to do processing of media. Two examples of public projects for doing server-side processing of media are Tokbox and Lynckia. Right now these services are limited to interact with other \gls{wrtc} endpoints and there are no interoperability with non-\gls{wrtc} clients. Other missing technologies in \gls{wrtc} that we can find in related services are PUSH capabilities, interoperability with legacy systems such as SIP, more flexible group conversation architecture and advanced media sharing capabilities. All of these currently require some sort of server-side architecture.
+
+\subsection*{Summary}
+\gls{wrtc} is definately on the right path to becoming big, as it's being utilized in a couple of very popular applications, but right now it's missing some key features to become a permament solution for companies. It currently acts more like a tool to simplify much of the underlying aspects of doing real-time media, you have to take care of the rest yourself. One of the big things that's missing are being able to do processing of media, however upcoming companies sell their services on top of \gls{wrtc} to allow for these features.
