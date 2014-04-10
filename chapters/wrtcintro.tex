@@ -1,9 +1,9 @@
 
-This section gives an introduction to the new \gls{wrtc} APIs.
+This section gives an introduction to the drafted \gls{wrtc} APIs.
 
 \gls{wrtc} is a collection of standards, protocols, and Javascript APIs. The combination of these enables web browsers to do peer-to-peer audio, video and data sharing between browsers. There is no plugin or third-party software required. Real-time communication is now becoming a standard feature in browsers that any web site can use via simple APIs.
 
-Delivering such functionality such as live audio and video sharing and data exchange requires a lot of new processing capabilities in the browser. This is abstracted behind three primary APIs:
+Delivering functionality such as live audio and video sharing and data exchange requires a lot of new processing capabilities in the browser. This is abstracted behind three primary APIs:
 
 \begin{itemize}
 \item MediaStream: capturing audio and video streams
@@ -13,23 +13,21 @@ Delivering such functionality such as live audio and video sharing and data exch
 
 With the above APIs you can: capture media from a camera on your device, do signaling, peer discovery, connection negotiations and security to name a few.
 
-NAT traversal, media encryption, port multiplexing
-
 \subsection{Standards and development}
-The \gls{wrtc} architecture consists of different standards, covering both native and browser APIs:
+The \gls{wrtc} architecture consists of different standards, covering both protocols and browser APIs:
 
 \begin{itemize}
 \item All the different protocols and data formats required to make \gls{wrtc} work is defined by the IETF Working Group \gls{rtcweb}. They are responsible for defining protocols, data formats, security, and all other aspects to enable peer-to-peer communication in the browser.
 \item The \gls{wrtc} \gls{w3c} Working Group is responsible for defining the browser APIs.
 \end{itemize}
 
-WebRTC is the first open standard to tranport data over \gls{udp}. However doing this in the browser requires a lot more than raw \gls{udp} to do real-time communication:
+WebRTC is the first open standard to tranport data over \gls{udp} in the browser. However doing this requires a lot more than raw \gls{udp} to do real-time communication, we need media processing and added security layers.
 
 \subsection{Audio and video}
 Doing live audio and video sharing requires processing to enhance image quality, doing synchronization, echo cancellation, noise reduction and packet loss concealment\cite{Grigorik2013High}. On the transmitting end the bitrate must be adjusted to fluctuating bandwidth and latency between clients. On the receiving end the client must decode the streams in real-time and be able to adjust network jitter and latency delays. These are complex problems, but WebRTC includes fully featured engines in the browser, which takes care of all the signal processing for us. All of the processing is done directly by the browser.
 
 \subsection{getUserMedia()}
-Acquiring audio and video is done by usig JavaScript APIs that enables the browser to acquire audio and video from a physical device such as a webcam or microphone. Incoming streams from remote network peers are also captured and everything is packaged in a MediaStream object. Inside the MediaStream object we have one or more individual tracks that are synchronized with one another. The output can be sent to a local audio or video element, post-processing scripts or remote peers.
+Acquiring audio and video is done by using JavaScript APIs that enables the browser to acquire audio and video from a physical device such as a webcam or microphone. Incoming streams from remote network peers are also captured and everything is packaged in a MediaStream object. Inside the MediaStream object we have one or more individual tracks that are synchronized with one another. The output can be sent to a local audio or video element, post-processing scripts or remote peers.
 
 The MediaStream object represents a real-time media stream and allows the application to manipulate individual tracks and specify outputs.
 
@@ -82,7 +80,7 @@ To be able to understand RTCPeerConnection we need to understand signaling and \
 
 
 \subsubsection{Signaling}
-While \gls{wrtc} does all the routing and connectivity check for us with the \gls{ice} protocol. We have to do session negotiation ourselves. To do this we must extend an offer to the receiving peer and we need an answer in return. How can we do this if the other peer is not listening for incoming packets? Choice of signaling application is up to us. The \gls{wrtc} standard does not define a signaling protocol, but the key information that needs to be exchanged is the \gls{sdp}, which specifies the necessary transport and media configuration information necessary to establish a connection. This approach is outlined by \gls{jsep}. Assuming we have a shared signaling channel, we can initiate a \gls{wrtc} connection.
+While \gls{wrtc} does all the routing and connectivity check for us with the \gls{ice} protocol, we have to do session negotiation ourselves. To do this we must extend an offer to the receiving peer and we need an answer in return. How can we do this if the other peer is not listening for incoming packets? Choice of signaling application is up to us. The \gls{wrtc} standard does not define a signaling protocol, but the key information that needs to be exchanged is the \gls{sdp}, which specifies the necessary transport and media configuration information necessary to establish a connection. This approach is outlined by \gls{jsep}. Assuming we have a shared signaling channel, we can initiate a \gls{wrtc} connection.
 
 \begin{lstlisting}
 var signalingChannel = new SignalingChannel();

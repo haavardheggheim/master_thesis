@@ -34,3 +34,30 @@ Try not to use nouns as adjectives. Alas, this is a common problem in Computer S
 
 
 Need two thing either gateway or client that acts like an mcu!!!
+
+
+
+9/4-14
+the goal of a webrtc ejnterprise client is to significantly expand the pool of clients to access enterprise media systems.. this document containts the study on security issues floowinf the potetntial modifications of the architecture and proceduers required by the support of webrtc clients to access ems
+
+re-use of existing auth mechanisms
+
+required enahancemnets to VritualArean meda plane security
+control plane security related aspects
+
+CALL SETUP TIMES
+Tricle ICE
+STUN timeouts
+BUNDLE, RTCP-mux
+
+MEDIA GLITCHES
+SRTP vs RTP nack/fec/red
+DTLS vs Aggressive ICE
+(Poor) DTMF support
+
+SIGNALING
+Web/App vs Legacy
+
+BAttery - 'PUSH' notifications
+
+ORTC Wokring <Group

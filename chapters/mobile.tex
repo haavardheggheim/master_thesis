@@ -1,6 +1,6 @@
 %!TEX root = ../main.tex
 
-The use of cellular broadband for accessing the Internet via tablets and smartphones has increased rapidly as a result of high speed mobile networks such as 3G and 4G. The web browser on these devices are becoming more and more similar in capabilities to their desktop versions. It is possible to run \gls{wrtc} applications in some of them, and these features will become more available with time. This section is going to look at the use of \gls{wrtc} in mobile devices. We start by looking at some of the issues we have to deal with when working with mobile devices, then we will look at performance and quality metrics derived from current research.
+The use of mobile broadband for accessing the Internet via tablets and smartphones has increased rapidly as a result of high speed mobile networks becoming more available such as 3G and 4G. The web browser on these devices are becoming more and more similar in capabilities to their desktop versions. It is possible to run \gls{wrtc} applications in some of them, and these features will become more available with time. This section is going to look at the use of \gls{wrtc} in mobile devices. We start by looking at some of the issues we have to deal with when working with mobile devices, then we will look at performance and quality metrics derived from current research.
 
 \subsection{Network performance}
 It is feasible to run \gls{wrtc} applications on mobile devices. However, battery consumption,  persistent connectivity, and quality performance remain a big challenge. A lot of work is being done in radio technologies, but the most important factor is how the applications, protocols, and API's are designed\cite{isomaki2012considerations}. First we will look at some of the performance issues of serving wireless video.
@@ -27,7 +27,7 @@ mean (shaded area).}
 \label{fig:mobile-audio-metrics}
 \end{figure}
 
-An important thing to mention is that video quality is not that important when it comes to communication, the audio quality is of much more value. We can observe from Figure \ref{fig:mobile-audio-metrics} that the audio bitrate is mostly consistent, degrading only in extremely poor channel quality. The biggest problem here as seen in Table \ref{tbl:wrtc-packet-loss} is that the packet loss is quite high on the uplink for audio in the urban environment. This is because the quality is not reduced to keep the audio signal clear. This could be somewhat fixed by retransmission of the packets, but this will again increse latency.
+An important thing to mention is that video quality is not that important when it comes to communication, the audio quality is of much more value\cite{fund2013performance}. We can observe from Figure \ref{fig:mobile-audio-metrics} that the audio bitrate is mostly consistent, degrading only in extremely poor channel quality. The biggest problem here as seen in Table \ref{tbl:wrtc-packet-loss} is that the packet loss is quite high on the uplink for audio in the urban environment. This is because the quality is not reduced to keep the audio signal clear. This could be somewhat fixed by retransmission of the packets, but this will again increse latency.
 \\
 \begin{table}[here]
 \centerline{\includegraphics[scale=0.4]{wrtc-packet-loss}}
