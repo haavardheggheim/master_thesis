@@ -1,0 +1,39 @@
+\section{Enterprises and Firewalls}
+
+
+
+Typically, enterprise communication enable multiparty conference scenarios within the guarded enterprise network. Usually session-centric client-server capability.
+
+\subsection{Firewall}
+Enterprises use firewalls to enforce Internet Protocol access policies at the edge of their networks. These policies relate to who is allowed to access which resources. The firewall are often implemented using 5-tuple rules (source and destination IP address, source and destination ports, and transport protocol). Typically firewalls were developed to handle client-server protocols such as web browsing, email, and file transfer\cite{ieeexplore}. Peer-to-peer communication systems and protocols are bigger challenges to firewalls.
+
+\gls{rtp} packets are typically described as peer-to-peer flows. They are often established directly between two communicating devices. Servers are used to help establish these flows. Peer-to-peer flows are difficult to get through enterpirse firewalls. Media can be sent from inside the firewall, but the reverse flow often gets blocked. This is why \gls{ice} was developed, to make firewall traversal easier.
+
+\subsection{Session Border Controllers}
+An \gls{sbc} is essntially an application layer firewall with a signaling and media application layer gateway built in. The \gls{sbc} is usually connected in an enterprise demilitarized zone(DMZ) as a trusted enterprise network element. It block all unauthorized signaling and media flows, and provides a point of policy enforcement as shown in Fig\ref{?}. SBCs support \gls{sip}, \gls{rtp}, and \gls{srtp}. \gls{sip} is a signaling protocol used for VoIP and video communications to establish RTP media sessions. By parsing SIP messages, the SBC is able to discover the transport addresses (5-tuple) to be used for the media session. The SBC opens a filter rule permitting the RTP traffic, and the RTP media session is able to traverse the firewall. Since SBCs are widely deployed it makes sense to reuse them for WebRTC. However, there are problems with this approach. The SBC inserts itself into the control path to learn when media flows are beginning and ending. With WebRTC, the control path is the HTTP or WebSocket channel between the browser and the server, optionally running over TLS: 
+
+SBCs use an identity determined from the signaling channel to authenticate the media channel. In WebRTC, there is no standard way to indicate identity. 
+
+WebRTC has no concept of sessions; instead, it has a concept of `streams'. Streams have media sources and sinks that generate and consume media flows. 
+
+One possibleapporach would be to convert every WebRTC session into that crosses enterprise boundaries into a communication session that its existing infrastructure could handle in a session-centric manner. This could mean converting a WebRTC session into a SIP session., then converting back again.
+
+How can the enterprise firewall adapt to WebRTC?
+How can the enterprise firewall detet and apply policy to WebRTC flows?
+How can the emerging WebRTC applications integrate and interoperate with existing enterprise communication equipment?
+
+\subsection{WebRTC Firewall Traversal}
+
+
+ICE
+There is a standard type of signaling protocol used for establishing media flows as part of WebRTC. It is built into the ICE protcol sued for traversing firewalls. Before any media flows, ICE is run between two browsers. This could be used to detect an ICE exchange starting up across the enterprise border. This could then be used to distinguish a WebRTC media flow across the border, allowing policy to be applied.
+
+ICE identity?
+
+SRTP
+Another approach might be to use SRTP key negotiation along with \gls{dtls} to authenticate the media flow. For example, if DTLS-SRTP is used for key management, the secure edge could act as a man-in-the-middle an hence validate the public key in the fingerprint. 
+
+
+Media Relay
+
+TURN
