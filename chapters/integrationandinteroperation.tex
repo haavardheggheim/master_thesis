@@ -1,0 +1,17 @@
+\section{Integration and interoperation}
+\gls{wrtc} deviates from traditional enterprise communications in two ways: it opens up communications from every web application instead of controlled software pieces. The integration of \gls{wrtc} with legacy systems could happen in the end user's browser (client) or via a translation gateway (server).
+
+In the \gls{wrtc} world the media plain is designed to avoid having to relay media streams. The goal is to have pure peer-to-peer connections. While in the enterprise world it is common to have full control over the media plane and in most cases use some kind of media server. In WebRTC it is mandatory to use encryption, while this is hardly ever used in the enterprise world. In the enterprise an SBC is commonly used to control incoming media traffic. In WEBRTC it's one uses ICE browser-to-browser to cross NATs/Firewalls. In webrtc it is required to use srtp-dtls for handling the master-key, While in an enterprise it is common to use srtp with sdes if encryption is used. With the keys being handled on the signaling plane. It is clear that webrtc is not designed to be able interoperate with any legacy enterprise communication software.
+
+\subsection{Interoperation}
+To connect with a SIP device fromt the browser, one could implement the SIP stack in Javascript running in the client, use SIP-over-WebSocket transport, and use an end-to-end media path enabled by \gls{wrtc}. This could work if the legacy enterprise system supported all the required protocols defined in \gls{wrtc}, otherwise the architecture would have to be upgraded to support all the new features. This is not trivial, since it would require to redo all of the existing architecture just to support \gls{wrtc}. It is better to create a bridge in the form of a gateway between \gls{wrtc} and the legacy architecture.
+
+\subsection{Integration}
+AIMS
+easy innovative real-time service development
+provide inter-domain interface at serviec
+re-use as much as possible of existing architecture
+
+
+\subsection{Related Work}
+There is a great interest in interworking webRTC with existing telco services. An example is the integration with IMS. This work closely resembles the work that is done in this thesis. Currently there are gateway implemenations between webrtc and ims created by ericsson and mavenir. the 3gpp is doing work on drafting a standardized gateway implementation between webrtc and ims. Both ericsson and mavenir systems are closed to th epublic, but the 3gpp papers are open for reviewing.

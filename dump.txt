@@ -61,3 +61,10 @@ Web/App vs Legacy
 BAttery - 'PUSH' notifications
 
 ORTC Wokring <Group
+
+All IP-based 
+services are progressively migrating at the edge from dedicated 
+client/server protocols to Javascript APIs relying on the 
+universal and service agnostic HTTP protocol. 
+
+How can the emerging WebRTC applications integrate and interoperate with existing enterprise communication software?
