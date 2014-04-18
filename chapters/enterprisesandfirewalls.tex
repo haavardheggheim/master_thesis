@@ -6,8 +6,8 @@ Enterprise software enable multiparty conference scenarios within a guarded ente
 Enterprises use firewalls to enforce Internet Protocol access policies at the edge of their networks. These policies relate to who is allowed to access which resources. The firewall are often implemented using 5-tuple rules (source and destination IP address, source and destination ports, and transport protocol). Typically firewalls were developed to handle client-server protocols such as web browsing, email, and file transfer\cite{johnston_taking_2013}. Peer-to-peer communication systems are bigger challenges to firewalls, and since \gls{wrtc} is designed to work peer-to-peer, this introduces some problems. \gls{rtp} packets are typically described as peer-to-peer flows. Media can be sent from inside the firewall, but the reverse flow often gets blocked. This is why \gls{ice} was developed, to make firewall traversal easier. But enterprise communication software usually has a client-server architecture, to communicate with entities outside the enterprise network, it is common to use a \gls{sbc}. Currently \gls{sbc}s won't work well with \gls{wrtc}. This raises some questions:
 
 \begin{itemize}
-\item How can the enterprise firewall adapt to WebRTC?
-\item How can the enterprise firewall detect and apply policy to WebRTC flows?
+\item{How can the enterprise firewall adapt to WebRTC?}
+\item{How can the enterprise firewall detect and apply policy to WebRTC flows?}
 \end{itemize}
 
 \subsection{Session Border Controllers}
