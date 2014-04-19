@@ -10,3 +10,4 @@ Words in text: 4646
 16/03(eod) 11631 +
 17/03(eod) 11986 -
 18/03(eod) 12385 - (almost there)
+19/03(eod) 12468 - but focus today was to rewrite and create diagrams, still didn't achive enough
