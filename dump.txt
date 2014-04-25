@@ -68,3 +68,6 @@ client/server protocols to Javascript APIs relying on the
 universal and service agnostic HTTP protocol. 
 
 How can the emerging WebRTC applications integrate and interoperate with existing enterprise communication software?
+
+% \subsection{Related Work}
+% There is a great interest in interworking webRTC with existing telco services. An example is the integration with IMS. This work closely resembles the work that is done in this thesis. Currently there are gateway implemenations between webrtc and ims created by ericsson and mavenir. the 3gpp is doing work on drafting a standardized gateway implementation between webrtc and ims. Both ericsson and mavenir systems are closed to th epublic, but the 3gpp papers are open for reviewing.

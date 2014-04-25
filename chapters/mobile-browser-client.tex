@@ -1,0 +1,32 @@
+%INTRO
+When developing a \gls{wrtc} client for mobile devices there are two ways to go about this. Either create a HTML5 app or embed \gls{wrtc} into a native app. \gls{wrtc} itself provides a high-quality media engine for voice and video that adapts to network conditions automatically. Security is high due to encryption of media packets. But using the browser \gls{api}s or some third-party \gls{sdk} is one thing, we still have to create a way of doing signaling ourself, since this is not standardised yet. Creating a client that works for mobile phones is beneficial for the \gls{byod} policy of permitting employees to bring personally owned mobile devices (tablets, smart phones) in enterprises.
+
+\begin{quote}
+Enterprise migration toward tablets from PCs will effectively cause many - if not most - companies to `dismantle' their current business-as-usual approach to technology - Eric Schmidt
+\end{quote}
+
+
+\section{Mobile client for WebRTC}
+When developing a client for our mobile devices there are a few options. For Android we have advanced implementations of \gls{wrtc} directly integrated in both the chrome and firefox mobile browsers. But for iOS we have to use third-party \gls{sdk}s to embed \gls{wrtc} into a native app.
+Using a web browser application is great for when the user has a planned meeting, this way he can open or join an ongoing session, but the user will not be available to receive incoming calls. It migh be benficial to create native applications on mobile phones to allow for receicing messages of incoming calls.
+
+A few the problems specific to mobile devices are bandwidth usage, \gls{cpu} and power limitations, signaling, and sound echo.
+
+\subsection{Bandwidth}
+Mobile bandwidth usage comes at a premium, and \gls{wrtc} dynamically adjusts each stream for maximum bandwidth usage at best quality. There is not much we can do about this on the client side, but we could be able to transmit lower bandwidth video if we used a media server for manipulating the media before it's transmitted. 
+
+
+\subsection{Processing}
+The encoding and decoding of video is \gls{cpu} expensive. The H.264 codec is the most \gls{cpu} friendly one, since it has a greater range of devices supporting hardware acceleration. But in this day and age, this is a minor issue that will soon become irrevelevant due to the rapid increase in mobile processing power we're seeing. A bigger issue are multiparty streams since software encoding barely supports single streams, so for multiple streams we have to use server side mixing of the streams to have support for multiparty sessions.
+
+
+\subsection{Signaling}
+The mobile radio is one of most battery draining units on our mobile phones, so we need think about how we do our signaling, since keeping an open connection all the time is very expensive. The main issue here are how to listen for incoming connections, when we are actively using our app its natural to keep an open socket all the time, but when we are not actively using the phone, it might be better to listen only infrequently for incoming calls or opening up a socket when receiving a push notification notifying the user of an incoming call. Both Google's Cloud Messaging (GCM) service and Apples's Push Notification Service (APNS) allows for persistent connections, which will allow for the user of an application that is not running to be alerted that the application has data waiting for it.
+
+
+\subsection{Echo Cancellation}
+The biggest issue relevant to a user is call quality. When the microphone is placed near the speaker a common problem is echo, this happens when the microphone records output from the speaker. This may not be audible for the user, but can be very annoying for the other party. The solution here is to use echo cancellation techniques. This is integrated in the \gls{wrtc} audio engine, but currently it works poorly on mobile devices. The technique used is Acoustic Echo Cancellation (AEC). It works by analyzing the sound output being played from your speakers and removes it from the sound captured by your microphone. But lots of Android devices are unable to handle AEC\footnote{https://code.google.com/p/webrtc/issues/detail?id=2580} . The lazy solution is to recommend the user to use earplugs/headphones so that the microphone cannot pick up sound from the speakers. The advanced solution would be to implement third-party echo cancellation software specialized to each platform and device.
+
+
+\section{Summary}
+When developing \gls{wrtc} clients for mobile devices, we have to think about a lot of problems specific to mobile devices in contrast to desktop clients. Specifically processing limitations for multiparty sessions, battery consumption when doing signaling, and echo noise issues.
