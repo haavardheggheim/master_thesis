@@ -70,6 +70,8 @@ This is one of the advantages of utilizing a \gls{mcu} because you can add suppo
 
 
 \section{The Experimental Solution//TO DO}
+
+%%EXPERIMENTAL SOLUTION%% EXTRA CHAPTER???
 A server that acts like a client. This could be done using the native client library. One problem with the native library is that it as far behind the web APIs in terms of development. This is because all the focus is on browser-to-browser scenarios. There are a couple of services out there that uses the native libraries, but most are commerce. There is one open-source solution that has the ability to create a server that acts like client, but we need more than that. We need to be able to attach remote incoming RTP streams to a peer connection. Signaling is already done on the server side so that should not be any different from the previous solution. What we need is one gateway server that can listen to UDP-packets from Virtual Arena and act as a peer in \gls{wrtc}. This is not an ideal approach, but pretty cool if it should work.
 
 For a single person that acts as a PeerConnection in WebRTC to listen in on a conversation from Virtual Arena, one would need to initiate a fake RTC Connection using two peers, then create a MediaStream from the incoming UDP packets and inject that MediaStream into the RTC Connection. On the returning side one would have to take the MediaStreams and break them into pure RTC packets with an SSRC identifier in the header and send them in return to the \gls{mcu}.

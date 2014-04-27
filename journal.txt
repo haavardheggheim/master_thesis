@@ -1,4 +1,7 @@
-min new words 500/day
+format:
+date - productivity score - words per day -  + comments
+
+goal min new words 500/day
 
 Words in text: 4646
 25/03		4971
@@ -16,3 +19,4 @@ Words in text: 4646
 23/03(eod)
 24/03(eod) 13129 + good job, stod opp tidlig, men ble litt mye prokrastinering midt på dagen
 25/03(eod) 13674 + good job, men stod opp litt sent
+27/03(eod) xxxxx 844+ stod opp tidlig, jobbet bra idag :) fortsett på abstract imorgen
