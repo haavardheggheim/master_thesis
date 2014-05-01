@@ -71,3 +71,15 @@ How can the emerging WebRTC applications integrate and interoperate with existin
 
 % \subsection{Related Work}
 % There is a great interest in interworking webRTC with existing telco services. An example is the integration with IMS. This work closely resembles the work that is done in this thesis. Currently there are gateway implemenations between webrtc and ims created by ericsson and mavenir. the 3gpp is doing work on drafting a standardized gateway implementation between webrtc and ims. Both ericsson and mavenir systems are closed to th epublic, but the 3gpp papers are open for reviewing.
+
+29/4 - 14
+Du får analysere så godt du kan og begrunne de påstander du har om arkitekturen på en god måte. Du har vel også gjort noen konkrete forsøk for å se hva som virker og hvilke problemer som er der. Du må gjerne peke på veien videre for å få verifisert dine anbefalinger.
+ 
+Vet ikke om det var til hjelp.
+
+
+30/4
+til future cahpter
+user identification authentication
+trickle-ice
+
