@@ -1,44 +1,26 @@
 %SUMMARIZE THE THESIS AS A WHOLE AS IN INTRODUCTION. DESCRIBE HOW EVALUATION REVEALED THAT YOUR SYSTEM IS SUCCESSFUL. DESCRIBE FUTURE WORK IN THIS AREA WHAT CONTRIBUTIONS HAVE BEEN MADE????
 
 %INTRO
-This chapter starts by discussing the the validity of the solution. Then present some thoughts about the conclusions, follwed by suggestions for future work.
-
-With greatly increased number of smartphones and tabelts in the market, with different operating systems and browsers, it has become important to fin a unifying way to create content that works equally on across all platforms an screen dimensions.
-
+The problem as stated in the introduction was to model a bridge between mobile web real-time communications and enterprise communications with \gls{rtcweb} as the media stack. Many enterprises are adopting the \gls{byod} policy to the workplace, and this technology looks to be a good solution to some of the challenges that arise with such policies. This work is important because of the greatly increased number of smartphones and tablets in the market, with different operating systems and browsers, it has become important to find a unifying way to create content that works equally across all platforms and screen dimensions. This chapter starts by discussing the validity of the gateway solution, then I present some thoughts about potential future work.
 
 %VALIDITY
 
 %External validity
-is concerned with whether the results of the research are applicable outside the context of this thesis. Whether they can generalized to a broader audience.
-
-The industrial case provided
-has both strengths and flaws with respect to validity
-
-The goal was to find out how to interwork RTCWEB with Virtual Arena. Ericsson was the first to supply a webrtc gateway, and now the market is actually really crowded, however most of the implementation are based on SIP and IMS systems. There a couple of open-source gateways that i've found but they also only work with SIP systems and are poorly documented. The process of creating a gatewat is very similar to that you will find of IMS SIP implementations, even if pracically the individual steps are different. The goal remains the same.
-
-Our solution is more extensive than the open-source solution, the open-source solutions does not take into consideration an enterprise firewall, nor
-
-This thesis also expands on some of the problems of creating a client for mobile devices.
-
-The guidelines derived are very general, and i have expanded upon the topic because i wanted my work to reach further than just a single industrial case. The focus was on utilizing exisitng architecture
-The aim was to be pragmatic so as to be relevant for businesses, I believe the results do provide useful information that will be of aid when deciding how to approach this problem.
+\section{External validity}
+External validity is concerned with whether the results of the research are applicable outside the context of this thesis. While this thesis was an industrial case, I have tried to generalize my approach so that others can use the information to implement their own version of the solution derived from this research. Ericsson was the first to supply a \gls{rtcweb} gateway, and now the market is crowded with different vendors providing different solutions, however most of the implementations are based on SIP and IMS systems. There a couple of open-source gateways that I've found and tested, but they also only work with SIP systems and are poorly documented. The process of creating a gateway is very similar to that you will find of IMS-SIP implementations, even if pracically the individual steps are somewhat different, the goal remains the same. My solution is little bit more heavy on the security side, than current open-source gateways. The guidelines derived are very general, but I wanted my work to reach further than just a single industrial case. The focus was on utilizing existing architecture, and the solution aims was to be pragmatic so as to be relevant for businesses. I believe the results do provide useful information that will be of aid when deciding how to approach this problem.
 
 %Validity of the approach
-A question that desverves attention is whether this solution is the best solution without having tested ona prototype. I believe this, because I frist drafted my model, than I found related work that looked greatly similar in nature. I refined my approach and expanded on a few areas.
-
+\section{Validity of the approach}
+A question that desverves attention is whether this solution is a good solution without having tested on a prototype. I believe this, because I first drafted my model after doing extensive amounts of background research. After modeling the gateway I found related work that looked greatly similar in architecture. I refined my approach and expanded on a few areas, such as the work on mobile clients.
 
 %Summary and Conclusions
-The aim of this study was to develop a model for an enterprise communication system could interoperate with RTCWEB. Two objectives were identified in order to achieve this aim.????
-
-Further expanion on the problem. What was created. How was the solution validated.
-
-Key takeaways
+\section{Summary and conlusions}
+The aim of this study was to develop a model for an enterprise communication system that could interoperate with \gls{rtcweb}. One main objective were identified in order to achieve this aim, and one smaller objective. The main one was to model the gateway, the other was to create mobile \gls{wrtc} client. Contributions this work gives to the industry are to be interpreted as guidelines, since the \gls{ietf} has not finished standardizing yet, there will be changes that have to be taken into consideration. There has definately been done similar work earlier in this are, but it's mostly licensed or lacks documentation. The current open-source solutions does not take into consideration an enterprise firewall, my solution expands on this issue. This thesis also looks into some of the issues of creating a client for mobile devices.
 
 %Future Work
-an actual implementation of the gateway modeled. Peraphs loooked into how to handle uuids. and expanded the model to work with datachannels as well.
-
-Also my work will have ro refined as the IETF and W3C expands and changes things on a frequent basis.
-
+\section{Future Work}
+This work are to be seen has work in progress, as the IETF finishes standardizing the protocols and codec to be used. I also do believe there has to be some changes in regards to the way signaling is done, since \gls{sdp} doesn't really fit with what \gls{wrtc} tries to achieve, especially when the DataChannel APIs starts to mature, we will probably see some changes made by the IETF here for the next version of \gls{rtcweb}. As of now managing the \gls{sdp} is complex and involves some unnecessary parameters to be able to work with legacy SIP systems. Further work should definately introduce an actual implementation of the gateway modeled. Also I would like to see some work on how to manage identities, perhaps look into how to handle \gls{uuid}s as a separate component. Also the model should be expanded to work with the DataChannel APIs as well. I left these out, since they are constantly changing and not very mature yet. My work will have to refined as the IETF and W3C expands and changes things on a frequent basis.
 
 %Closing remarks
-WebRTC and rtcWeb is a very hot topic these days, it was really hard to find any relevant source materials in the beginning of my research, so it was a slow process in the beginning. Then suddenly the interest for webrtc exploded and several books came out explaining the different protocols and technologies. But Webrtc is continusly being develoeped. The interest is very high at the momen, and it seems that everyone you ask in the teclo busines is working on webrtc on way or another. Within a couple of years, the communicatins landscape may be totally different than what we see today.
+\section{Closing remarks}
+\gls{wrtc} and \gls{rtcweb} is a very hot topic these days, it was really hard to find any relevant source materials in the beginning of my research, so it was a slow process in the beginning. Then suddenly the interest for \gls{wrtc} exploded and several books came out explaining the different protocols and technologies. But \gls{wrtc} is continuosly under development, I would definately say that it's important for telecom companies to work on this technology, because it's a very useful tool that allows for a ton of new devices to communicate together. The interest in \gls{wrtc} is very high at the moment, and it seems that everyone you ask in the telecom business is working on \gls{wrtc} in one way or another. Within a couple of years, the communication landscape may be totally different than what we see today.
