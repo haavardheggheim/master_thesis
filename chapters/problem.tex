@@ -1,62 +1,65 @@
 %!TEX root = ../main.tex
 
-As the use of mobile devices increase in business use, Visual Solutions wants to explore the possibility of developing collaboration tools that run directly in the browser using the new APIs drafted by the \gls{w3c}. This would allow their solutions to extend to more platforms. This chapter aims to explain the problems and what can be done to overcome them.
+This chapter will describe the problems of integrating \gls{webrtc} with enterprise communication systems. It will also present the goals of doing this research, present the research question, define the research and implementation method, then lastly present the expected results.
 
-As described in the previous chapter, Visual Solutions has chosen to look at the new Web APIs that are under development for doing collaboration services. While there long have been Flash, and other tools like Microsoft Silverlight's Smooth Streaming and Apple's \gls{http} Live Streaming, \gls{wrtc} seems to have some important advantages over the other technologies.
+\section{Problem Description}
+The \gls{byod} policy allows workers to bring their own mobile or tablet device to work. In enterprises this policy generates a lot of problems regarding how to handle security. One thing people need is to be able to access their enterprise internal communication system from their own device. The \gls{wrtc} APIs allows us to easily create mobile web clients, but how do we get these to interact with existing enterprise communication systems. We need some kind of technology that interworks these two technologies. What we need is to have the underlying protocols of \gls{wrtc} work together with traditional enterprise communication protocols. We also need to have the two systems being able to communicate with each other by following an Offer/Answer model. Last but probably most important is how to handle access policies and crossing the enterprise firewall. The advantages of supporting \gls{rtcweb} in enterprise communication systems are huge. Immediately the system can access a whole range of new devices, as long as the device has a web browser that supports \gls{wrtc}. Basically we get universal mobile support, easy client integration with top security, and no need to download applications or plugins, the client runs directly in the browser.
 
-\begin{itemize}
-    \item Universal mobile support
-    \item Easy integration, with a high focus on security.
-    \item No need to download clients or plugins.
-\end{itemize}
+% Doing real-time communication in the web browser is nothing new, flash implementations have existed for a long time, and Google's Hangout is quite popular, but \gls{wrtc} seems to have some important advantages over the other technologies.
 
-By looking over the drafts done by \gls{w3c}, \gls{wrtc} seems to be well suited for doing collaboration directly in the web browser.
+% \begin{itemize}
+%     \item Universal mobile support
+%     \item Easy integration, with a high focus on security.
+%     \item No need to download clients or plugins.
+% \end{itemize}
 
-\section{Problem statement}
-\gls{wrtc} seems to be the best solution for doing video conferencing on the web, and both desktop and mobile web browsers have some degree of support which improves on a nightly basis.
+% By looking over the drafts done by \gls{w3c}, \gls{wrtc} seems to be well suited for doing collaboration directly in the web browser.
 
-While other solutions like Flash may have better support at the moment, there is a clear indication that the web is moving towards open standards\cite{jennings_real-time_2013}. A lot of effort is being put into \gls{wrtc} at the moment by big companies like Google and Mozilla to create this technology, however there are still disagreements about which audio/video codecs is going to be used\cite{philippe_video_2014}.
 
-All the browsers that support \gls{wrtc} only support different subsets of the features specified by the \gls{w3c}. Therefore a lot of experiments had to be conducted to see what kind of features worked and which did not. It was also necessary to test different codecs, to see which ones was allowed to use in the different browsers.
+% \section{Problem statement}
+% \gls{wrtc} seems to be the best solution for doing video conferencing on the web, and both desktop and mobile web browsers have some degree of support which improves on a nightly basis.
 
-Visual Solutions is interested to see if this technology is mature and usable enough to work in a business environment. We also have to see what features are planned for the future of \gls{wrtc}, and if support for more platforms are coming.
+% While other solutions like Flash may have better support at the moment, there is a clear indication that the web is moving towards open standards\cite{jennings_real-time_2013}. A lot of effort is being put into \gls{wrtc} at the moment by big companies like Google and Mozilla to create this technology, however there are still disagreements about which audio/video codecs is going to be used\cite{philippe_video_2014}.
 
+% All the browsers that support \gls{wrtc} only support different subsets of the features specified by the \gls{w3c}. Therefore a lot of experiments had to be conducted to see what kind of features worked and which did not. It was also necessary to test different codecs, to see which ones was allowed to use in the different browsers.
+
+% It's interesting to see if this technology is mature and usable enough to work in a enterprise environment. We also have to see what features are planned for the future of \gls{wrtc}, and if support for more platforms are coming.
 
 \section{Research question}
 This thesis will try to answer the following question:
 \\
 \\
-\textbf{How can we best integrate a desktop enterprise communication application with \gls{wrtc} for doing collaboration?}
+\textbf{How can we best integrate \gls{wrtc} with a enterprise communication system for doing collaboration?}
 \\
 \\
 Supporting questions:
 
 \begin{itemize}
-    \item How well does \gls{wrtc} connections scale with more MediaStreams and peers, and if this can be improved using other models than the standard peer-to-peer model?
-    \item How will the support for this technology improve in the near future?
+    \item How should we approach developing a mobile \gls{wrtc} client?
+    \item How will this technology improve in the near future?
 \end{itemize}
 
+By answering these questions, it's possible for multiple businesses to take advantage of this new technology with the addition of study on developing mobile clients that integrates with their current communication platform.
 
 \section{Research method}
-The research method used in this thesis, was a quantitative experimental method, using systematic investigation and analysis of the different implementations in browsers of the drafted APIs by the \gls{w3c}. Experiments was done to examine the actual workings of the implementations to uncover support for the different features.
+The research method used in this thesis, was a quantitative experimental method, using systematic investigation and analysis of the different implementations in browsers of the drafted APIs by the \gls{w3c}. Experiments was done to examine the actual workings of the implementations to uncover support for the underlying \gls{rtcweb} workings. Practical experiments was run in Chrome, Firefox, and Chrome for Android. These experiments were performed because there is a lot of incomplete information on the current support for \gls{wrtc}. Wireshark was used to capture and analyse traffic to see what was type of data was being transmitted. An open source implementation of a \gls{wrtc} gateway were tested to see how well it interworked with \gls{wrtc} and other systems. 
 
-Practical experiments was run in Chrome, Firefox, and Chrome for Android. These experiments were performed because there is a lot of incomplete information on the current support.
+\section{Implementation method}
+The model was created to reuse as much of existing architecture as possible from the enterpirse communication system. This was done to achieve loose coupling and thus this work extends beyond the specific industrial case in this thesis. The specifics of the industrial case will be explaned further in the next chapter.
 
-Looking at trends in the development, this thesis will also be predicting support for the APIs in the near future.
 
 
-\section{Existing work}
-There exist's a lot of tutorials on creating very simple implementations of \gls{wrtc} on the client side, usually setting up one-to-one connections using a third-party service for doing signaling. More advanced guides shows how you can setup your own server to do signaling using WebSockets\footnote{WebSocket is a protocol providing full-duplex communications channels over a single TCP connection}.
+% \section{Existing work}
+% There exist's a lot of tutorials on creating very simple implementations of \gls{wrtc} on the client side, usually setting up one-to-one connections using a third-party service for doing signaling. More advanced guides shows how you can setup your own server to do signaling using WebSockets\footnote{WebSocket is a protocol providing full-duplex communications channels over a single TCP connection}.
 
-This is great, but to be able to do what we need, we need to create an advanced server that acts like a gateway between \gls{wrtc} and Virtual Arena. Looking at commercial solutions that could potentially be of some help, most of them are closed. But there is one open source project named webrtc2sip\cite{doubango_telecom_webrtc2sip_2014} which acts like a gateway between \gls{wrtc} and \gls{sip} to allow a browser to create and receive calls from a legacy \gls{sip} network. It's written in C++ and it's open source, but not very well documented. It also doesn't offer exactly what we need, as it is designed to work with \gls{sip} systems. An other interesting project is an open-source \gls{mcu} called Licode\cite{lynckia_licode_2014}, this one is not designed to include external \gls{rtp} streams, but if this functionality could be implemented server side along with a proxy for doing signaling, it could be a very interesting project.
+% This is great, but to be able to create an advanced server that acts like a gateway between \gls{wrtc} and Virtual Arena, we need to look further. Looking at commercial solutions that could potentially be of some help, most of them are closed. But there is one open source project named webrtc2sip\cite{doubango_telecom_webrtc2sip_2014} which acts like a gateway between \gls{wrtc} and \gls{sip} to allow a browser to create and receive calls from a legacy \gls{sip} network. It's written in C++ and it's open source, but not very well documented. It also doesn't offer exactly what we need, as it is designed to work with \gls{sip} systems. An other interesting project is an open-source \gls{mcu} called Licode\cite{lynckia_licode_2014}, this one is not designed to include external \gls{rtp} streams, but if this functionality could be implemented server side along with a proxy for doing signaling, it could be a very interesting project.
 
-There is no good service on the web that provides live data on how far the support has come on different browsers. There is one service that will check for WebRTC and WebSockets connectivity on \url{http://www.check-connectivity.com/}. There are blogs and articles that provide tables showing who has implemented which APIs, but most will be outdated.
+% There is no good service on the web that provides live data on how far the support has come on different browsers. There is one service that will check for WebRTC and WebSockets connectivity on \url{http://www.check-connectivity.com/}. There are blogs and articles that provide tables showing who has implemented which APIs, but most will be outdated.
 
 
 \section{Expected results}
 
 \begin{itemize}
-    \item From this thesis we want to have provided a solution to how Visual Solutions can integrate WebRTC with Virtual Arena. We want to provide information about all the necessary technologies that need to be implemented.
-    \item We would also like to map the current support for WebRTC on different browsers.
-    \item Also we would like to look at how well WebRTC connections scales with more MediaStreams and peers, and if this can be improved using other models than the standard P2P model.
+    \item From this thesis I will have provided a model of how an enterprise can integrate WebRTC with their own communication systems. I want to provide information and guidelines about all the necessary technologies that need to be implemented.
+    \item Also I would like to design a simple mobile WebRTC client that works with this model.
 \end{itemize}
