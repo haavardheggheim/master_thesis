@@ -22,7 +22,7 @@ By signaling we mean the offer/answer exchange. The media plane is the transport
 
 The current \gls{wrtc} specification says to exchange this information with the browser API in \gls{sdp} format. \gls{sdp} is an old format used in the \gls{voip} world, therefore the re-use of \gls{sdp} is supposed to save time, but the anatomy of an \gls{sdp} is complex and constantly changing because the \gls{ietf} are coming up with new stuff to include. All the information has to be excactly right or it will be rejected by the browser. It is highly unlikely that the current specification of \gls{sdp} will work with any older implementation found in any enterprise communication system.
 
-Another thing is that \gls{wrtc} has to do signaling running over \gls{http}, while the standard in an enterprise system is to use \gls{sdp} with \gls{sip} or some other proprietary way over \gls{tcp} or \gls{udp}.
+Another thing is that \gls{wrtc} has to do signaling running over HTTP, while the standard in an enterprise system is to use \gls{sdp} with \gls{sip} or some other proprietary way over TCP or UDP.
 
 We need to come up with some way of manipulating the \gls{sdp} and possibly use a \gls{sip} stack developed in Javascript running in the client.
 

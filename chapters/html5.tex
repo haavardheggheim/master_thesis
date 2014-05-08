@@ -42,7 +42,7 @@ A huge increase in network capacity has made streaming audio and video over the 
 RTP, the Real Time Streaming Protocol is the most used today. There is a need for browsers to also support this protocol, but currently there is very limited support. Live streaming can also be achieved using HTTP or HTTPS using adaptive streaming technologies. A problem with RTP is that it requires connection on specific ports. The problem is that unless these specific ports are opened - the firewall will block traffic from them. RTP uses UDP which allows live connection, if the network gets congested, RTP will lose the data. But RTP can also be run over TCP, this would be almost the same as HTTP which uses TCP. You will not lose data, but there can be a delay in the stream. It is used in situations where live communication with low latency is required. Adobe Flash Media Server is very similar to RTP.
 
 \subsubsection{WebRTC}
-\ac is an effort in collaboration amongst the different web browser vendors to add real-time voice and video communication capabilities to browsers. These new standards will bring phone, TV and computer all on a common platform. It is based on \ac{udp} communication with \ac{srtp} on top with \ac{dtls} for security. The specification is divided in three \ac{API}s:
+\ac is an effort in collaboration amongst the different web browser vendors to add real-time voice and video communication capabilities to browsers. These new standards will bring phone, TV and computer all on a common platform. It is based on UDP communication with \ac{srtp} on top with \ac{dtls} for security. The specification is divided in three APIs:
 
 MediaStream(aka getUserMedia)
 represents syncronized streams of media taken from the camera and microphone of a media device.

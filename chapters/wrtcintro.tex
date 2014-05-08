@@ -18,7 +18,7 @@ The \gls{wrtc} architecture consists of different standards, covering both proto
 \item The \gls{wrtc} \gls{w3c} Working Group is responsible for defining the browser APIs.
 \end{itemize}
 
-WebRTC is the first open standard to tranport data over \gls{udp} in the browser. However doing this requires a lot more than raw \gls{udp} to do real-time communication, we need media processing and added security layers.
+WebRTC is the first open standard to tranport data over UDP in the browser. However doing this requires a lot more than raw UDP to do real-time communication, we need media processing and added security layers.
 
 \subsection{Audio and video}
 Doing live audio and video sharing requires processing to enhance image quality, doing synchronization, echo cancellation, noise reduction and packet loss concealment\cite{grigorik_high_2013}. On the transmitting end the bitrate must be adjusted to fluctuating bandwidth and latency between clients. On the receiving end the client must decode the streams in real-time and be able to adjust network jitter and latency delays. These are complex problems, but WebRTC includes fully featured engines in the browser, which takes care of all the signal processing for us. All of the processing is done directly by the browser.
@@ -30,9 +30,9 @@ Doing live audio and video sharing requires processing to enhance image quality,
 \end{figure}
 
 \subsection{Real-time transports}
-When it comes to real-time communication, synchronization and low latency is more important than reliability. This is the reason why the \gls{udp} protocol is preferred for doing real-time communication. While \gls{tcp} delivers a reliable communication, there can be delays. If a packet is lost, it is re-requested. The human brain does't handle latency in communication very well, but we are good at filling in the gaps. Therefore we use UDP, which is a connectionless solution. It doesn't check the state of the message. So part of the message could be lost, and we wouldn't know, but the connection would run without delay.
+When it comes to real-time communication, synchronization and low latency is more important than reliability. This is the reason why the UDP protocol is preferred for doing real-time communication. While TCP delivers a reliable communication, there can be delays. If a packet is lost, it is re-requested. The human brain does't handle latency in communication very well, but we are good at filling in the gaps. Therefore we use UDP, which is a connectionless solution. It doesn't check the state of the message. So part of the message could be lost, and we wouldn't know, but the connection would run without delay.
 
-\gls{udp} is the foundation for doing real-time communication, but to meet all the specified requirements of \gls{wrtc}, we need to support a lot of protocols and services on top of that.
+UDP is the foundation for doing real-time communication, but to meet all the specified requirements of \gls{wrtc}, we need to support a lot of protocols and services on top of that.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.8]{wrtc-protocol-stack.png}}
@@ -40,7 +40,7 @@ When it comes to real-time communication, synchronization and low latency is mor
 \label{fig:wrtc-protocol-stack}
 \end{figure}
 
-\gls{ice}, \gls{stun}, and \gls{turn} are needed to establish a connection over \gls{udp} in \gls{wrtc}. Encryption is mandatory and \gls{dtls} is used to secure all transfers between peers. \gls{srtp} and \gls{sctp} are used to multiplex the different streams, provide congestion and flow control, and provide delivery on top of \gls{udp}.
+\gls{ice}, \gls{stun}, and \gls{turn} are needed to establish a connection over UDP in \gls{wrtc}. Encryption is mandatory and \gls{dtls} is used to secure all transfers between peers. \gls{srtp} and \gls{sctp} are used to multiplex the different streams, provide congestion and flow control, and provide delivery on top of UDP.
 
 After looking at the underlying technologies of \gls{wrtc} defined as RTCWEB, we will now give an introduction to the drafted browser browser APIs. We are only going to introduce the first two of them, since the third one is not applicable to this project.
 
@@ -153,7 +153,7 @@ m=video 1 RTP/SAVPF 100 116 117
 In order to establish a peer-to-peer connection, the peers must be able to send packets to each other. This is easy when you know which ip and port to listen to for incoming messages, but hard when you don't know. Normally there would be firewalls and NAT devices between most peers. In a local environment where there is no firewall, we could establish a connection between two peers by appending the IP and port number to the \gls{sdp}, and forward it to the other peer. What \gls{ice} does is getting around these restrictions by doing connectivity checks and route planning between peers. \gls{ice} gathers all possible addresses it can in address:port and transport triplets\cite{ivov_ice_2013}. \gls{ice} calls these `candidates', and once candidates have been gathered, they are ordered in a list based on priority. Highest priorities are assigned to candidates with the least overhead: those that you get from the device itself, the IP `host' candidates. Next in line are STUN candidates, which are f.ex obtained via \gls{upnp}. Finally the `relayed' candidates that is obtained from TURN servers come. By relaying media through a TURN server, we no longer have a peer-to-peer connection, this is costly and not something we want to do unless there is no other way of connecting to each other.
 
 \subsubsection{Secure communication}
-Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of \gls{udp}, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This all taken care of by \gls{wrtc}, and once we have everyting else in place, we are ready to establish peer-to-peer connections.
+Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of UDP, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This all taken care of by \gls{wrtc}, and once we have everyting else in place, we are ready to establish peer-to-peer connections.
 
 \subsubsection{Bringing it all together}
 To summarize the process of creating a peer-to-peer connection:

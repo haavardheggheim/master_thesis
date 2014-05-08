@@ -7,7 +7,7 @@ Virtual Arena is the application that Visual Solutions has created to do visual 
 \subsection{Signaling}
 Virtual Arena uses a proprietary way of doing signaling over RTCP.
 
-Communication between peers and the media server is done by opening up ports in the firewall to listen for incoming tcp and udp connections. The media server can receives incoming streams and mix it in with the other streams and forward it to all the other peers. All the streams are identified using an SSRC.
+Communication between peers and the media server is done by opening up ports in the firewall to listen for incoming TCP and UDP connections. The media server can receives incoming streams and mix it in with the other streams and forward it to all the other peers. All the streams are identified using an SSRC.
 
 
 \subsection{Transport layer}
@@ -17,7 +17,7 @@ Raw RTP stream over UDP.
 Speex for audio and theora for video.
 
 \subsection{Security}
-While \gls{wrtc} provides security such as \gls{dtls} on top of \gls{srtp}, Virtual Arena only uses raw \gls{udp} streams because nothing more is needed. It operates in a closed business environement, so transport level encryption is not needed, because unidentified peers are not allowed inside the network anyways.  The closed environment makes technologies like \gls{ice}, \gls{dtls}, and {srtp} unnecessary.
+While \gls{wrtc} provides security such as \gls{dtls} on top of \gls{srtp}, Virtual Arena only uses raw UDP streams because nothing more is needed. It operates in a closed business environement, so transport level encryption is not needed, because unidentified peers are not allowed inside the network anyways.  The closed environment makes technologies like \gls{ice}, \gls{dtls}, and {srtp} unnecessary.
 
 \subsection*{Summary}
 
