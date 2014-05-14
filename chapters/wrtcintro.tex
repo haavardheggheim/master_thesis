@@ -1,7 +1,6 @@
 
-\gls{wrtc} is a collection of standards, protocols, and Javascript APIs. The combination of these enables web browsers to do peer-to-peer audio, video and data sharing between browsers. There is no plugin or third-party software required. Real-time communication is now becoming a standard feature in browsers that any web site can use via simple APIs. Delivering functionality such as live audio and video sharing and data exchange requires a lot of new processing capabilities in the browser. We will look at the underlying technologies and protocols of \gls{wrtc}, such as audio and video processing, transportation of media, and security. These technologies are abstracted behind three primary browser APIs:
+\gls{wrtc} is a collection of standards, protocols, and Javascript APIs. The combination of these enables web browsers to do peer-to-peer audio, video and data sharing between browsers. There is no plugin or third-party software required. Real-time communication is now becoming a standard feature in browsers that any web site can use via simple APIs. Delivering functionality such as live audio and video sharing and data exchange requires a lot of new processing capabilities in the browser. I will look at the underlying technologies and protocols of \gls{wrtc}, such as audio and video processing, transportation of media, and security. These technologies are abstracted behind three primary browser APIs:
 
-\newpage
 \begin{itemize}
 \item MediaStream: capturing audio and video streams
 \item RTCPeerConnection: communication of audio and video data
@@ -21,7 +20,7 @@ The \gls{wrtc} architecture consists of different standards, covering both proto
 WebRTC is the first open standard to tranport data over UDP in the browser. However doing this requires a lot more than raw UDP to do real-time communication, we need media processing and added security layers.
 
 \subsection{Audio and video}
-Doing live audio and video sharing requires processing to enhance image quality, doing synchronization, echo cancellation, noise reduction and packet loss concealment\cite{grigorik_high_2013}. On the transmitting end the bitrate must be adjusted to fluctuating bandwidth and latency between clients. On the receiving end the client must decode the streams in real-time and be able to adjust network jitter and latency delays. These are complex problems, but WebRTC includes fully featured engines in the browser, which takes care of all the signal processing for us. All of the processing is done directly by the browser.
+Doing live audio and video sharing requires processing to enhance image quality, doing synchronization, echo cancellation, noise reduction and packet loss concealment\cite{grigorik_high_2013}. On the transmitting end the bitrate must be adjusted to fluctuating bandwidth and latency between clients. On the receiving end the client must decode the streams in real-time and be able to adjust network jitter and latency delays. These are complex problems, but WebRTC includes fully featured audio and video engines in the browser as seen in Figure \ref{fig:audiovideocapture}, which takes care of all the signal processing for us. All of the processing is done directly by the browser.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.8]{audiovideocapture.png}}
@@ -32,7 +31,7 @@ Doing live audio and video sharing requires processing to enhance image quality,
 \subsection{Real-time transports}
 When it comes to real-time communication, synchronization and low latency is more important than reliability. This is the reason why the UDP protocol is preferred for doing real-time communication. While TCP delivers a reliable communication, there can be delays. If a packet is lost, it is re-requested. The human brain does't handle latency in communication very well, but we are good at filling in the gaps. Therefore we use UDP, which is a connectionless solution. It doesn't check the state of the message. So part of the message could be lost, and we wouldn't know, but the connection would run without delay.
 
-UDP is the foundation for doing real-time communication, but to meet all the specified requirements of \gls{wrtc}, we need to support a lot of protocols and services on top of that.
+UDP is the foundation for doing real-time communication, but to meet all the specified requirements of \gls{wrtc}, we need to support a lot of protocols and services on top of that as we can see in Figure \ref{fig:wrtc-protocol-stack}.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.8]{wrtc-protocol-stack.png}}
@@ -42,18 +41,17 @@ UDP is the foundation for doing real-time communication, but to meet all the spe
 
 \gls{ice}, \gls{stun}, and \gls{turn} are needed to establish a connection over UDP in \gls{wrtc}. Encryption is mandatory and \gls{dtls} is used to secure all transfers between peers. \gls{srtp} and \gls{sctp} are used to multiplex the different streams, provide congestion and flow control, and provide delivery on top of UDP.
 
-After looking at the underlying technologies of \gls{wrtc} defined as RTCWEB, we will now give an introduction to the drafted browser browser APIs. We are only going to introduce the first two of them, since the third one is not applicable to this project.
+After looking at the underlying technologies of \gls{wrtc} defined as RTCWEB, we will now give an introduction to the drafted browser APIs. We are only going to introduce the first two of them, since the third one is not applicable to this project.
 
 \subsection{getUserMedia()}
 Acquiring audio and video is done by using JavaScript APIs that enables the browser to acquire audio and video from a physical device such as a webcam or microphone. Incoming streams from remote network peers are also captured and everything is packaged in a MediaStream object. Inside the MediaStream object we have one or more individual tracks that are synchronized with one another. The output can be sent to a local audio or video element, post-processing scripts or remote peers.
 
 The MediaStream object represents a real-time media stream and allows the application to manipulate individual tracks and specify outputs.
 
-
-The getUserMedia() API allows us to specify a list of mandatory constraints to match the needs of the applicaton:
+The getUserMedia() API allows us to specify a list of mandatory constraints to match the needs of the applicaton as seen in Listing \ref{lst:constraints}.
 
 \lstset{language=Javascript} 
-\begin{lstlisting}
+\begin{lstlisting}[caption={getUserMedia constraints object}, label={lst:constraints}]
 var constraints = {
 	audio: true,
 	video: {
@@ -75,7 +73,7 @@ Simplified the getUserMedia() is an API to acquire audio and video streams. The 
 
 
 \subsection{RTCPeerConnection}
-The RTCPeerConnection is responsible for managing the peer-to-peer connection. It uses an \gls{ice} Agent for NAT traversal, keeps track of streams, and triggers renegotiation when required. It provides an API for generating offer and answer.
+The RTCPeerConnection as seen in Figure \ref{fig:rtcpeerconnection} is responsible for managing the peer-to-peer connection. It uses an \gls{ice} Agent for NAT traversal, keeps track of streams, and triggers renegotiation when required. It provides an API for generating offer and answer.
 
 To be able to understand RTCPeerConnection we need to understand signaling and \gls{ice}.
 
@@ -89,7 +87,7 @@ To be able to understand RTCPeerConnection we need to understand signaling and \
 
 \begin{enumerate}
 \item Input devices are opened for capture as the media source. This is done using the getUserMedia API.
-\item Now we have to signal the other users that we want to connect to them. using RTCPeerConnection we send an \gls{sdp} offer to the other clients, which generates an \gls{sdp} Answer. The \gls{sdp} here includes \gls{ice} candidates,  which allows for firewall traversal.
+\item Now we have to signal the other users that we want to connect to them. Using RTCPeerConnection we send an \gls{sdp} offer to the other clients as seen in Figure \ref{fig:sdp-exchange}, which generates an \gls{sdp}. The \gls{sdp} here includes \gls{ice} candidates,  which allows for firewall traversal.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=1.0]{SDPexchange.png}}
@@ -104,10 +102,10 @@ To be able to understand RTCPeerConnection we need to understand signaling and \
 
 
 \subsubsection{Signaling}
-While \gls{wrtc} does all the routing and connectivity check for us with the \gls{ice} protocol, we have to do session negotiation ourselves. To do this we must extend an offer to the receiving peer and we need an answer in return. Choice of signaling application is up to us. The \gls{wrtc} standard does not define a signaling protocol, but the key information that needs to be exchanged is the \gls{sdp}, which specifies the necessary transport and media configuration information necessary to establish a connection. This approach is outlined by \gls{jsep}. Assuming we have a shared signaling channel, we can initiate a \gls{wrtc} connection.
+While \gls{wrtc} does all the routing and connectivity check for us with the \gls{ice} protocol, we have to do session negotiation ourselves. To do this we must extend an offer to the receiving peer and we need an answer in return. Choice of signaling application is up to us. The \gls{wrtc} standard does not define a signaling protocol, but the key information that needs to be exchanged is the \gls{sdp}, which specifies the necessary transport and media configuration information necessary to establish a connection. This approach is outlined by \gls{jsep}. Assuming we have a shared signaling channel, we can initiate a \gls{wrtc} connection (Listing \ref{lst:peerConnection}).
 
 
-\begin{lstlisting}
+\begin{lstlisting}[caption={Initiating a RTCPeerConnection in WebRTC}, label={lst:peerConnection}]
 var signalingChannel = new SignalingChannel();
 var pc = new RTCPeerConnection({});
 
@@ -129,9 +127,9 @@ function onStream(stream) {
 
 
 
-Here is some of the information that is generated after a call createOffer() has generated the \gls{sdp} description:
+Here is some of the information that is generated after a call createOffer() has generated the \gls{sdp} description (Listing \ref{lst:sdp}):
 
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single, caption={Snippet of SDP description}, label={lst:sdp}]
 ...snip...
 m=audio 1 RTP/SAVPF 111 103 104 0 8 106 105 13 126
 c=IN IP4 0.0.0.0
@@ -156,9 +154,9 @@ In order to establish a peer-to-peer connection, the peers must be able to send 
 Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of UDP, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This all taken care of by \gls{wrtc}, and once we have everyting else in place, we are ready to establish peer-to-peer connections.
 
 \subsubsection{Bringing it all together}
-To summarize the process of creating a peer-to-peer connection:
+To summarize the process of creating a peer-to-peer connection (Listing \ref{lst:p2p-webrtc}):
 
-\begin{lstlisting}
+\begin{lstlisting}[caption={WebRTC P2P connection}, label={lst:p2p-webrtc}]
 <video id='local' autoplay></video>
 <video id='remote' autoplay></video>
 
