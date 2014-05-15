@@ -1,8 +1,15 @@
-Enterprise software enable multiparty conference scenarios within a guarded enterprise network. Usually with a session-centric client-server architecture. Enterprise communication software usually uses an \gls{sbc} to communicate with the outside world. \gls{wrtc} is not designed to work with current \gls{sbc} deployments. We look into how we can adapt an enterprise firewall to work with \gls{wrtc}.
+% Enterprise software enable multiparty conference scenarios within a guarded enterprise network. Usually with a session-centric client-server architecture. Enterprise communication software usually uses an \gls{sbc} to communicate with the outside world. \gls{wrtc} is not designed to work with current \gls{sbc} deployments. We look into how we can adapt an enterprise firewall to work with \gls{wrtc}.
 
+In this section I will start by pointing out the differences between the gateway used for testing purposes and the gateway that would have to be implemented for VA. Starting with the traffic proxy and media server. Then I will describe the differences in the signaling. Lastly I will introduce the problems of crossing the enterprise firewall.
 
-\section{Firewall}
-Enterprises use firewalls to enforce Internet Protocol access policies at the edge of their networks. These policies relate to who is allowed to access which resources. The firewall are often implemented using 5-tuple rules (source and destination IP address, source and destination ports, and transport protocol). Typically firewalls were developed to handle client-server protocols such as web browsing, email, and file transfer\cite{johnston_taking_2013}. Peer-to-peer communication systems are bigger challenges to firewalls, and since \gls{wrtc} is designed to work peer-to-peer, this introduces some problems. \gls{rtp} packets are typically described as peer-to-peer flows. Media can be sent from inside the firewall, but the reverse flow often gets blocked. This is why \gls{ice} was developed, to make firewall traversal easier. But enterprise communication software usually has a client-server architecture, to communicate with entities outside the enterprise network, it is common to use a \gls{sbc}. Currently \gls{sbc}s won't work well with \gls{wrtc}. This raises some questions:
+\section{The traffic proxy and media server}
+The media in VA travels over raw RTP streams. The traffic proxy needs to handle the translation between RTP and SRTP-DTLS. In addition it needs to do multiplexing and demultiplexing of the streams. ICE would also have to be implemented.
+
+\section{Signaling}
+Since the signaling is proprietary in VA, it would have to be upgraded to support the \gls{sdp} used in the \gls{rtcweb} standard, or we could develop a way of manipulating the \gls{sdp}. However, we can still use the same protocols for transmitting the signaling, but we have to use a gateway to allow the messages to travel over HTTP as well. This could be accomplished using JSON over WebSockets as an example.
+
+\section{The enterprise firewall}
+Enterprises such as Visual Solutions use firewalls to enforce Internet Protocol access policies at the edge of their networks. These policies relate to who is allowed to access which resources. The firewall are often implemented using 5-tuple rules (source and destination IP address, source and destination ports, and transport protocol). Typically firewalls were developed to handle client-server protocols such as web browsing, email, and file transfer\cite{johnston_taking_2013}. Peer-to-peer communication systems are bigger challenges to firewalls, and since \gls{wrtc} is designed to work peer-to-peer, this introduces some problems. \gls{rtp} packets are typically described as peer-to-peer flows. Media can be sent from inside the firewall, but the reverse flow often gets blocked. This is why \gls{ice} was developed, to make firewall traversal easier. But enterprise communication software usually has a client-server architecture, to communicate with entities outside the enterprise network, it is common to use a \gls{sbc}. Currently \gls{sbc}s won't work well with \gls{wrtc}. This raises some questions:
 
 \begin{itemize}
 \item{How can the enterprise firewall adapt to \gls{wrtc}?}
@@ -21,7 +28,7 @@ An \gls{sbc} is essentially an application layer firewall with a signaling and m
 
 The \gls{sbc} should either be upgraded to support \gls{wrtc} or we should opt for another way of detecting \gls{wrtc} flows.
 
-\section{WebRTC Firewall Traversal}
+\section{WebRTC firewall traversal}
 If upgrading the \gls{sbc} is not trivial, we can look at the other planes for detecting an incoming \gls{wrtc} session:
 
 \subsection{ICE}
@@ -30,8 +37,8 @@ There is a standard type of signaling protocol used for establishing media flows
 \subsection{SRTP}
 Another approach might be to use SRTP key negotiation along with \gls{dtls} to authenticate the media flow. For example, since SRTP-DTLS is used for key management, the secure edge could act as a man-in-the-middle an hence validate the public key in the fingerprint. A self-signed key from the browser could be stored in an enterprise key server. This could allow the secure edge to authenticate the browser inside the enterprise network and apply appropriate policy.
 
-\subsection{Media Relay}
+\subsection{Media relay}
 Another approach would be to require a media relay to be used for \gls{wrtc} media sessions crossing the enterprise boundary. There is a standard protocol for this relay, known as \gls{turn}. The enterprise firewall would be configured to block non-relayed \gls{wrtc} media flows. The enterprise would then deploy a \gls{turn} server in the \gls{dmz}, and permit media flows that go through this server. During media flow setup, the TURN server could authenticate the user and also learn what type of media flow is to be set up based on the bandwidth requested. Policy could then be applied to this media flow.
 
 \section{Summary}
-Doing peer-to-peer communication crossing enterprise networks are difficult. It might not be trivial to upgrade current SBC implementations, therefore we looked into other ways of detecting \gls{wrtc} traffic for applying policy to the media flows. In the next chapter we will look at the other challenges of integrating \gls{wrtc} with enterprise communication software. 
+Doing peer-to-peer communication crossing enterprise networks are difficult. It might not be trivial to upgrade current SBC implementations, therefore I looked into other ways of detecting \gls{wrtc} traffic for applying policy to the media flows. The next chapter will look at some of the challenges of creating a mobile \gls{wrtc} client.
