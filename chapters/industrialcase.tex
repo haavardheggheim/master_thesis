@@ -1,56 +1,28 @@
 %!TEX root = ../main.tex
 
-The objective of this study is to implement a model for interworking \gls{rtcweb} with an enterprise collaboration system. The collaboration is focused around audio and video communication. This model should allow the enterprise collaboration system to communicate with web real-time communications. This challenge is provided by Visual Solutions\footnote{http://www.bbvisuals.com/} as \gls{wrtc} is an interesting technology, that should be explored for possible integrations in the future.
+The objective of this study is to implement a model for interworking \gls{rtcweb} with an enterprise collaboration system. The collaboration is focused around audio and video communication. This model should allow the enterprise collaboration system VA to communicate with web real-time communications. This challenge is provided by Visual Solutions\footnote{http://www.bbvisuals.com/} as \gls{wrtc} is an interesting technology, that should be explored for possible integrations in the future.
 
-\section{Visual Solutions}
-Visual Solutions is a Norwegian company in the BB Visual Group\footnote{http://www.bbvisualgroup.com/} Their primary business is within the integration of operations for the oil and gas industry. They have offices in Houston, US, Brighton, UK and a headquarter in Bergen, Norway.
-They contribute tailor made solutions enabling and improving collaboration and cross-disciplinary interaction across organisation units and geographic locations. One of their applications Virtual Arena\cite{solutions_b2|virtual_2014} is a powerful and interactive tool that allows IP-based application sharing within collaborative sessions. Virtual Arena supports one-to-one, one-to-many and many-to-many collaborative scenarios, with support for high-performance application sharing, audio and video communication from an advanced 3D shared scene.
-
-In today's  world everybody owns some kind of mobile device. If a user could enter a collaborative session from the web browser of their own simple mobile device, this would be of great benefit to the customer. The user would not have to install any additonal plugins or software to their device. Many new API's are currently being developed to improve communication and hardware access in the web browsers. The \gls{w3c} has drafted a document that defines a set of API's to allow media to be sent to and from another browser or device implementing the appropriate set of real-time protocols mandated by the \gls{ietf}.
-
-Visual Solutions wants to investigate how far development has come with these new API's and if it's possible to use them in their own applications.
-
-\section{Target model architecture}
-When a user in Virtual Arena is active in a colloborative session, any external \gls{wrtc} user should be able to authenticate himself and join the session. Since the two different systems use a totally different set of protocols and codecs, there need to be an element in between that translate all the media and messages so that the two systems can work together. The user also needs to get through the enterprise firewall, without his media traffic being blocked by a strict firewall ruleset.
-
-
-\section{Enterprise collaboration system architecture}
-The existing desktop application system used as an example for developing a gateway between \gls{wrtc} and a enterprise collaboration system is Virtual Arena. Virtual Arena's architecture can be divided into three sub compoenents:
-
-\subsection{Signaling}
-Virtual Arena uses a proprietary way of doing signaling over \gls{rtcp}. Communication between peers and the media server is done by opening up ports in the firewall to listen for incoming connections. The media server receives incoming media and manages the streams. Each stream is identified with an \gls{ssrc}. All the peers can choose from a list which stream they want to subscribe to. The traffic then goes from the media server through a router to the corresponding peer.
-
-\subsection{Transport layer}
-%Raw RTP stream over UDP.
-Virtual Arena is used for both sharing of audio/video and applications. This thesis focus on the audio and video sharing capabilities. All media is transported over RTP which runs on top of UDP. RTCP is used for synchronizing the streams and signaling. The codecs used are:
-\begin{itemize}
-\item{Audio: Speex}
-\item{Video: Theora}
-\end{itemize}
-There is no security involved in the transport layer, but it's not really necessary in a closed environment anyways. 
-
-\subsection{Firewall}
-%spør Visual Solutions
+\section{Target interaction goals}
+When a user in VA is active in a collaborative session, any external \gls{wrtc} user should be able to authenticate himself and join the session. Since the two different systems use a totally different set of protocols and codecs, there need to be an element in between that translate all the media and messages so that the two systems can work together. The user also needs to get through the enterprise firewall, without his media traffic being blocked by a strict firewall ruleset.
 
 \section{Technologies involved}
+The different aspects of this system can be divided into layers and modules, which then again can be divided into sub-problems:
 
-The different aspects of a communication system can be divided into layers and mdoules which then again can be divided into sub-problems:
-
-\subsection{Signaling Layer}
-The signaling layer raises the follwing problems:
+\subsection{Signaling}
+The signaling layer raises the following problems:
 \begin{itemize}
 \item{How to translate the signaling from \gls{wrtc} to Virtual Arena?}
 \item{How to handle negotiating the \gls{sdp}?}
 \end{itemize}
 
-\subsection{Transport Layer}
+\subsection{Transport}
 The transport layer handles the media and transcoding modules:
 \begin{itemize}
 \item{How to handle ICE candidates?}
 \item{How to negotiate the DTLS secret keys?}
 \item{How to decrypt and encrypt the media streams from SRTP to RTP and reverse?}
 \item{How to transcode the media streams?}
-\item{How to handle demultiplexing of the streams?}
+\item{How to handle multiplexing and demultiplexing of the streams?}
 \end{itemize}
 
 \subsection{IP addressing}
@@ -68,4 +40,4 @@ What considerations have to be taken when developing a mobile \gls{wrtc} client:
 \item{How to limit battery consumption?}
 \end{itemize}
 
-The next chaper begins looking at integrating \gls{rtcweb} with an enterprise communication system.
+The next chapter begins looking at integrating \gls{rtcweb} with an enterprise communication system.

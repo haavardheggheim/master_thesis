@@ -1,6 +1,6 @@
 %describe how you evaluated to show that your approach was successful. You may need a methods section, a results section and a conclusion
 
-This chapter reflects on the theoretical architecture (see Figure \ref{fig:wrtc-enterprise-gateway}) created in the integration chapter. I will break down each component of the gateway and test individual functionality using available open source tools. Secondly I will compare my model against a study 3GPP\footnote{http://www.3gpp.org/} did on giving \gls{wrtc} clients access to \gls{ims}, which is similar to this case. Then I will discuss the results and derive some guidelines.
+This chapter reflects on the theoretical architecture (see Figure \ref{fig:wrtc-enterprise-gateway}) drafted in the integration section of the previous chapter. I will compare my model against a study 3GPP\footnote{http://www.3gpp.org/} did on giving \gls{wrtc} clients access to \gls{ims}, which is similar to this case. Then I will discuss the results and derive some guidelines.
 
 
 \section{Evaluate against criteria defined by 3GPP}
@@ -46,4 +46,4 @@ supports policy and charging control decisions based on session and media-relate
 the WIC would normally be behind a NAT element, so a box has been included in the diagram. ICE is used to enable two-way flows of SRTP behind NAT, therefore a media gateway needs to have ICE implemented to exchange media flows with the \gls{ims} core.
 
 \section{Results}
-In the signaling proxy there was a lot of problems setting the \gls{sdp}, probably because of different implementations. There was also problems negotiating the video codec, this is also a \gls{sdp} problem, since both VP8 and H.264 was usually already implemented by the SIP desktop clients. There could theoretically be a firewall issue, but this is highly doubtable since audio worked perfectly in all cases, and \gls{rtcweb} supports multiplexing of the media streams, so they should be running over one single port if there was a firewall limitation. The calling in all cases was pretty much instant with very little delay, this means that ICE found working candidates really fast, even when testing behind a proxy. The transcoder turned out difficult to test, since the codecs was usually already implemented in the SIP desktop clients. In the next chapter I will discuss the findings in this thesis and look at future improvements.
+Looking at the similarities of the gateway proposed in this thesis together with the one proposed by the 3GPP, they both look very similar in nature, with some added thoughts around the firewall issue present in enterprise systems in ours. In the next chapter I will discuss the findings in this thesis and look at future improvements.

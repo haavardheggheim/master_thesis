@@ -2,7 +2,7 @@
 
 \section{Requirements and problems}
 There are basically three planes we have to make interoperate: the signaling plane, the media plane, and the IP addressing plane. 
-By signaling we mean the offer/answer exchange. The media plane is the transportation of the media, and the IP addressing plane is basically how we connect to each other.
+By signaling we mean the offer/answer exchange. The media plane is the transportation of the media, and the IP addressing plane is basically how we connect to each other. In Figure \ref{fig:gateway-layers} we can see where the interworking components has to go (marked with a ?) in such an architecture.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.5]{gateway-layers.png}}
@@ -24,7 +24,7 @@ The current \gls{wrtc} specification says to exchange this information with the 
 
 Another thing is that \gls{wrtc} has to do signaling running over HTTP, while the standard in an enterprise system is to use \gls{sdp} with \gls{sip} or some other proprietary way over TCP or UDP.
 
-We need to come up with some way of manipulating the \gls{sdp} and possibly use a \gls{sip} stack developed in Javascript running in the client.
+We need to come up with some way of manipulating the \gls{sdp} and possibly use a \gls{sip} stack developed in Javascript running in the client. We will call this component the Signaling Proxy.
 
 \subsection{Media}
 In the \gls{wrtc} world the media plain is designed to avoid having to relay media streams. The goal is to have pure peer-to-peer connections, while in the enterprise world it is common to have full control over the media plane and in most cases use some kind of media server. Also the \gls{wrtc} specification says that support for \gls{ice} and \gls{srtp}-\gls{dtls} are mandatory. Encryption is hardly ever used in the enterprise world, so this is another challenge. If encryption is used, it is more common to use \gls{srtp}-\gls{sdes} with the keys being handled on the signaling plane, rather than in media plane that is the case with \gls{dtls}.
@@ -33,8 +33,16 @@ In the \gls{wrtc} world the media plain is designed to avoid having to relay med
 
 The biggest issues here is probably which codecs we need to implement. The \gls{ietf} has landed on two default audio codecs, but has not decided on which video codec to use yet. The most typical enterprise video code used is H.264. Right now the \gls{ietf} are deciding between VP8 and H.264, so currently we have to support both and do server side transcoding between them.
 
+There are basically two components in this plane; the translation of the media transport protocols and the transcoding. We split them into two components called the Transport Proxy and the Media Transcoder.
+
 \subsection{IP addressing}
-In the enterprise world a \gls{sbc} is commonly used to control incoming media traffic. In \gls{wrtc} one uses \gls{ice} browser-to-browser to cross firewalls. We have to handle both exchanging of \gls{ice} candidates and bypassing the enterprise firewall. This is a bigger topic that we will go more deeply into in the next chapter.
+In the enterprise world a \gls{sbc} is commonly used to control incoming media traffic. In \gls{wrtc} one uses \gls{ice} browser-to-browser to cross firewalls. We have to handle both exchanging of \gls{ice} candidates and bypassing the enterprise firewall. This is a bigger topic that I will go more deeply into later in this thesis. We should put the IP addressing component in the Transport Proxy, because once we have an open connection, we are ready to transmit our media immediately. In Figure \ref{fig:gateway} we see the suggested gateway components.
+
+\begin{figure}[here]
+\centerline{\includegraphics[scale=0.4]{gateway.png}}
+\caption{WebRTC-Enterprise gateway}
+\label{fig:gateway}
+\end{figure}
 
 \section{Summary}
-The first iteration of \gls{rtcweb} is still under development, and not all protocols and codecs have been decided yet. It is theoretically possible to create a gateway and it has been done before under closed doors. Some of the biggest issues are how to handle the signaling, translating the media, and crossing the enterprise firewall. In the next chapter we will further look into how to traverse the enterprise firewall before we finally introduce a solution to the problem.
+The first iteration of \gls{rtcweb} is still under development, and not all protocols and codecs have been decided yet. It is theoretically possible to create a gateway and it has been done before, but mostly under closed doors. Some of the biggest issues are how to handle the signaling, translating the media, and crossing the enterprise firewall. In the next chapter I will test the proposed gateway using open-source libraries and tools.
