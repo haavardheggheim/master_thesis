@@ -29,16 +29,16 @@ An \gls{sbc} is essentially an application layer firewall with a signaling and m
 The \gls{sbc} should either be upgraded to support \gls{wrtc} or we should opt for another way of detecting \gls{wrtc} flows.
 
 \section{WebRTC firewall traversal}
-If upgrading the \gls{sbc} is not trivial, we can look at the other planes for detecting an incoming \gls{wrtc} session:
+If upgrading the \gls{sbc} is not trivial, we can look other places for detecting an incoming \gls{wrtc} session:
 
 \subsection{ICE}
-There is a standard type of signaling protocol used for establishing media flows as part of \gls{wrtc}. It is built into the \gls{ice} protocol used for traversing firewalls. Before any media flows, \gls{ice} is run between two browsers. This could be used to detect an \gls{ice} exchange starting up across the enterprise border. This could then be used to distinguish a \gls{wrtc} media flow across the border, allowing policy to be applied.
+There is a standard type of signaling protocol used for establishing media flows as part of \gls{wrtc}. It is built into the \gls{ice} protocol used for traversing firewalls. Before any media flows, \gls{ice} is run between two WebRTC clients. This could be used to detect an \gls{ice} exchange starting up across the enterprise border. This could then be used to distinguish a \gls{wrtc} media flow across the border, allowing policy to be applied.
 
 \subsection{SRTP}
-Another approach might be to use SRTP key negotiation along with \gls{dtls} to authenticate the media flow. For example, since SRTP-DTLS is used for key management, the secure edge could act as a man-in-the-middle an hence validate the public key in the fingerprint. A self-signed key from the browser could be stored in an enterprise key server. This could allow the secure edge to authenticate the browser inside the enterprise network and apply appropriate policy.
+Another approach might be to use SRTP key negotiation along with \gls{dtls} to authenticate the media flow. For example, since SRTP-DTLS is used for key management, a gateway could act as a man-in-the-middle an hence validate the public key in the fingerprint. A self-signed key from the browser could be stored in an enterprise key server. This could allow the gateway to authenticate the browser inside the enterprise network and apply appropriate policy.
 
 \subsection{Media relay}
 Another approach would be to require a media relay to be used for \gls{wrtc} media sessions crossing the enterprise boundary. There is a standard protocol for this relay, known as \gls{turn}. The enterprise firewall would be configured to block non-relayed \gls{wrtc} media flows. The enterprise would then deploy a \gls{turn} server in the \gls{dmz}, and permit media flows that go through this server. During media flow setup, the TURN server could authenticate the user and also learn what type of media flow is to be set up based on the bandwidth requested. Policy could then be applied to this media flow.
 
 \section{Summary}
-Doing peer-to-peer communication crossing enterprise networks are difficult. It might not be trivial to upgrade current SBC implementations, therefore I looked into other ways of detecting \gls{wrtc} traffic for applying policy to the media flows. The next chapter will look at some of the challenges of creating a mobile \gls{wrtc} client.
+Doing communication crossing enterprise networks is difficult. It might not be trivial to upgrade current SBC implementations, therefore I looked into other ways of detecting \gls{wrtc} traffic for applying policy to the media flows. The next chapter will look at some of the challenges of creating a \gls{wrtc} client for mobile devices.
