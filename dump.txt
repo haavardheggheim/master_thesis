@@ -1,50 +1,15 @@
-3. Write an abstract without a sentence starting “my original contribution to knowledge is…”
 
-Finally, we located a clear section in one chapter that was original. He signalled it in the abstract. He highlighted it in the introduction. He stressed the importance of this insight in the chapter itself and restated it in the conclusion.
-
-7. Leave spelling mistakes in the script
-
-8. Make the topic of the thesis too large
-The best PhDs are small. They investigate a circumscribed area, rather than over-egging the originality or expertise. The most satisfying theses – and they are rare – emerge when students find small gaps in saturated research areas and offer innovative interpretations or new applications of old ideas.
-
-short introductions signify the start of deeper problems: candidates are unaware of the research area or the theoretical framework. In the case of introductions and conclusions in doctoral theses, size does matter.
-
-You should normally use the present tense when referring to previously published work, and you should use the past tense when referring to your present results. The principal exception to this rule is when describing experiments undertaken by others in the past tense, even if the results that they established are described in the present tense. Results of calculations and statistical analyses should also be in the present tense. 
-So "There are six basic emotions [Ekman, 1972]. I have written a computer program that distinguishes them in photographs of human faces."
-
-Voice — The active voice is usually more precise and less wordy than the passive voice. 
-So "The system distinguished six emotions" rather than "It was found that the system could distinguish six emotions".
-
-Person — The general preference nowadays is to write in the first person, although there is still some debate.
-
-Number — When writing in the first person, use the singular or plural as appropriate. For a dissertation with one author, do not use the "editorial we" in place of "I". The use of "we" by a single author is outrageously pretentious.
-
-Formality — A dissertation is a formal document. Writing in the first person singular is preferred, but remember that you are writing a scientific document not a child's diary. Don't use informal abbreviations like "don't".
-
-Repetition — Say everything three times: introduce the ideas, explain them, and then give a summary. You can apply this to the whole dissertation with introductory and closing chapters, and to each chapter with introductory and closing sections. However, do not simply copy entire paragraphs. The three variants of the text serve different purposes and should be written differently.
-
-Sidenotes — Avoid remarks in parentheses and excessive use of footnotes. If something matters, say it in the main text. If it doesn't matter, leave it out.
-References — Citations in brackets are parenthetical remarks. Don't use them as nouns. 
-So "Ekman [1972] identifies six basic emotions" rather than "Six basic emotions are identified in [Ekman, 1972]".
-
-Simple language — Convoluted sentences with multiple clauses—especially nested using stray punctuation—make it harder for the reader to follow the argument; avoid them. Short sentences are more effective at holding the reader's attention.
-
-Try not to use nouns as adjectives. Alas, this is a common problem in Computer Science publications. At the very least, limit the number of nouns that are strung together.
-
-
-
-Need two thing either gateway or client that acts like an mcu!!!
-
-
+%GENERAL NOTES%
 
 9/4-14
-the goal of a webrtc ejnterprise client is to significantly expand the pool of clients to access enterprise media systems.. this document containts the study on security issues floowinf the potetntial modifications of the architecture and proceduers required by the support of webrtc clients to access ems
+the goal of a webrtc enterprise client is "to significantly expand the pool of clients to access enterprise media systems".. this document containts the study on security issues floowinf the potetntial modifications of the architecture and proceduers required by the support of webrtc clients to access ims
 
 re-use of existing auth mechanisms
 
 required enahancemnets to VritualArean meda plane security
 control plane security related aspects
 
+%%FUTURE WORK OR ADVANCED CHAPTER%%
 CALL SETUP TIMES
 Tricle ICE
 STUN timeouts
@@ -60,7 +25,7 @@ Web/App vs Legacy
 
 BAttery - 'PUSH' notifications
 
-ORTC Wokring <Group
+ORTC Working <Group>
 
 All IP-based 
 services are progressively migrating at the edge from dedicated 
@@ -79,7 +44,7 @@ Vet ikke om det var til hjelp.
 
 
 30/4
-til future cahpter
+til future chapter
 user identification authentication
 trickle-ice
 
