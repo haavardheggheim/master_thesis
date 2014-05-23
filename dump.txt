@@ -1,6 +1,13 @@
 
 %GENERAL NOTES%
 
+INTRO?
+There are a number of proprietary implementations that provide direct 
+interactive rich communication using audio, video, collaboration, 
+games, etc. between two peers' web-browsers. These are not 
+interoperable, as they require non-standard extensions or plugins to 
+work. \citehttp://datatracker.ietf.org/wg/rtcweb/charter/
+
 9/4-14
 the goal of a webrtc enterprise client is "to significantly expand the pool of clients to access enterprise media systems".. this document containts the study on security issues floowinf the potetntial modifications of the architecture and proceduers required by the support of webrtc clients to access ims
 

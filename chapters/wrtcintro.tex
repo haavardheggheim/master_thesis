@@ -13,8 +13,8 @@ With the above APIs you can: capture media from a camera on your device, do peer
 The \gls{wrtc} architecture consists of different standards, covering both protocols and browser APIs:
 
 \begin{itemize}
-\item All the different protocols and data formats required to make \gls{wrtc} work is defined by the IETF Working Group \gls{rtcweb}. They are responsible for defining protocols, data formats, security, and all other aspects to enable peer-to-peer communication in the browser.
-\item The \gls{wrtc} \gls{w3c} Working Group is responsible for defining the browser APIs.
+\item All the different protocols and data formats required to make \gls{wrtc} work, are defined by the IETF Working Group called \gls{rtcweb}. They are responsible for defining protocols, data formats, security, and all other aspects to enable peer-to-peer communication in the browser.
+\item The components used for setting up communication sessions and accessing the camera and microphone, are defined by the \gls{w3c} Working Group called \gls{wrtc}. They are responsible for defining the browser APIs.
 \end{itemize}
 
 WebRTC is the first open standard to tranport data over UDP in the browser. However doing this requires a lot more than raw UDP to do real-time communication, we need media processing and added security layers.
@@ -24,7 +24,7 @@ Doing live audio and video sharing requires processing to enhance image quality,
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.8]{audiovideocapture.png}}
-\caption{WebRTC audio and video engines}
+\caption{WebRTC audio and video engines. Copyright 2013 by O'Reilly Media, Inc.}
 \label{fig:audiovideocapture}
 \end{figure}
 
@@ -35,20 +35,20 @@ UDP is the foundation for doing real-time communication, but to meet all the spe
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.8]{wrtc-protocol-stack.png}}
-\caption{WebRTC protocol stack}
+\caption{WebRTC protocol stack. Copyright 2013 by O'Reilly Media, Inc.}
 \label{fig:wrtc-protocol-stack}
 \end{figure}
 
 \gls{ice}, \gls{stun}, and \gls{turn} are needed to establish a connection over UDP in \gls{wrtc}. Encryption is mandatory and \gls{dtls} is used to secure all transfers between peers. \gls{srtp} and \gls{sctp} are used to multiplex the different streams, provide congestion and flow control, and provide delivery on top of UDP.
 
-After looking at the underlying technologies of \gls{wrtc} defined as RTCWEB, we will now give an introduction to the drafted browser APIs. We are only going to introduce the first two of them, since the third one is not applicable to this project.
+After looking at the underlying technologies of \gls{wrtc} defined as RTCWeb, we will now give an introduction to the drafted browser APIs. We are only going to introduce the first two of them, since the third one is not applicable to this project.
 
-\subsection{getUserMedia()}
-Acquiring audio and video is done by using JavaScript APIs that enables the browser to acquire audio and video from a physical device such as a webcam or microphone. Incoming streams from remote network peers are also captured and everything is packaged in a MediaStream object. Inside the MediaStream object we have one or more individual tracks that are synchronized with one another. The output can be sent to a local audio or video element, post-processing scripts or remote peers.
+\subsection{MediaStream}
+Acquiring audio and video is done by calling the getUserMedia() method that enables the browser to acquire audio and video from a physical device such as a webcam or microphone. Incoming streams from remote network peers are also captured and everything is packaged in a MediaStream object. Inside the MediaStream object we have one or more individual tracks that are synchronized with one another. The output can be sent to a local audio or video element, post-processing scripts or remote peers.
 
 The MediaStream object represents a real-time media stream and allows the application to manipulate individual tracks and specify outputs.
 
-The getUserMedia() API allows us to specify a list of mandatory constraints to match the needs of the applicaton as seen in Listing \ref{lst:constraints}.
+The getUserMedia() method allows us to specify a list of mandatory constraints to match the needs of the applicaton as seen in Listing \ref{lst:constraints}.
 
 \lstset{language=Javascript} 
 \begin{lstlisting}[caption={getUserMedia constraints object}, label={lst:constraints}]
@@ -69,7 +69,7 @@ navigator.getUserMedia(constraints, stream, error);
 
 Once a stream is acquired we can feed them into other APIs such as Web Audio for enabling advanced audio processing. Canvas API for post-processing video frames and WebGL can apply 3D effects on the output stream.
 
-Simplified the getUserMedia() is an API to acquire audio and video streams. The media is automatically optimized, encoded and decoded by the audio and video engines. Then we can display the media locally in an audio or video element in the browser.
+Simplified the getUserMedia() is a method to acquire audio and video streams. The media is automatically optimized, encoded and decoded by the audio and video engines. Then we can display the media locally in an audio or video element in the browser.
 
 
 \subsection{RTCPeerConnection}
@@ -77,21 +77,21 @@ The RTCPeerConnection as seen in Figure \ref{fig:rtcpeerconnection} is responsib
 
 To be able to understand RTCPeerConnection we need to understand signaling and \gls{ice}.
 
-\subsubsection{Establishing a connection}
-
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.8]{peerconnection.png}}
-\caption{RTCPeerConnection API}
+\caption{RTCPeerConnection API. Copyright 2013 by O'Reilly Media, Inc.}
 \label{fig:rtcpeerconnection}
 \end{figure}
 
+\subsubsection{Establishing a connection}
+
 \begin{enumerate}
-\item Input devices are opened for capture as the media source. This is done using the getUserMedia API.
+\item Input devices are opened for capture as the media source. This is done using the getUserMedia() method.
 \item Now we have to signal the other users that we want to connect to them. Using RTCPeerConnection we send an \gls{sdp} offer to the other clients as seen in Figure \ref{fig:sdp-exchange}, which generates an \gls{sdp}. The \gls{sdp} here includes \gls{ice} candidates,  which allows for firewall traversal.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=1.0]{SDPexchange.png}}
-\caption{Offer/answer SDP exchange between peers}
+\caption{Offer/answer SDP exchange between peers. Copyright 2013 by O'Reilly Media, Inc.}
 \label{fig:sdp-exchange}
 \end{figure}
 
@@ -148,15 +148,15 @@ m=video 1 RTP/SAVPF 100 116 117
 
 
 \subsubsection{ICE}
-In order to establish a peer-to-peer connection, the peers must be able to send packets to each other. This is easy when you know which ip and port to listen to for incoming messages, but hard when you don't know. Normally there would be firewalls and NAT devices between most peers. In a local environment where there is no firewall, we could establish a connection between two peers by appending the IP and port number to the \gls{sdp}, and forward it to the other peer. What \gls{ice} does is getting around these restrictions by doing connectivity checks and route planning between peers. \gls{ice} gathers all possible addresses it can in address:port and transport triplets\cite{ivov_ice_2013}. \gls{ice} calls these `candidates', and once candidates have been gathered, they are ordered in a list based on priority. Highest priorities are assigned to candidates with the least overhead: those that you get from the device itself, the IP `host' candidates. Next in line are STUN candidates, which are f.ex obtained via \gls{upnp}. Finally the `relayed' candidates that is obtained from TURN servers come. By relaying media through a TURN server, we no longer have a peer-to-peer connection, this is costly and not something we want to do unless there is no other way of connecting to each other.
+In order to establish a peer-to-peer connection, the peers must be able to send packets to each other. This is easy when you know which ip and port to listen to for incoming messages, but hard when you don't know. Normally there would be firewalls and NAT devices between most peers. In a local environment where there is no firewall, we could establish a connection between two peers by appending the IP and port number to the \gls{sdp}, and forward it to the other peer. What \gls{ice} does is getting around these restrictions by doing connectivity checks and route planning between peers. \gls{ice} gathers all possible addresses it can in address:port and transport triplets\cite{ivov_ice_2013}. \gls{ice} calls these `candidates', and once candidates have been gathered, they are ordered in a list based on priority. Highest priorities are assigned to candidates with the least overhead: those that you get from the device itself, the IP `host' candidates. Next are STUN candidates, which are f.ex obtained via \gls{upnp}. Last option is the `relayed' candidates that are obtained from TURN servers. By relaying media through a TURN server, we no longer have a peer-to-peer connection, this is costly and not something we want to do unless there is no other way of connecting to each other.
 
 \subsubsection{Secure communication}
 Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of UDP, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This all taken care of by \gls{wrtc}, and once we have everyting else in place, we are ready to establish peer-to-peer connections.
 
 \subsubsection{Bringing it all together}
-To summarize the process of creating a peer-to-peer connection (Listing \ref{lst:p2p-webrtc}):
+To summarize the process of creating a peer-to-peer connection (Listing \ref{lst:p2p-webrtc-1}, \ref{lst:p2p-webrtc-2} and \ref{lst:p2p-webrtc-3}):
 
-\begin{lstlisting}[caption={WebRTC P2P connection}, label={lst:p2p-webrtc}]
+\begin{lstlisting}[caption={Initializing a WebRTC P2P connection, Part I}, label={lst:p2p-webrtc-1}]
 <video id='local' autoplay></video>
 <video id='remote' autoplay></video>
 
@@ -169,7 +169,11 @@ To summarize the process of creating a peer-to-peer connection (Listing \ref{lst
   var pc = new RTCPeerConnection(ice);
 
   navigator.getUserMedia({ "audio": true, "video": true }, onStream, logError);
+\end{lstlisting}
 
+In Listing \ref{lst:p2p-webrtc-1} we have defined the output elements for both local and remote streams. We have initialized a signaling channel and peer connection object. Lastly we have used the getUserMedia() method for acquiring local audio and video streams.
+
+\begin{lstlisting}[caption={Initializing a WebRTC P2P connection, Part II}, label={lst:p2p-webrtc-2}]
   function onStream(evt) {
     pc.addStream(evt.stream);
 
@@ -187,7 +191,11 @@ To summarize the process of creating a peer-to-peer connection (Listing \ref{lst
       signalingChannel.send(evt.candidate);
     }
   }
+\end{lstlisting}
 
+In Listing \ref{lst:p2p-webrtc-2} we register the local media streams with PeerConnection. Then we output the local video stream to its video element. After that we generate an SDP offer describing the connection and gather ICE candidates. Then we send it to peer via the signaling channel.
+
+\begin{lstlisting}[caption={Initializing a WebRTC P2P connection, Part III}, label={lst:p2p-webrtc-3}]
   signalingChannel.onmessage = function(msg) {
     if (msg.candidate) {
       pc.addIceCandidate(msg.candidate);
@@ -203,16 +211,7 @@ To summarize the process of creating a peer-to-peer connection (Listing \ref{lst
 </script>
 \end{lstlisting}
 
-\begin{enumerate}
-\item{Initialize a shared signaling channel}
-\item{Initialize a PeerConnection Object}
-\item{Acquire local media streams}
-\item{Register local media streams with PeerConnection}
-\item{Gather ICE candidates and generate SDP offer describing connection and send to peer via the signaling channel}
-\item{Register remote ICE candidates and initiate connection}
-\item{Receive remote media stream}
-\end{enumerate} 
-
+Later in Listing \ref{lst:p2p-webrtc-3} we register the remote ICE candidates and initiate the connection. Lastly we receive the remote video stream and output to the video element.
 
 \subsection{Summary}
-We have now looked at the underlying aspects of \gls{wrtc} and the subsequent browser APIs. We know that there are two different working groups: IETF working on the protocols and W3C working on the browser APIs. We also know how to initiate a simple peer-to-peer connection. In the next chapter we will look at some of the challenges of utilizing \gls{wrtc} on a mobile device.
+We have now looked at the underlying technologies of \gls{wrtc} and the subsequent browser APIs. We know that there are two different aspects of this technology: IETF working on the protocols and W3C working on the browser APIs. We also know how to initiate a simple peer-to-peer connection. In the next chapter we will look at some of the challenges of utilizing \gls{wrtc} on a mobile device.
