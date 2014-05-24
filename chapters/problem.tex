@@ -1,61 +1,31 @@
 %!TEX root = ../main.tex
 
-This chapter will describe the problems of integrating \gls{wrtc} with enterprise communication systems. It will also present the goals of doing this research, present the research question, define the research and implementation method, then lastly present the expected results.
+This chapter will describe the problems of integrating \gls{wrtc} with enterprise communication systems. It will also present the goals of doing this research, present the research questions, define the research method, then lastly present the expected results.
 
 \section{Problem Description}
-The \gls{byod} policy allows workers to bring their own mobile or tablet device to work. In enterprises this policy generates a lot of problems regarding how to handle security. One thing people need is to be able to access their enterprise internal communication system from their own device. The \gls{wrtc} technology allows us to easily create mobile clients, but how do we get these to interact with existing enterprise communication systems? We need some kind of technology that interworks these two technologies. What we need is to have the underlying protocols of \gls{wrtc} work together with traditional enterprise communication protocols. We also need to have the two systems being able to communicate with each other through message exchanging and signaling. Last but probably most important is how to handle access policies and crossing the enterprise firewall. The advantages of supporting \gls{rtcweb} in enterprise communication systems are huge. Immediately the system can access any WebRTC-enabled browser. This means we can reach out to a whole range of new devices. We basically get universal mobile support, easy client integration with top security, and no need to download applications or plugins, the app runs directly in the browser.
-
-% Doing real-time communication in the web browser is nothing new, flash implementations have existed for a long time, and Google's Hangout is quite popular, but \gls{wrtc} seems to have some important advantages over the other technologies.
-
-% \begin{itemize}
-%     \item Universal mobile support
-%     \item Easy integration, with a high focus on security.
-%     \item No need to download clients or plugins.
-% \end{itemize}
-
-% By looking over the drafts done by \gls{w3c}, \gls{wrtc} seems to be well suited for doing collaboration directly in the web browser.
-
-
-% \section{Problem statement}
-% \gls{wrtc} seems to be the best solution for doing video conferencing on the web, and both desktop and mobile web browsers have some degree of support which improves on a nightly basis.
-
-% While other solutions like Flash may have better support at the moment, there is a clear indication that the web is moving towards open standards\cite{jennings_real-time_2013}. A lot of effort is being put into \gls{wrtc} at the moment by big companies like Google and Mozilla to create this technology, however there are still disagreements about which audio/video codecs is going to be used\cite{philippe_video_2014}.
-
-% All the browsers that support \gls{wrtc} only support different subsets of the features specified by the \gls{w3c}. Therefore a lot of experiments had to be conducted to see what kind of features worked and which did not. It was also necessary to test different codecs, to see which ones was allowed to use in the different browsers.
-
-% It's interesting to see if this technology is mature and usable enough to work in a enterprise environment. We also have to see what features are planned for the future of \gls{wrtc}, and if support for more platforms are coming.
+The \gls{byod} policy allows workers to bring their own mobile or tablet device to work. In enterprises this policy generates a lot of problems regarding how to handle security. One thing people need is to be able to access their enterprise internal communication system from their own device. The \gls{wrtc} technology allows us to easily create mobile clients, but how do we get these to interact with existing enterprise communication systems? We need some kind of technology that interworks these two technologies. We need to have the two systems being able to communicate with each other through message exchanging and signaling. We also need to have the underlying transport protocols of \gls{wrtc} work together with traditional enterprise communication protocols. In addition the media may need to be transcoded. Last but probably most important is how to handle access policies and crossing the enterprise firewall. The advantages of supporting \gls{rtcweb} in enterprise communication systems are huge. Immediately the system can access any WebRTC-enabled browser. This means we can reach out to a whole range of new devices. We basically get universal mobile support, easy client integration with top security, and no need to download applications or plugins, the app runs directly in the browser.
 
 \section{Research question}
 This thesis will try to answer the following question:
 \\
 \\
-\textbf{How can we best integrate \gls{wrtc} with a enterprise communication system for doing collaboration?}
+\textbf{How can we integrate \gls{wrtc} with an enterprise collaboration system for doing communication?}
 \\
 \\
 Supporting questions:
 
 \begin{itemize}
-    \item How should we approach developing a \gls{wrtc} client for mobile devices?
-    \item How will this technology improve in the near future?
+\item How do we cross the enterprise firewall?
+\item How can we develop a signaling proxy?
+\item How can we develop a transport proxy?
+\item How can we develop a transcoder?
 \end{itemize}
 
-By answering these questions, it will be possible for multiple businesses to take advantage of the \gls{wrtc} technology by utilizing a gateway that interoperates with their existing systems for doing communication, with the addition of some important notes on developing clients for mobile devices.
+By answering these questions, I can derive guidelines that will make it possible for multiple businesses to take advantage of the \gls{wrtc} technology. In addition I will discuss how we should approach developing a WebRTC client for mobile devices.
+
 
 \section{Research method}
-The research method used in this thesis, is a quantitative experimental method, using systematic investigation and analysis of the different implementations in browsers of the drafted APIs by the \gls{w3c}. Experiments is done to examine the actual workings of the implementations to uncover support for the protocols and codecs defned in \gls{rtcweb} by the IETF. Practical experiments are run in Chrome, Firefox, and Chrome for Android. Different SIP applications will be used to test interoperation through a gateway. Wireshark\footnote{Wireshark is a network protocol analyzer} is used to capture and analyse traffic to see what type of data is being transmitted. An open source \gls{wrtc} gateway is tested to see how well it interworks with \gls{wrtc} and other systems. 
-
-\section{Implementation method}
-A model is created to reuse as much of existing architecture as possible from the enterprise communication system. This is done to separate components as much as possible from the existing system, and thus this work extends beyond the specific industrial case in this thesis. The specifics of the industrial case will be explained further in the next chapter.
-
-
-
-% \section{Existing work}
-% There exist's a lot of tutorials on creating very simple implementations of \gls{wrtc} on the client side, usually setting up one-to-one connections using a third-party service for doing signaling. More advanced guides shows how you can setup your own server to do signaling using WebSockets\footnote{WebSocket is a protocol providing full-duplex communications channels over a single TCP connection}.
-
-% This is great, but to be able to create an advanced server that acts like a gateway between \gls{wrtc} and Virtual Arena, we need to look further. Looking at commercial solutions that could potentially be of some help, most of them are closed. But there is one open source project named webrtc2sip\cite{doubango_telecom_webrtc2sip_2014} which acts like a gateway between \gls{wrtc} and \gls{sip} to allow a browser to create and receive calls from a legacy \gls{sip} network. It's written in C++ and it's open source, but not very well documented. It also doesn't offer exactly what we need, as it is designed to work with \gls{sip} systems. An other interesting project is an open-source \gls{mcu} called Licode\cite{lynckia_licode_2014}, this one is not designed to include external \gls{rtp} streams, but if this functionality could be implemented server side along with a proxy for doing signaling, it could be a very interesting project.
-
-% There is no good service on the web that provides live data on how far the support has come on different browsers. There is one service that will check for WebRTC and WebSockets connectivity on \url{http://www.check-connectivity.com/}. There are blogs and articles that provide tables showing who has implemented which APIs, but most will be outdated.
-
+The research method used in this thesis is an analytical and experimental method. By looking at related work and using tools like Wireshark\footnote{Wireshark is a network protocol analyzer - https://www.wireshark.org/} and Chrome Developer Tools\footnote{The Chrome Developer Tools are a set of web authoring and debugging tools built into Google Chrome}, I will carry out experiments and test the different components we need to develop, to solve the research questions. It is pretty clear by looking at the supporting questions that there is a lot of translation that needs to be done. Therefore it is logical that we create a model of a gateway that does all this translation. However, developing a \gls{wrtc} gateway is a huge amount of work, and because of all the protocols and security measures that would have to be implemented, I will not actually create a gateway in this thesis. I will derive a model describing how the theoretical gateway we create fits in with WebRTC and enterprise architecture. I will test the validity of this gateway by doing experiments using sipML5\footnote{http://sipml5.org/}, which is an open-source HTML5 SIP client using WebRTC for the media stack (natively provided by the browser). It uses SIP and SDP stacks written in javascript over WebSockets for signaling. For interoperability with native SIP clients it uses the webrtc2sip\footnote{Smart SIP and Media Gateway to connect WebRTC endpoints} gateway to act as a SIP proxy for translating the signaling. This gateway also includes a RTCWeb Breaker to convert the media streams and a Media Coder for transcoding. This gives us almost everything we need for my research, with the exception of crossing the enterprise firewall. The signaling component is a lot different from the one in VA, but this will just give an advantage in terms of deriving more general guidelines. However, I will not be able to provide specific integration guidelines for VA in terms of signaling.
 
 \section{Expected results}
 

@@ -1,0 +1,34 @@
+The specific problems related to this component are repeated below:
+
+\begin{itemize}
+\item{How to authenticate user identities?}
+\item{How to translate the signaling from \gls{wrtc} to Virtual Arena?}
+\item{How to handle negotiating the \gls{sdp}?}
+\end{itemize}
+
+\section{Authentication}
+VA uses Kerberos to authenticate its users, so we need to find a way to do this in the browser somehow. Since we may want users to run a WebRTC application simply by clicking on a link in an email, we need Kerberos to operate with untrusted applications. Normally applications are linked in the Kerberos library, but this would not work for the browser, as it would allow any site the user visits to steal their credentials\cite{vk}. We may be able to use the Webathena project\footnote{https://github.com/davidben/webathena} created by a MIT student for his master's project\cite{vk}. The solution consists of a Kerberos client written in Javascript, paired with a server side proxy to wrap the Kerberos protocol in HTTP. We would then be able to delegate credentials to untrusted web applications. I have not been able to test this on VA, so this is a topic for future work.
+
+\section{Signaling}
+
+
+
+
+\section{SDP}
+In order to get a session going, the peers should only have the need to exchange four things for establishing a secure connection in addition to information about the media:
+
+\begin{itemize}
+\item{An ICE username}
+\item{An ICE password}
+\item{A list of possible ICE candidates}
+\item{A DTLS fingerprint}s
+\end{itemize}
+
+The current \gls{wrtc} specification says to exchange this information with the browser API in \gls{sdp} format. \gls{sdp} is an old format used in the \gls{voip} world, therefore the re-use of \gls{sdp} is supposed to save time, but the anatomy of an \gls{sdp} is complex and constantly changing because the \gls{ietf} are coming up with new parameters to include. All the information has to be excactly right or it will be rejected by the browser. It is highly unlikely that the current specification of \gls{sdp} will work with any older implementation found in any enterprise communication system.
+
+Since the signaling in VA is very complex and specific to itself, I will describe a more general scenario. V   Another thing is that \gls{wrtc} has to do signaling running over HTTP, while the standard in an enterprise system is to use \gls{sdp} with \gls{sip} or some other proprietary way over TCP or UDP.
+
+We need to come up with some way of manipulating the \gls{sdp} and possibly use a \gls{sip} stack developed in Javascript running in the client. We will call this component the Signaling Proxy.
+
+
+In this implemenation the client has implemented signaling using a \gls{sip} stack in Javascript. The SIP includes the \gls{sdp} and this is transmitted over HTTP using WebSockets. Then the signaling proxy will manipulate the \gls{sdp} to support the enterprise implementation of \gls{sip} or any other proprietary way. The SDP would also only include TURN addresses so we make sure that the media always gets routed through th e gateway, blocking all other candidates. The message would then be transported through the enterprise \gls{sbc}. The Signaling proxy has to generate an offer for the client, then on the client the remote party would install it using the setRemoteDescription() API.

@@ -1,43 +1,46 @@
 %!TEX root = ../main.tex
 
-The objective of this study is to implement a model for interworking \gls{rtcweb} with an enterprise collaboration system. The collaboration is focused around audio and video communication. This model should allow the enterprise collaboration system VA to communicate with web real-time communications. The challenge is provided by Visual Solutions\footnote{http://www.bbvisuals.com/} as \gls{wrtc} is an interesting technology, that should be explored for possible integrations in the future.
+The objective of this study is to create a model for interworking \gls{rtcweb} with an enterprise collaboration system. The collaboration is focused around audio and video communication. This model should allow the enterprise collaboration system Virtual Arena to communicate with web real-time communications. The challenge is provided by Visual Solutions\footnote{http://www.bbvisuals.com/} as \gls{wrtc} is an interesting technology, that should be explored for possible integration in the future.
 
 \section{Target interaction goals}
-When a user in VA is active in a collaborative session, any external \gls{wrtc} user should be able to authenticate himself and join the session. Since the two different systems use a totally different set of protocols and codecs, there need to be an element in between that translate all the media and messages so that the two systems can work together. The user also needs to get through the enterprise firewall, without his media traffic being blocked by a strict firewall ruleset.
+When a user in VA is active in a collaborative session, any external \gls{wrtc} user should be able to authenticate himself and join the session. Since the two different systems use a totally different set of protocols and codecs, there need to be a component in between that translate all the media and messages so that the two systems can work together. The user also needs to get through the enterprise firewall, without his media traffic being blocked by a strict firewall ruleset.
 
-\section{Technologies involved}
-The different aspects of this system can be divided into layers and modules, which then again can be divided into sub-problems:
+The aspects of this system can be divided into different components, which then again can be divided into sub-problems:
 
-\subsection{Signaling}
-The signaling layer raises the following problems:
+\section{The Enterprise Firewall}
+Crossing the enterprise firewall raises the following problem:
 \begin{itemize}
+\item{How can the enterprise firewall detect and apply policy to \gls{wrtc} flows?}
+\end{itemize}
+
+\section{Signaling}
+The signaling component handles user authentication, signaling, and raises the following problems:
+\begin{itemize}
+\item{How to authenticate user identities?}
 \item{How to translate the signaling from \gls{wrtc} to Virtual Arena?}
 \item{How to handle negotiating the \gls{sdp}?}
 \end{itemize}
 
-\subsection{Transport}
-The transport layer handles the media and transcoding modules:
+\section{Transport}
+The transport component handles the transport of media and IP addressing:
 \begin{itemize}
 \item{How to handle ICE candidates?}
 \item{How to negotiate the DTLS secret keys?}
 \item{How to decrypt and encrypt the media streams from SRTP to RTP and reverse?}
-\item{How to transcode the media streams?}
 \item{How to handle multiplexing and demultiplexing of the streams?}
 \end{itemize}
 
-\subsection{IP addressing}
-This layer handles the user authentication and access policies:
+\newpage
+\section{Transcoding}
+The transcoder is a simple component that does one thing:
 \begin{itemize}
-\item{How to authenticate user identities?}
-\item{How to cross the enterprise firewall?}
+\item{How to transcode the media streams?}
 \end{itemize}
 
-\subsection{Mobile Client}
+\section{Mobile Client}
 What considerations have to be taken when developing a mobile \gls{wrtc} client:
 \begin{itemize}
 \item{How to handle signaling?}
 \item{Is a mobile phone powerful enough for doing multi-party conferencing?}
 \item{How to limit battery consumption?}
 \end{itemize}
-
-The next chapter begins looking at integrating \gls{rtcweb} with an enterprise communication system.

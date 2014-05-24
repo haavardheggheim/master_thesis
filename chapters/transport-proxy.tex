@@ -1,0 +1,7 @@
+In the \gls{wrtc} world the media plane is designed to avoid having to relay media streams. The goal is to have pure peer-to-peer connections, while in the enterprise world it is common to have full control over the media plane and in most cases use some kind of media server. Also the \gls{wrtc} specification says that support for \gls{ice} and \gls{srtp}-\gls{dtls} are mandatory. Encryption is hardly ever used in the enterprise world, so this is another challenge. If encryption is used, it is more common to use \gls{srtp}-\gls{sdes} with the keys being handled on the signaling plane, rather than in media plane that is the case with \gls{dtls}.
+
+\gls{wrtc} uses one-way media streams, while an enterprise system usually expects to receive bi-directional streams. This can be fixed by multiplexing the streams, so we can have multiple streams running over the same network port.
+
+The biggest issues here is probably which codecs we need to implement. The \gls{ietf} has landed on two default audio codecs, but has not as of 16th of May decided on which video codec to use yet. The most typical enterprise video code used is H.264. Right now the \gls{ietf} are deciding between VP8 and H.264, so currently we have to support both and do server side transcoding between them.
+
+There are basically two components in this plane; the translation of the media transport protocols and the transcoding. We split them into two components called the Transport Proxy and the Media Transcoder.
