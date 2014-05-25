@@ -24,7 +24,7 @@ The signaling component handles user authentication, signaling, and raises the f
 \section{Transport}
 The transport component handles the transport of media and IP addressing:
 \begin{itemize}
-\item{How to handle ICE candidates?}
+\item{How to implement ICE?}
 \item{How to negotiate the DTLS secret keys?}
 \item{How to decrypt and encrypt the media streams from SRTP to RTP and reverse?}
 \item{How to handle multiplexing and demultiplexing of the streams?}
@@ -35,6 +35,7 @@ The transport component handles the transport of media and IP addressing:
 The transcoder is a simple component that does one thing:
 \begin{itemize}
 \item{How to transcode the media streams?}
+\item{Which codecs do we need to support?}
 \end{itemize}
 
 \section{Mobile Client}

@@ -1,4 +1,13 @@
 
+
+esting serves to validate that the suggested interworking components mentioned in the previous chapter accomplish their intended aim.
+
+Since SIP is pretty much the industry standard for doing signaling in the telecommunications industry, I see this as a good approach for testing purposes.
+
+
+
+
+
 %GENERAL NOTES%
 
 INTRO?

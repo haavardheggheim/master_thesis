@@ -1,4 +1,4 @@
-The specific problems related to this component are repeated below:
+We need the Signaling Proxy to translate the information exchange concerning the establishment and control of a communication session. The specific problems related to this component are repeated below:
 
 \begin{itemize}
 \item{How to authenticate user identities?}
@@ -27,7 +27,7 @@ Blink               & opus  & failed & none                                     
 \label{tbl:sip-client-webrtc-interaction}
 \end{table}
 
-In figure \ref{tbl:sip-client-webrtc-interaction} the audio and video columns refer to the mutually agreed upon codec to be used during the signaling process. Since g.711 is the most preferred codec to be used in \gls{voip} systems, it is natural that audio most often defaults to this codec. Experiments with video conferencing was not very successful, it was difficult getting a normal video session to work for various reasons, one of them being a mismatch in the \gls{sdp} which was mentioned earlier as a probable outcome. The one desktop client that did manage to get a working video session using the VP8 codec had a very high packet loss as seen in figure \ref{fig:wireshark-sip-call}. Reasons for this is hard to say as the experiment was done on a really high-bandwidth connection, but through a proxy.
+In figure \ref{tbl:sip-client-webrtc-interaction} the audio and video columns refer to the mutually agreed upon codec to be used during the signaling process. Since g.711 is the most preferred codec to be used in \gls{voip} systems, it is natural that audio most often defaults to this codec. Experiments with video conferencing was not very successful. It was difficult getting a normal video session to work for various reasons, one of them being a problem in the \gls{sdp}, which was mentioned earlier as a probable outcome. The one desktop client that did manage to get a working video session using the VP8 codec had a very high packet loss as seen in figure \ref{fig:wireshark-sip-call}. Reasons for this is hard to say as the experiment was done on a really high-bandwidth connection, but through a proxy.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.6]{wireshark-rtp.png}}
@@ -36,7 +36,7 @@ In figure \ref{tbl:sip-client-webrtc-interaction} the audio and video columns re
 \end{figure}
 
 \section{SDP}
-In order to get a session going, the peers should in my opinion only have the need to exchange four things for establishing a secure connection in addition to information about the media:
+In order to get a session going, the most important elements to exchange are the four things (see below) needed for establishing a secure connection, in addition to information about the media:
 
 \begin{itemize}
 \item{An ICE username}
@@ -45,7 +45,13 @@ In order to get a session going, the peers should in my opinion only have the ne
 \item{DTLS fingerprint}s
 \end{itemize}
 
-The current \gls{wrtc} specification says to exchange this information with the browser in \gls{sdp} format. But as mentioned earlier its a bit more complex than that. For VA we need to create methods for generating and manipulating the \gls{sdp} in this component.
+The current \gls{wrtc} specification says to exchange this information with the browser in \gls{sdp} format. But as mentioned earlier its a bit more complex than that. Here is an example of a failed SDP exchange:
+
+\begin{quote}
+Failed to set remote offer sdp: Called with a SDP without crypto enabled. -from WebRTC Internals
+\end{quote}
+
+For VA we need to create methods for generating and manipulating the \gls{sdp} in this component.
 
 \section{Summary}
 For deriving general guidelines and testing purposes it's easier to envison that our enterprise communication system uses the SIP protocol for signaling purposes rather than VA's proprietary solution. In this chapter we tested the sipML5 client which is essentially a WebRTC client using SIP for signaling. The SIP proxy worked very well for audio, but there was some problems negotiating video, possibly due to different implementations of the SDP, and since SIP is mainly used to deliver the SDP, we should use additional services like the WebAthena proxy to authenticate the users. In the following chapters I will continue to use these experiments as a reference.
