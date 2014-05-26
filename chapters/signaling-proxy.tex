@@ -27,7 +27,7 @@ Blink               & opus  & failed & none                                     
 \label{tbl:sip-client-webrtc-interaction}
 \end{table}
 
-In figure \ref{tbl:sip-client-webrtc-interaction} the audio and video columns refer to the mutually agreed upon codec to be used during the signaling process. Since g.711 is the most preferred codec to be used in \gls{voip} systems, it is natural that audio most often defaults to this codec. Experiments with video conferencing was not very successful. It was difficult getting a normal video session to work for various reasons, one of them being a problem in the \gls{sdp}, which was mentioned earlier as a probable outcome. The one desktop client that did manage to get a working video session using the VP8 codec had a very high packet loss as seen in figure \ref{fig:wireshark-sip-call}. Reasons for this is hard to say as the experiment was done on a really high-bandwidth connection, but through a proxy.
+In figure \ref{tbl:sip-client-webrtc-interaction} the audio and video columns refer to the mutually agreed upon codec to be used during the signaling process. Since g.711 is the most preferred codec to be used in \gls{voip} systems, it is natural that audio most often defaults to this codec. Experiments with video conferencing was not very successful. It was difficult getting a normal video session to work for various reasons, one of them being a problem in the \gls{sdp}, which was mentioned earlier as a probable outcome. The one desktop client that did manage to get a working video session using the VP8 codec had a very high packet loss as seen in figure \ref{fig:wireshark-sip-call}. Reasons for this is hard to say as the experiment was done on a really high-bandwidth connection.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.6]{wireshark-rtp.png}}
@@ -45,7 +45,7 @@ In order to get a session going, the most important elements to exchange are the
 \item{DTLS fingerprint}s
 \end{itemize}
 
-The current \gls{wrtc} specification says to exchange this information with the browser in \gls{sdp} format. But as mentioned earlier its a bit more complex than that. Here is an example of a failed SDP exchange:
+The current \gls{wrtc} specification says to exchange this information with the browser in \gls{sdp} format. But as mentioned earlier it's a bit more complex than that. Here is an example of a failed SDP exchange:
 
 \begin{quote}
 Failed to set remote offer sdp: Called with a SDP without crypto enabled. -from WebRTC Internals
