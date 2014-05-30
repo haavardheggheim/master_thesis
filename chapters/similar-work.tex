@@ -1,4 +1,4 @@
-In this section I will look at similar work that I can use for my thesis. These works are not finished, so they are subject to change at any time.
+In this section I will look at similar work that is relevant for my thesis. These works are not finished, so they are subject to change at any time.
 
 \subsection{WebRTC to IMS}
 There is an ongoing effort at the 3GPP on giving \gls{wrtc} clients access to \gls{ims} with 3GPP TR 23.701\cite{3gpp-wrtc-access-ims} as the current proposed architecture. \gls{ims} is basically an architectural framework for delivering IP multimedia services. It was originally designed for evolving mobile networks beyond \gls{gsm}. Later it has evolved to include Wireless LAN and fixed lines, it's intended to aid the access of multimedia and voice applications across different networks. This study is relevant because most telecom companies already have IMS or a similar architecture in place for doing real-time communication. The following diagram shows the proposed architecture:
@@ -42,5 +42,10 @@ supports policy and charging control decisions based on session and media-relate
 \textbf{Network Address Translation (NAT)}
 the WIC would normally be behind a NAT element, so a box has been included in the diagram.
 
-\subsection{Doubango Telecom}
-Doubango Telecom has created a Smart SIP and Media Gateway to connect WebRTC endpoints\footnote{http://webrtc2sip.org/}. It's called webrtc2sip and it uses RTCWeb and SIP technologies. It allows your browser to make and receive calls to and from any SIP endpoint. The gateway contains four modules: a SIP Proxy, a RTCWeb Breaker, a Media Coder, and a Click-to-Call service. The first three are relevant to integrating WebRTC with enterprise communications. The SIP Proxy converts the SIP transport from WebSockets to SIP over UDP or TCP, which is supported by most enterprise networks, and the RTCWeb Breaker make support for ICE and SRTP-DTLS when negotiating media streams between WebRTC and SIP endpoints. Lastly, the Media Coder will allow us to make calls between browsers and SIP endpoints supporting different codecs.
+\subsection{The webrtc2sip Smart SIP and Media Gateway}
+Doubango Telecom has created a gateway to connect WebRTC with SIP endpoints\footnote{http://webrtc2sip.org/}. It's called webrtc2sip and it uses RTCWeb and SIP technologies. It allows your browser to make and receive calls to and from any SIP endpoint. The gateway contains four modules: a SIP Proxy, a RTCWeb Breaker, a Media Coder, and a Click-to-Call service. The first three are relevant to integrating WebRTC with enterprise communications. The SIP Proxy converts the SIP transport from WebSockets to SIP over UDP or TCP, which is supported by most enterprise networks, and the RTCWeb Breaker make support for ICE and SRTP-DTLS when negotiating media streams between WebRTC and SIP endpoints. Lastly, the Media Coder will allow us to make calls between browsers and SIP endpoints supporting different codecs.
+
+%%flere paper's
+
+\subsection{Other Relevant papers}
+%There are jaknfakfnakjnfkjanfanfanflnasfklns
