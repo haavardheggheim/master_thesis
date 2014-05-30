@@ -10,16 +10,16 @@ The most used and relevant networks are Wi-Fi, WiMAX, and the different telecomm
 \pagebreak
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.45]{mobile-video-metrics.png}}
-\caption{WebRTC video performance\cite{fund2013performance}.}
+\caption{WebRTC video performance. Reprinted from: Performance of DASH and WebRTC Video Services for Mobile Users\cite{fund2013performance}.}
 \label{fig:mobile-video-metrics}
 \end{figure}
 
-\gls{wrtc} adapts to changing link conditions by estimating the available sent bandwidth and passing this estimate to the encoder as a target bitrate. Figure \ref{fig:mobile-video-metrics} show key metrics of video and audio quality for a \gls{wrtc} session sustained over a WiMAX link in two different locations. The color blue is a suburban setting (Amherst) and purple is an urban setting (New York). For each plot, the shaded area shows one standard deviation above and below the mean, while the points give values for a representative trial. These values are presented from the perspective of the mobile, WiMAX-connected peer. There is a dramatic difference in performance between the two locations, with the suburban setting always outperforming the urban setting. The uplink stream has significantly worse video performance than the downlink. This is probably due to the asymmetry of the celullar link. Only 25\% of radio resources are allocated to the uplink\cite{fund2013performance}. A result of this is a reduced frame rate, this is unfortunate since mobile users are often walking, which makes the video feed have a high motion content.
+\gls{wrtc} adapts to changing link conditions by estimating the available sent bandwidth and passing this estimate to the encoder as a target bitrate. Figure \ref{fig:mobile-video-metrics} show key metrics of video and audio quality for a \gls{wrtc} session sustained over a WiMAX link in two different locations. The color blue is a suburban setting (Amherst) and purple is an urban setting (New York). For each plot, the shaded area shows one standard deviation above and below the mean, while the points give values for a representative trial. These values are presented from the perspective of the mobile WiMAX-connected peer. There is a dramatic difference in performance between the two locations, with the suburban setting always outperforming the urban setting. The uplink stream has significantly worse video performance than the downlink. This is probably due to the asymmetry of the cellular link. Only 25\% of radio resources are allocated to the uplink\cite{fund2013performance}. A result of this is a reduced frame rate, this is unfortunate since mobile users are often walking, which makes the video feed have a high motion content.
 
 \pagebreak
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.5]{mobile-audio-metrics.png}}
-\caption{WebRTC audio performance\cite{fund2013performance}.}
+\caption{WebRTC audio performance. Reprinted from: Performance of DASH and WebRTC Video Services for Mobile Users\cite{fund2013performance}.}
 \label{fig:mobile-audio-metrics}
 \end{figure}
 
@@ -27,12 +27,12 @@ An important thing to mention is that video quality is not that important when i
 \\
 \begin{table}[here]
 \centerline{\includegraphics[scale=0.5]{wrtc-packet-loss}}
-\caption{Packet loss ratio for a WebRTC session\cite{fund2013performance}.}
+\caption{Packet loss ratio for a WebRTC session. Adapted from: Performance of DASH and WebRTC Video Services for Mobile Users\cite{fund2013performance}.}
 \label{tbl:wrtc-packet-loss}
 \end{table}
 
 \subsection{Connectivity}
-Another concern is persistent connectivity. For an app to be reachable for incoming connections, it needs some kind of persistant communication channel. Most cellular networks have a firewall preventing incoming TCP connections\cite{isomaki2012considerations}. To keep a TCP connection alive, the application needs to send some kind of keep-alive packets with a high enough frequency to avoid a connection timeout. Problem with keeping a connection open all the time is that is that device's radio will consume a lot of battery. Therefore, the keep-alive packets should only be sent infrequently.
+Another concern is persistent connectivity. For an app to be reachable for incoming connections, it needs some kind of persistant communication channel. Most cellular networks have a firewall preventing incoming TCP connections\cite{isomaki2012considerations}. To keep a TCP connection alive, the application needs to send some kind of keep-alive packets with a high enough frequency to avoid a connection timeout. Problem with keeping a connection open all the time, is that the device's radio will consume a lot of battery. %herefore, the keep-alive packets should only be sent infrequently.
 
 \subsection{Summary}
-Most of the performance issues is handled by the underlying technologies of \gls{wrtc}, which actually is pretty good at adapting bandwidth usage in variable network conditions, but it is important to be aware of these problems when developing applications. The effect that a mobile users uplink is much worse than its downlink has great impact on a user's perception of the connection. However, the most important factor for us to consider is how we will do the signaling with a mobile device, since we can't keep a connection open all the time, as that would drain the battery.
+Most of the performance issues is handled by the underlying technologies of \gls{wrtc}, which actually is pretty good at adapting bandwidth usage in variable network conditions. But it is important to be aware of these problems, when developing applications. The effect that a mobile users uplink is much worse than it's downlink has great impact on a user's perception of the connection. However, the most important factor for us to consider is how we will do the signaling with a mobile device, since we can't keep a connection open all the time, as that would drain the battery.

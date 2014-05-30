@@ -7,17 +7,17 @@ When a user in VA is active in a collaborative session, any external \gls{wrtc} 
 
 The aspects of this system can be divided into different components, which then again can be divided into sub-problems:
 
-\section{The Enterprise Firewall}
+\section{The enterprise firewall}
 Crossing the enterprise firewall raises the following problem:
 \begin{itemize}
 \item{How can the enterprise firewall detect and apply policy to \gls{wrtc} flows?}
 \end{itemize}
 
 \section{Signaling}
-The signaling component handles user authentication, signaling, and raises the following problems:
+The signaling component handles user authentication and signaling:
 \begin{itemize}
 \item{How to authenticate user identities?}
-\item{How to translate the signaling from \gls{wrtc} to Virtual Arena?}
+\item{How to translate the signaling?}
 \item{How to handle negotiating the \gls{sdp}?}
 \end{itemize}
 
@@ -32,16 +32,15 @@ The transport component handles the transport of media and IP addressing:
 
 \newpage
 \section{Transcoding}
-The transcoder is a simple component that does one thing:
+The transcoder will allow us to make calls between different systems using different codecs. What we need to figure out is:
 \begin{itemize}
 \item{How to transcode the media streams?}
 \item{Which codecs do we need to support?}
 \end{itemize}
 
-\section{Mobile Client}
-What considerations have to be taken when developing a mobile \gls{wrtc} client:
+\section{WebRTC mobile client}
+Since RTCWeb takes care of adapting the bandwidth and other adjustments, we mainly have to think about how we do signaling. In addition, since VA allows for subscription of multiple streams of audio and video, we want to know if it's possible to receive these simultaneously on a mobile device. So, the considerations we have to think about when developing a mobile \gls{wrtc} client are:
 \begin{itemize}
-\item{How to handle signaling?}
+\item{How to handle signaling in a way that limits battery consumption?}
 \item{Is a mobile phone powerful enough for doing multi-party conferencing?}
-\item{How to limit battery consumption?}
 \end{itemize}

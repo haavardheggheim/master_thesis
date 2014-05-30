@@ -1,7 +1,7 @@
 Visual Solutions is a Norwegian company in the BB Visual Group\footnote{http://www.bbvisualgroup.com/}. Their primary business is within the integration of operations for the oil and gas industry, with customers located all over the world. They create solutions enabling collaboration across organisation units and geographic locations.
 
 \subsection{Virtual Arena}
-One of Visual Solutions applications is Virtual Arena\cite{solutions_b2_virtual_2014}, which from now on will be referred to as \gls{va}. VA is a powerful and interactive tool that allows for high-performance application sharing, with audio and video communication from a 3D shared scene as seen in Figure \ref{fig:vsva-3d-scene}.
+One of Visual Solutions applications is Virtual Arena\footnote{http://www.bbvisuals.com/index.php?site=2\&page=75.125}, which from now on will be referred to as \gls{va}. VA is a powerful and interactive tool that allows for high-performance application sharing, with audio and video communication from a 3D shared scene as seen in Figure \ref{fig:vsva-3d-scene}.
 \\
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.6]{virtualarena.png}}
@@ -20,7 +20,7 @@ VA is an application that Visual Solutions has created for doing visual collabor
 \end{figure}
 
 \subsubsection{Signaling}
-VA has a proprietary way of doing signaling and the server authenticates users \gls{guid}'s via Kerberos\footnote{Kerberos is a computer network authentication protocol} over HTTPS. This is where the clients send messages to the media server describing which streams they want to subscribe to. Streams are recognized by the their \gls{ssrc}, which is defined in the header packets of the media streams. All the SSRCs are registered in the signaling server. Communication between peers and the media server is done by opening up ports in the firewall to listen for incoming TCP and UDP connections. These ports are preconfigured manually for this application. The media server can receive incoming streams, mix them, and route the media to all peers connected.
+VA has a way of doing signaling which I will not go into, since it's proprietary. Authentication works by using the signaling server to authenticate users \gls{guid}'s via Kerberos\footnote{Kerberos is a computer network authentication protocol} over HTTPS. This is where the clients send messages to the media server describing which streams they want to subscribe to. Streams are recognized by the their \gls{ssrc}, which is defined in the header packets of the media streams. All the SSRCs are registered in the signaling server. Communication between peers and the media server is done by opening up ports in the firewall to listen for incoming TCP and UDP connections. These ports are preconfigured manually for this application. The media server can receive incoming streams, mix them, and route the media to all peers connected.
 
 \subsubsection{Transport}
 VA uses raw \gls{rtp} streams over UDP together with a \gls{rtcp} connection. This is basically the standard protocols used for transmitting real-time media in any communication system. RTCP is used for providing statistics and control information for the RTP flow. There will be more details about the RTP protocol in the upcoming sections.

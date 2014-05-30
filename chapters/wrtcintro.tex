@@ -24,7 +24,7 @@ Doing live audio and video sharing requires processing to enhance image quality,
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.8]{audiovideocapture.png}}
-\caption{WebRTC audio and video engines. Copyright 2013 by O'Reilly Media, Inc.}
+\caption{WebRTC audio and video engines. Reprinted from: High Performance Browser Networking\cite{grigorik_high_2013}.}
 \label{fig:audiovideocapture}
 \end{figure}
 
@@ -35,7 +35,7 @@ UDP is the foundation for doing real-time communication, but to meet all the spe
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.8]{wrtc-protocol-stack.png}}
-\caption{WebRTC protocol stack. Copyright 2013 by O'Reilly Media, Inc.}
+\caption{WebRTC protocol stack. Reprinted from: High Performance Browser Networking\cite{grigorik_high_2013}.}
 \label{fig:wrtc-protocol-stack}
 \end{figure}
 
@@ -79,7 +79,7 @@ To be able to understand RTCPeerConnection we need to understand signaling and \
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.8]{peerconnection.png}}
-\caption{RTCPeerConnection API. Copyright 2013 by O'Reilly Media, Inc.}
+\caption{RTCPeerConnection API. Reprinted from: High Performance Browser Networking\cite{grigorik_high_2013}.}
 \label{fig:rtcpeerconnection}
 \end{figure}
 
@@ -91,7 +91,7 @@ To be able to understand RTCPeerConnection we need to understand signaling and \
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=1.0]{SDPexchange.png}}
-\caption{Offer/answer SDP exchange between peers. Copyright 2013 by O'Reilly Media, Inc.}
+\caption{Offer/answer SDP exchange between peers. Reprinted from: High Performance Browser Networking\cite{grigorik_high_2013}.}
 \label{fig:sdp-exchange}
 \end{figure}
 
@@ -129,7 +129,7 @@ function onStream(stream) {
 
 Here is some of the information that is generated after a call createOffer() has generated the \gls{sdp} description (Listing \ref{lst:sdp}):
 
-\begin{lstlisting}[frame=single, caption={Snippet of SDP description}, label={lst:sdp}]
+\begin{lstlisting}[frame=single, caption={Snippet of a SDP description}, label={lst:sdp}]
 ...snip...
 m=audio 1 RTP/SAVPF 111 103 104 0 8 106 105 13 126
 c=IN IP4 0.0.0.0
@@ -148,10 +148,10 @@ m=video 1 RTP/SAVPF 100 116 117
 
 
 \subsubsection{ICE}
-In order to establish a peer-to-peer connection, the peers must be able to send packets to each other. This is easy when you know which ip and port to listen to for incoming messages, but hard when you don't know. Normally there would be firewalls and NAT devices between most peers. In a local environment where there is no firewall, we could establish a connection between two peers by appending the IP and port number to the \gls{sdp}, and forward it to the other peer. What \gls{ice} does is getting around these restrictions by doing connectivity checks and route planning between peers. \gls{ice} gathers all possible addresses it can in address:port and transport triplets\cite{ivov_ice_2013}. \gls{ice} calls these `candidates', and once candidates have been gathered, they are ordered in a list based on priority. Highest priorities are assigned to candidates with the least overhead: those that you get from the device itself, the IP `host' candidates. Next are STUN candidates, which are f.ex obtained via \gls{upnp}. Last option is the `relayed' candidates that are obtained from TURN servers. By relaying media through a TURN server, we no longer have a peer-to-peer connection, this is costly and not something we want to do unless there is no other way of connecting to each other.
+In order to establish a peer-to-peer connection, the peers must be able to send packets to each other. This is easy when you know which IP and port to listen to for incoming messages, but hard when you don't know. Normally there would be firewalls and NAT devices between most peers. In a local environment where there is no firewall, we could establish a connection between two peers by appending the IP and port number to the \gls{sdp}, and forward it to the other peer. What \gls{ice} does is getting around these restrictions by doing connectivity checks and route planning between peers. \gls{ice} gathers all possible addresses it can in address:port and transport triplets\cite{ivov_ice_2013}. \gls{ice} calls these `candidates', and once candidates have been gathered, they are ordered in a list based on priority. Highest priorities are assigned to candidates with the least overhead: those that you get from the device itself, the IP `host' candidates. Next are STUN candidates, which are f.ex obtained via \gls{upnp}. Last option is the `relayed' candidates that are obtained from TURN servers. By relaying media through a TURN server, we no longer have a peer-to-peer connection, this is costly and not something we want to do unless there is no other way of connecting to each other.
 
 \subsubsection{Secure communication}
-Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of UDP, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This all taken care of by \gls{wrtc}, and once we have everyting else in place, we are ready to establish peer-to-peer connections.
+Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of UDP, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This is all taken care of by \gls{wrtc}, and once we have everyting else in place, we are ready to establish peer-to-peer connections.
 
 \subsubsection{Bringing it all together}
 To summarize the process of creating a peer-to-peer connection (Listing \ref{lst:p2p-webrtc-1}, \ref{lst:p2p-webrtc-2} and \ref{lst:p2p-webrtc-3}):
@@ -193,7 +193,7 @@ In Listing \ref{lst:p2p-webrtc-1} we have defined the output elements for both l
   }
 \end{lstlisting}
 
-In Listing \ref{lst:p2p-webrtc-2} we register the local media streams with PeerConnection. Then we output the local video stream to its video element. After that we generate an SDP offer describing the connection and gather ICE candidates. Then we send it to peer via the signaling channel.
+In Listing \ref{lst:p2p-webrtc-2} we register the local media streams with PeerConnection. Then we output the local video stream to its video element. After that we generate a SDP offer describing the connection and gather ICE candidates. Then we send it to the other peer via the signaling channel.
 
 \begin{lstlisting}[caption={Initializing a WebRTC P2P connection, Part III}, label={lst:p2p-webrtc-3}]
   signalingChannel.onmessage = function(msg) {
