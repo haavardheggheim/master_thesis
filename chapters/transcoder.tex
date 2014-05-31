@@ -1,4 +1,4 @@
-The transcoding component is simple:
+The transcoding component has to address the following questions:
 
 \begin{itemize}
 \item{How to transcode the media streams?}
@@ -14,7 +14,7 @@ ffmpeg -i demo.webm -preset ultrafast -acodec aac -ar 44100 -ac 2 -b:a 96k -vcod
 
 In the example above we convert a WebM (VP8) file to MP4 (H.264) with a target framerate of 25 frames per second using the ultrafast preset for speed in favor of quality. The encoding was done in less then 15 seconds for a one minute video on a low-end laptop. This shows it should be possible to do live transcoding. However, since my CPU ran at a 100\%, I'm guessing that if there was more than one incoming stream, that the encoding would go a lot slower.
 
-When doing experiments on the open-source gateway, there was problems interoperating between different video codecs. The Media Coder in the webrtc2sip gateway seemed to be disabled, since the SDP could not agree on a similar video codec in one of the experiments.
+When doing experiments on the open-source gateway, there were problems switching between different video codecs. The Media Coder in the webrtc2sip gateway seemed to be disabled, since the SDP could not agree on a similar video codec in one of the experiments.
 
 \begin{quote}
 ``Please note that the Media Coder will most likely be disabled on the sipml5.org hosted server'' - http://sipml5.org/expert.htm
@@ -22,7 +22,7 @@ When doing experiments on the open-source gateway, there was problems interopera
 
 In the sipML5 to Jitsi experiment there was not an agreement. Jitsi only supports the H.264 video codec and Chrome the VP8 codec. It seems the media transcoder did not kick in, otherwise it probably could have worked. For the other cases, I'm not sure why video won't work, but as mentioned before, I'm guessing there is a mismatch in the \gls{sdp}.
 
-Since transcoding can be done on the server, the quality should not really be affected by this component, with today's hardware we can do live transcoding. Which codec used can somewhat limit latency, but the biggest latency issue has to do with the clients physical geographic location. The closer a client is to the media server the better, as the media doesn't have to travel that far.
+Since transcoding can be done on the server, the quality should not really be affected by this component, with today's hardware we can do live transcoding. The choice of codec used can limit latency somewhat, but the most significant latency issue is still the physical location of the clients. The closer a client is to the media server the better, as the media doesn't have to travel that far.
 
 \section{Codecs}
 
@@ -32,7 +32,7 @@ The \gls{wrtc} specification defines these mandatory codecs:
     \item Video: ?
 \end{itemize}
 
-There are still discussions on the topic of which video codec should be standard. The choice is between VP8 and H.264. The H.264 codec was recently made free by Cisco\cite{h264-free}, so now both choices are royalty free. H.264 is the most widely deployed and currently has the best hardware support, but both Google and Firefox has decided to use VP8 in their WebRTC implementations. However, the Bowser browser created by Ericsson for iOS, has only implemented support for H.264 in their WebRTC solution. Our enterprise applicaton VA uses Speex for audio and Theora for video. So these would have to be transcoded to the appropriate formats. This is one of the advantages of creating a media transcoder, because you can add support for all of the codecs, including H.264, VP8, Theora, and Speex. Then you would be able to create a session between both Chrome, VA, and the Bowser browser on iOS. Problem with this component is that it's expensive in terms of processing, and it may cause some delays in the stream.
+There are still discussions on the topic of which video codec should be standard. The choice is between VP8 and H.264. The H.264 codec was recently made free by Cisco\cite{h264-free}, so now both choices are royalty free. H.264 is the most widely deployed and currently has the best hardware support, but both Google and Firefox has decided to use VP8 in their WebRTC implementations. However, the Bowser browser created by Ericsson for iOS, has only implemented support for H.264 in their WebRTC solution. Our enterprise applicaton VA uses Speex for audio and Theora for video. So these would have to be transcoded to the appropriate formats. This is one of the advantages of creating a media transcoder, because you can add support for all of the codecs, including H.264, VP8, Theora, and Speex. Then one would be able to create a session between both Chrome, VA, and the Bowser browser on iOS. Problem with this component is that it's expensive in terms of processing, and it may cause some delays in the stream.
 
 \section{Summary}
-The Media Coder in webrtc2sip turned out difficult to test, since it was probably turned off. However, it's definately possible to do live transcoding, but it is very resource demanding. We should support both VP8 and H.264 in our implementation, in addition to Speex and Theora for VA.
+I had difficulties to test Media Coder in webrtc2sip. However, it's definately possible to do live transcoding, but it is a very resource demanding process. Our implementation should support both VP8 and H.264, in addition to Speex and Theora for VA.

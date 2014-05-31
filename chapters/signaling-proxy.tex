@@ -1,7 +1,7 @@
 We need the signaling proxy to translate the information exchange concerning the establishment and control of a communication session. The specific problems related to this component are repeated below:
 
 \begin{itemize}
-\item{How to authenticate user identities?}
+\item{How to authenticate users?}
 \item{How to translate the signaling?}
 \item{How to handle negotiating the \gls{sdp}?}
 \end{itemize}
@@ -10,28 +10,28 @@ We need the signaling proxy to translate the information exchange concerning the
 VA uses Kerberos to authenticate its users, so we need to find a way to do this in the browser. Since we may want users to run a WebRTC application simply by clicking on a link in an email, we need Kerberos to operate with untrusted applications. Normally applications are linked in the Kerberos library, but this would not work for the browser, as it would allow any site the user visits to steal their credentials\cite{webathena}. We may be able to use the Webathena project\footnote{https://github.com/davidben/webathena} created by a MIT student for his master's project\cite{webathena}. The solution consists of a Kerberos client written in Javascript, paired with a server side proxy to wrap the Kerberos protocol in HTTP. We would then be able to delegate credentials to untrusted web applications. I have not been able to test this on VA, so this is a topic for future work.
 
 \section{Signaling}
-Since we are not looking into signaling for VA, I've chosen to look at more common scenarios. The most used signaling protocol for enterprise communication applications are the SIP protocol. In the report by 3GPP\cite{3gpp-wrtc-access-ims} on integrating WebRTC with IMS mentioned in the background chapter, they proposed to use SIP over WebSockets on the client side. This seems like a good solution, especially since WebSocket's average latencies are very low\cite{websocket-overhead}. This means we only have to translate between SIP over WebSockets and the SIP protocol in our proxy.
+Since we are not looking into signaling for VA, I've chosen to look at more common scenarios. The most used signaling protocol for enterprise communication applications is the SIP protocol. In the report by 3GPP\cite{3gpp-wrtc-access-ims} on integrating WebRTC with IMS mentioned in the background chapter, they proposed to use SIP over WebSockets on the client side. This is a good solution, especially since WebSocket has very low average latencies\cite{websocket-overhead}. This means we only have to translate between SIP over WebSockets and the SIP protocol in our proxy.
 
 \section{SDP}
-SIP is used to deliver the SDP, which we are required to exchange in WebRTC. \gls{sdp} is an old format used in the \gls{voip} world, therefore the re-use of \gls{sdp} is supposed to save time, but the anatomy of a \gls{sdp} is complex and constantly changing because the \gls{ietf} are coming up with new parameters to include. All the information has to be excactly right, or it will be rejected by the browser. Below is an example of a failed SDP exchange:
+SIP is used to deliver the SDP, which we are required to exchange in WebRTC. \gls{sdp} is an old format used in the \gls{voip} world, therefore the re-use of \gls{sdp} is supposed to save time, but the anatomy of a \gls{sdp} is complex and under constant development because \gls{ietf} frequently updates the parameters to include. All the information has to be excactly right, or it will be rejected by the browser. Below is an error message from a failed SDP exchange:
 
 \begin{quote}
 Failed to set remote offer sdp: Called with a SDP without crypto enabled. -from WebRTC Internals
 \end{quote}
 
-It is highly unlikely that the current specification of \gls{sdp} will work with any older implementation found in any enterprise communication system. In order to get a session going, the most important elements to exchange are the four things (see below) needed for establishing a secure connection, in addition to information about the media:
+It is highly unlikely that the current specification of \gls{sdp} will work with any older implementation found in any enterprise communication system. In order to establish a secure session, the following information has to be exchanged in addition to details about the media:
 
 \begin{itemize}
-\item{An ICE username}
-\item{An ICE password}
-\item{A list of possible ICE candidates}
+\item{ICE username}
+\item{ICE password}
+\item{List of possible ICE candidates}
 \item{DTLS fingerprint}s
 \end{itemize}
 
 For VA we need to create methods for generating and manipulating the \gls{sdp} in this component.
 
 \section{Experiments}
-By using the sipML5 client and the webrtc2sip gateway, I will test to see if we can get a WebRTC application using a SIP stack for Javascript running over WebSockets to interoperate with a desktop SIP client. I tested with a range of different SIP clients to see how well the SIP proxy worked.
+By using the sipML5 client and the webrtc2sip gateway, I investigated whether it is possible that a WebRTC application using a SIP stack for Javascript running over WebSockets interoperates with a desktop SIP client. I tested with a range of different SIP clients to see how well the SIP proxy works.
 
 \begin{table}[h]
 \resizebox{\textwidth}{!}{%
@@ -48,7 +48,7 @@ Blink               & opus  & failed & none                                     
 \label{tbl:sip-client-webrtc-interaction}
 \end{table}
 
-In figure \ref{tbl:sip-client-webrtc-interaction} the audio and video columns refer to the mutually agreed upon codec to be used during the signaling process. Since g.711 is the most preferred codec to be used in \gls{voip} systems, it is natural that audio most often defaults to this codec. Experiments with video conferencing was not very successful. It was difficult getting a normal video session to work for various reasons, one of them being a problem in the \gls{sdp}, which was mentioned earlier as a probable outcome. The one desktop client that did manage to get a working video session using the VP8 codec had a very high packet loss as seen in Figure \ref{fig:wireshark-sip-call}. Reasons for this is hard to say as the experiment was done on a really high-bandwidth connection.
+In Table \ref{tbl:sip-client-webrtc-interaction} the audio and video columns refer to the mutually agreed upon codec to be used during the signaling process. Since g.711 is the most preferred codec to be used in \gls{voip} systems, it is natural that audio most often defaults to this codec. Experiments with video conferencing were not very successful. It was difficult to get a normal video session to work for various reasons, one of them being a problem in the \gls{sdp}, which was mentioned earlier as a probable outcome. The one desktop client that did manage to get a working video session using the VP8 codec had a very high packet loss as seen in Figure \ref{fig:wireshark-sip-call}. I did not find a good explanation for this since the experiment was done on a really high-bandwidth connection.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.6]{wireshark-rtp.png}}
@@ -58,4 +58,4 @@ In figure \ref{tbl:sip-client-webrtc-interaction} the audio and video columns re
 
 \newpage
 \section{Summary}
-For deriving general guidelines and testing purposes it's easier to envison that our enterprise communication system uses the SIP protocol for signaling purposes rather than VA's proprietary solution. In this chapter we tested the sipML5 client which is essentially a WebRTC client using SIP over WebSockets for signaling. The SIP proxy worked very well for audio, but there was some problems negotiating video, possibly due to different implementations of the SDP. Another thing is that since SIP is mainly used to deliver the SDP, we should use additional services like the WebAthena proxy to authenticate the users. In the following chapters I will continue to use the experiments done in this chapter as a reference.
+For deriving general guidelines and for testing purposes it's better to envison that our enterprise communication system uses the SIP protocol for signaling purposes rather than VA's proprietary solution. In this chapter we tested the sipML5 client which is essentially a WebRTC client using SIP over WebSockets for signaling. The SIP proxy worked very well for audio, but there were some problems negotiating video, possibly due to different implementations of the SDP. Another thing is that since SIP is mainly used to deliver the SDP, we should use additional services like the WebAthena proxy to authenticate the users. In the following chapters I will continue to use the experiments done in this chapter as a reference.

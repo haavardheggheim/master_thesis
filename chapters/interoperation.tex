@@ -1,7 +1,9 @@
 \gls{wrtc} deviates from traditional enterprise collaboration systems by opening up communications from web applications instead of controlled software pieces. Basically, we have to make the open web interoperate with the closed enterprise world. Therefore, we should extend current enterprise architecture with \gls{wrtc} capabilities. To do this, we have to create a gateway between the underlying technologies of \gls{wrtc} specified as \gls{rtcweb} and existing enterprise infrastructure. The aim when creating a gateway between the two systems is to re-use as much as possible of existing architecture. This chapter acts as an intro to this problem.
 
 \section{The gateway}
-There are basically three translating components we have to create: the signaling proxy, the transport proxy, and the transcoder. We also have to figure out how to cross the enterprise firewall. Once we have achieved that, we can also look into how to develop a WebRTC client for mobile devices. The signaling proxy is the offer/answer exchange of messages. The transport proxy will handle the transportation of media and gathering of ICE candidates, and the transcoder will simply transcode media between different formats. In Figure \ref{fig:gateway-layers} we can see where the interworking components has to go (marked with a ?) in such an architecture. We will place the gateway behind the enterprise firewall to have more control of the media. If we start by looking at how to receive WebRTC traffic, we first have to figure out how to cross the enterprise firewall, then translation, and lastly we can look at developing a client for mobile devices. I've chosen not to include images of the STUN and TURN servers as these are parts of the ICE technique.
+There are basically three translating components we have to create: the signaling proxy, the transport proxy, and the transcoder. We also have to figure out how to cross the enterprise firewall. Once we have achieved that, we can also look into how to develop a WebRTC client for mobile devices. The signaling proxy is the offer/answer exchange of messages. The transport proxy will handle the transportation of media and gathering of ICE candidates, and the transcoder will simply transcode media between different formats.
+
+In Figure \ref{fig:gateway-layers} we can see where the interworking components has to go (marked with a ?) in such an architecture. We will place the gateway behind the enterprise firewall, in contrast to the webrtc2sip gateway that runs in the cloud. This is done to keep the unsecured media flows inside the enterprise. If we start by looking at how to receive WebRTC traffic, we first have to figure out how to cross the enterprise firewall, then translation, and lastly we can look at developing a client for mobile devices. I've chosen not to include images of the STUN and TURN servers as these are parts of the ICE technique.
 \\
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.39]{gateway-unknown.png}}
@@ -21,8 +23,6 @@ We have to handle incoming ICE requests from a STUN or TURN server. This is why 
 
 \subsection{The transcoder}
 We need to figure out how to do the transcoding, but the biggest issue here is probably which codecs we need to implement. The \gls{ietf} has landed on two default audio codecs, but has not as of 16th of May 2014 decided on which video codec to use yet. The most typical enterprise video codec used is H.264, but right now the \gls{ietf} are deciding between both H.264 and VP8. In VA's case we should implement the Speex and Theora codecs as well.
-
-In Figure \ref{fig:gateway} we see the suggested gateway components.
 \\
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.4]{gateway-suggested.png}}
@@ -31,4 +31,4 @@ In Figure \ref{fig:gateway} we see the suggested gateway components.
 \end{figure}
 
 \section{Summary}
-The first iteration of \gls{rtcweb} is still under development, and not all protocols and codecs have been decided yet. It is theoretically possible to create a gateway and it has been done before, but mostly under closed source. Some of the biggest issues are how to handle the signaling, translation of the media, and crossing the enterprise firewall. In the next chapters I will dive further into each component mentioned above.
+The first iteration of \gls{rtcweb} is still under development, and not all protocols and codecs have been decided yet. It is theoretically possible to create a gateway and it has been done before, but mostly under closed source. In Figure \ref{fig:gateway} we see the suggested gateway components. Some of the biggest issues are how to handle the signaling, translation of the media, and crossing the enterprise firewall. In the next chapters I will dive further into each component mentioned above.

@@ -43,9 +43,10 @@ supports policy and charging control decisions based on session and media-relate
 the WIC would normally be behind a NAT element, so a box has been included in the diagram.
 
 \subsection{The webrtc2sip Smart SIP and Media Gateway}
+\label{sec:webrtc2sip}
 Doubango Telecom has created a gateway to connect WebRTC with SIP endpoints\footnote{http://webrtc2sip.org/}. It's called webrtc2sip and it uses RTCWeb and SIP technologies. It allows your browser to make and receive calls to and from any SIP endpoint. The gateway contains four modules: a SIP Proxy, a RTCWeb Breaker, a Media Coder, and a Click-to-Call service. The first three are relevant to integrating WebRTC with enterprise communications. The SIP Proxy converts the SIP transport from WebSockets to SIP over UDP or TCP, which is supported by most enterprise networks, and the RTCWeb Breaker make support for ICE and SRTP-DTLS when negotiating media streams between WebRTC and SIP endpoints. Lastly, the Media Coder will allow us to make calls between browsers and SIP endpoints supporting different codecs.
 
 %%flere paper's
 
 \subsection{Other Relevant papers}
-%There are jaknfakfnakjnfkjanfanfanflnasfklns
+Ther are a few paper's relevant such as `Taking on WebRTC in an Enterprise\cite{johnston_taking_2013}', which discuesses issues around crossing the enterprise firewall. Another one ......
