@@ -1,7 +1,7 @@
 In this section I will look at similar work that is relevant for my thesis. These works are not finished, so they are subject to change at any time.
 
-\subsection{WebRTC to IMS}
-There is an ongoing effort at the 3GPP on giving \gls{wrtc} clients access to \gls{ims} with 3GPP TR 23.701\cite{3gpp-wrtc-access-ims} as the current proposed architecture. \gls{ims} is basically an architectural framework for delivering IP multimedia services. It was originally designed for evolving mobile networks beyond \gls{gsm}. Later it has evolved to include Wireless LAN and fixed lines, it's intended to aid the access of multimedia and voice applications across different networks. This study is relevant because most telecom companies already have IMS or a similar architecture in place for doing real-time communication. The following diagram shows the proposed architecture:
+\subsection{WebRTC to IP Multimedia Subsystems}
+There is an ongoing effort at 3GPP on giving \gls{wrtc} clients access to \gls{ims} with 3GPP TR 23.701\cite{3gpp-wrtc-access-ims} as the current proposed architecture. \gls{ims} is basically an architectural framework for delivering IP multimedia services. It was originally designed for evolving mobile networks beyond \gls{gsm}. Later it has evolved to include Wireless LAN and fixed lines, it's intended to aid the access of multimedia and voice applications across different networks. This study is relevant because most telecom companies already have IMS or a similar architecture in place for doing real-time communication. The following diagram shows the proposed architecture:
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.5]{3gpp-wrtc-ims-architecture.png}}
@@ -12,7 +12,7 @@ There is an ongoing effort at the 3GPP on giving \gls{wrtc} clients access to \g
 Let's look at the main elements:
 
 \textbf{WebRTC IMS Client (WIC)}
-is downloaded from the WWSF. It provides the application logic and \gls{wrtc} API calls to access the communication services of \gls{ims}. It works on any device supporting a browser that supports \gls{wrtc}.
+is downloaded from the WWSF seen in Figure \ref{fig:wrtc-ims-architecture}. It provides the application logic and \gls{wrtc} API calls to access the communication services of \gls{ims}. It works on any device supporting a WebRTC capable browser.
 
 \textbf{User Equipment(UE)}
 is a device or application. It can be a web application running in a browser, a tablet or mobile phone.
