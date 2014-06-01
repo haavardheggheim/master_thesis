@@ -25,16 +25,17 @@ SIP is used to deliver the SDP, which we are required to exchange in WebRTC. \gl
 We need to create methods for generating and manipulating the \gls{sdp} in this component.
 
 \section{Experiments}
+\label{sec:experiments}
 By using the sipML5 client and the webrtc2sip gateway, I investigated whether it is possible that a WebRTC application using a SIP stack for Javascript running over WebSockets interoperates with a desktop SIP client. By testing and evaluating this behaviour, I will have confirmed that the proposed signaling component works.
 
 Test setup:
 \begin{itemize}
 \item Chrome browser
-\item sipML5 client with RTCWeb Breaker enabled in expert mode
+\item sipML5 client (WebRTC) with RTCWeb Breaker enabled in expert mode
 \item webrtc2sip gateway
 \item SIP2SIP communication service\footnote{https://mdns.sipthor.net/register\_sip\_account.phtml}
 \end{itemize}
-I tested with a range of different SIP clients:
+I tested this locally with a range of different SIP clients:
 
 \begin{table}[h]
 \resizebox{\textwidth}{!}{%
