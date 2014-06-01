@@ -10,9 +10,9 @@ There are many tools for doing this. One way is to use FFpmeg\footnote{http://ww
 
 Test setup:
 \begin{itemize}
-Laptop (Intel CPU U7300 @ 1.3GHz)
-FFmpeg
-Stopwatch
+\item Laptop (Intel CPU U7300 @ 1.3GHz)
+\item FFmpeg
+\item Stopwatch
 \end{itemize}
 
 In terminal:
@@ -33,6 +33,7 @@ In the sipML5 to Jitsi experiment there was not an agreement. Jitsi only support
 Since transcoding can be done on the server, the quality should not really be affected by this component, with today's hardware we can do live transcoding. The choice of codec used can limit latency somewhat, but the most significant latency issue is still the physical location of the clients. The closer a client is to the media server the better, as the media doesn't have to travel that far.
 
 \section{Codecs}
+\label{sec:codecs}
 
 The \gls{wrtc} specification defines these mandatory codecs:
 \begin{itemize}
