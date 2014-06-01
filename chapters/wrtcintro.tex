@@ -1,5 +1,5 @@
 
-\gls{wrtc} is a collection of standards, protocols, and Javascript APIs. The combination of these enables web browsers to do peer-to-peer audio, video and data sharing between browsers. There is no plugin or third-party software required. Real-time communication is now becoming a standard feature in browsers that any web site can use via simple APIs. Delivering functionality such as live audio and video sharing and data exchange requires a lot of new processing capabilities in the browser. I will look at the underlying technologies and protocols of \gls{wrtc}, such as audio and video processing, transportation of media, and security. These technologies are abstracted behind three primary browser APIs:
+\gls{wrtc} is a collection of standards, protocols, and JavaScript APIs. The combination of these enables web browsers to do peer-to-peer audio, video and data sharing between browsers. There is no plugin or third-party software required. Real-time communication is now becoming a standard feature in browsers that any web site can use via simple APIs. Delivering functionality such as live audio and video sharing and data exchange requires a lot of new processing capabilities in the browser. I will look at the underlying technologies and protocols of \gls{wrtc}, such as audio and video processing, transportation of media, and security. These technologies are abstracted behind three primary browser APIs:
 
 \begin{itemize}
 \item MediaStream: capturing audio and video streams
@@ -17,10 +17,10 @@ The \gls{wrtc} architecture consists of different standards, covering both proto
 \item The components used for setting up communication sessions and accessing the camera and microphone, are defined by a \gls{w3c} working group. They are responsible for drafting the WebRTC browser API definitions.
 \end{itemize}
 
-WebRTC is the first open standard to tranport data over UDP in the browser. However doing this requires a lot more than raw UDP to do real-time communication, we need media processing and added security layers.
+WebRTC is the first open standard to transport data over UDP in the browser. However doing this requires a lot more than raw UDP to do real-time communication, we need media processing and added security layers.
 
 \subsection{Audio and video}
-Doing live audio and video sharing requires processing to enhance image quality, doing synchronization, echo cancellation, noise reduction and packet loss concealment\cite{grigorik_high_2013}. On the transmitting end the bitrate must be adjusted to fluctuating bandwidth and latency between clients. On the receiving end the client must decode the streams in real-time and be able to adjust network jitter and latency delays. These are complex problems, but WebRTC includes fully featured audio and video engines in the browser as seen in Figure \ref{fig:audiovideocapture}, which takes care of all the signal processing for us. All of the processing is done directly by the browser.
+Doing live audio and video sharing requires processing to enhance image quality, doing synchronization, echo cancellation, noise reduction and packet loss concealment\cite{grigorik_high_2013}. On the transmitting end the bitrate must be adjusted to fluctuating bandwidth and latency between clients. On the receiving end the client must decode the streams in real-time and be able to adjust network jitter and latency delays. These are complex problems, but WebRTC includes fully featured audio and video engines in the browser as seen in Figure \ref{fig:audiovideocapture}, which takes care of the signal processing for us. All of the processing is done directly by the browser.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.8]{audiovideocapture.png}}
@@ -29,7 +29,7 @@ Doing live audio and video sharing requires processing to enhance image quality,
 \end{figure}
 
 \subsection{Real-time transports}
-When it comes to real-time communication, synchronization and low latency is more important than reliability. This is the reason why the UDP protocol is preferred for doing real-time communication. While TCP delivers a reliable communication, there can be delays. If a packet is lost, it is re-requested. The human brain does't handle latency in communication very well, but we are good at filling in the gaps. Therefore we use UDP, which is a connectionless solution. It doesn't check the state of the message. So part of the message could be lost, and we wouldn't know, but the connection would run without delay.
+When it comes to real-time communication, synchronization and low latency is more important than reliability. This is the reason why the UDP protocol is preferred for doing real-time communication. While TCP delivers a reliable communication, there can be delays. If a packet is lost, it is re-requested. The human brain doesn't handle latency in communication very well, but we are good at filling in the gaps. Therefore we use UDP, which is a connectionless solution. It doesn't check the state of the message. So part of the message could be lost, and we wouldn't know, but the connection would run without delay.
 
 UDP is the foundation for doing real-time communication, but to meet all the specified requirements of \gls{wrtc}, we need to support a lot of protocols and services on top of that as we can see in Figure \ref{fig:wrtc-protocol-stack}.
 
@@ -48,7 +48,7 @@ Acquiring audio and video is done by calling the getUserMedia() method that enab
 
 The MediaStream object represents a real-time media stream and allows the application to manipulate individual tracks and specify outputs.
 
-The getUserMedia() method allows us to specify a list of mandatory constraints to match the needs of the applicaton as seen in Listing \ref{lst:constraints}.
+The getUserMedia() method allows us to specify a list of mandatory constraints to match the needs of the application as seen in Listing \ref{lst:constraints}.
 
 \lstset{language=Javascript} 
 \begin{lstlisting}[caption={getUserMedia constraints object}, label={lst:constraints}]
@@ -153,7 +153,7 @@ In order to establish a peer-to-peer connection, the peers must be able to send 
 \gls{ice} gathers all possible addresses it can in address:port and transport triplets\cite{ivov_ice_2013}. \gls{ice} calls these `candidates', and once candidates have been gathered, they are ordered in a list based on priority. Highest priorities are assigned to candidates with the least overhead: those that you get from the device itself, the IP `host' candidates. Next are STUN candidates, which are f.ex obtained via \gls{upnp}. Last option is the `relayed' candidates that are obtained from TURN servers. By relaying media through a TURN server, we no longer have a peer-to-peer connection, this is costly and not something we want to do unless there is no other way of connecting to each other.
 
 \subsubsection{Secure communication}
-Once we have completed the \gls{sdp} anwers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of UDP, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This is all taken care of by \gls{wrtc}, and once we have everyting else in place, we are ready to establish peer-to-peer connections.
+Once we have completed the \gls{sdp} answers and offers, and traversed NATs, we have come a long way. But \gls{wrtc} require that we encrypt all communication. On top of UDP, we have \gls{srtp} used for transporting media securely, and \gls{dtls} which is used to negotiate secret keys for encrypting media data. This is all taken care of by \gls{wrtc}, and once we have everything else in place, we are ready to establish peer-to-peer connections.
 
 \subsubsection{Bringing it all together}
 To summarize the process of creating a peer-to-peer connection (Listing \ref{lst:p2p-webrtc-1}, \ref{lst:p2p-webrtc-2} and \ref{lst:p2p-webrtc-3}):
