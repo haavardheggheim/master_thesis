@@ -87,7 +87,7 @@ To be able to understand RTCPeerConnection we need to understand signaling and \
 
 \begin{enumerate}
 \item Input devices are opened for capture as the media source. This is done using the getUserMedia() method.
-\item Now we have to signal the other users that we want to connect to them. Using RTCPeerConnection we send an \gls{sdp} offer to the other clients as seen in Figure \ref{fig:sdp-exchange}, which generates an \gls{sdp}. The \gls{sdp} here includes \gls{ice} candidates,  which allows for firewall traversal.
+\item Now we have to signal the other users that we want to connect to them. Using RTCPeerConnection we send a \gls{sdp} offer to the other clients as seen in Figure \ref{fig:sdp-exchange}, which generates an \gls{sdp}. The \gls{sdp} here includes \gls{ice} candidates,  which allows for firewall traversal.
 
 \begin{figure}[here]
 \centerline{\includegraphics[scale=1.0]{SDPexchange.png}}

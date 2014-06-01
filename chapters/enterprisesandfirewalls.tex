@@ -25,13 +25,12 @@ Another approach might be to use SRTP key negotiation along with \gls{dtls} to a
 
 \subsection{Media relay}
 Another approach would be to require a media relay to be used for \gls{wrtc} media sessions crossing the enterprise border. There is a standard protocol for this relay, known as \gls{turn}. The enterprise firewall would be configured to block non-relayed \gls{wrtc} media flows. The enterprise would then deploy a \gls{turn} server in the \gls{dmz}, and permit media flows that go through this server\cite{johnston_taking_2013}. I believe this is a good approach. By forcing the use of relaying the media through a TURN server, the SBC knows that traffic from the TURN server should be allowed to cross the enterprise firewall as seen in Figure \ref{fig:sbc-turn}.
-
+\\
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.5]{sbcpolicy-wTURN.png}}
 \caption{DMZ with SBC and TURN server to allow for both enterprise communication and WebRTC media flows.}
 \label{fig:sbc-turn}
 \end{figure}
 
-\newpage
 \section{Summary}
 Doing communication crossing enterprise networks is difficult. It might not be trivial to upgrade current SBC implementations, therefore I evaluated alternative ways of detecting \gls{wrtc} traffic for applying policy to the media flows. A good solution is to configure the SBC/firewall to accept incoming traffic from a TURN server and block everything else, WebRTC media flows would then be relayed through the TURN server.
