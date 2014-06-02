@@ -148,6 +148,7 @@ m=video 1 RTP/SAVPF 100 116 117
 
 
 \subsubsection{ICE}
+\label{sec:ice}
 In order to establish a peer-to-peer connection, the peers must be able to send packets to each other. This is easy when you know which IP and port to listen to for incoming messages, but hard when you don't know. Normally there would be firewalls and NAT devices between most peers. In a local environment where there is no firewall, we could establish a connection between two peers by appending the IP and port number to the \gls{sdp}, and forward it to the other peer. What \gls{ice} does is getting around these restrictions by doing connectivity checks and route planning between peers.
 
 \gls{ice} gathers all possible addresses it can in address:port and transport triplets\cite{ivov_ice_2013}. \gls{ice} calls these `candidates', and once candidates have been gathered, they are ordered in a list based on priority. Highest priorities are assigned to candidates with the least overhead: those that you get from the device itself, the IP `host' candidates. Next are STUN candidates, which are f.ex obtained via \gls{upnp}. Last option is the `relayed' candidates that are obtained from TURN servers. By relaying media through a TURN server, we no longer have a peer-to-peer connection, this is costly and not something we want to do unless there is no other way of connecting to each other.

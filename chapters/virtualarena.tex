@@ -1,7 +1,7 @@
 Visual Solutions is a Norwegian company in the BB Visual Group\footnote{http://www.bbvisualgroup.com/}. Their primary business is within the integration of operations for the oil and gas industry, with customers located all over the world. They create solutions enabling collaboration across organization units and geographic locations.
 
 \subsection{Virtual Arena}
-One of Visual Solutions applications is Virtual Arena\footnote{http://www.bbvisuals.com/index.php?site=2\&page=75.125}, which from now on will be referred to as \gls{va}. VA is a powerful interactive tool that allows for high-performance application sharing, with audio and video communication from a 3D shared scene as seen in Figure \ref{fig:vsva-3d-scene}.
+One of Visual Solutions applications is \gls{va}\footnote{http://www.bbvisuals.com/index.php?site=2\&page=75.125}, which from now on will be referred to as \gls{va}. VA is a powerful interactive tool that allows for high-performance application sharing, with audio and video communication from a 3D shared scene as seen in Figure \ref{fig:vsva-3d-scene}.
 \\
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.6]{virtualarena.png}}
@@ -11,8 +11,15 @@ One of Visual Solutions applications is Virtual Arena\footnote{http://www.bbvisu
 
 % VA supports many-to-many collaborative scenarios by utilizing a media server.
 
-VA is an application that Visual Solutions has created for doing visual collaboration over IP. The architecture of VA is visualized in Figure \ref{fig:vsva-architecture}. The application uses a media server that serves three main purposes: enable VA to exchange media streams between hosts on private networks behind NATs and firewalls. Optimize bandwidth usage. Provide adaptive screen-share bandwidth scaling per client. By utilizing a media server VA can support for multiple incoming and outgoing streams. A client can subscribe to multiple streams of audio/video and applications. It is beyond the purpose of this thesis to present the details of the VA products; instead a general overview will be given. In the next subsections the different parts of the architecture in Figure \ref{fig:vsva-architecture} will be described with the necessary information required to understand the practical problem this thesis will try to solve. 
+VA is an application that Visual Solutions has created for doing visual collaboration over IP. The architecture of VA is visualized in Figure \ref{fig:vsva-architecture}. The application uses a media server that serves three main purposes:
+\begin{itemize}
+\item Enable VA to exchange media streams between hosts on private networks behind NATs and firewalls.
+\item Optimize bandwidth usage.
+\item Provide adaptive screen-share bandwidth scaling per client.
+\end{itemize}
 
+By utilizing a media server VA can support for multiple incoming and outgoing streams. A client can subscribe to multiple streams of audio/video and applications. It is beyond the purpose of this thesis to present the details of the VA products; instead a general overview will be given. In the next subsections the different parts of the architecture in Figure \ref{fig:vsva-architecture} will be described with the necessary information required to understand the practical problem this thesis will try to solve. 
+\\
 \begin{figure}[here]
 \centerline{\includegraphics[scale=0.6]{virtualArena-architecture.png}}
 \caption{Virtual Arena systems architecture}
@@ -20,7 +27,7 @@ VA is an application that Visual Solutions has created for doing visual collabor
 \end{figure}
 
 \subsubsection{Signaling}
-VA uses H2O\footnote{H2O is a distributed computing technology developed at Emory University, Atlanta, USA} for communication (signaling). This technology supports multiple communication protocols, VA uses HTTPS. Multiple authentication mechanisms are supported: username/password, \gls{ldap}, and Kerberos\footnote{Kerberos is a computer network authentication protocol}. H2O provides also hooks to integrate custom authentication modules. Each client session is identified by a \gls{guid}, which is stored in the signaling server. Typically, clients subscribe to projects (clients subscribed to the same project can share audio/video or applications), subscription and sharing actions are then picked up by the media server which will create the proper routing of the streams. The streams are recognized by the their \gls{ssrc}, which is defined in the header packets of the media streams. All the SSRCs are registered in the signaling server. Communication between peers and the media server is done by opening up ports in the firewall to listen for incoming TCP and UDP connections. These ports are preconfigured manually for this application.
+VA uses H2O\footnote{H2O is a distributed computing technology developed at Emory University, Atlanta, USA} for communication (signaling). This technology supports multiple communication protocols, VA uses HTTPS. Multiple authentication mechanisms are supported: username/password, \gls{ldap}, and Kerberos\footnote{Kerberos is a computer network authentication protocol}. H2O provides also hooks to integrate custom authentication modules. Each client session is identified by a \gls{guid}, which is stored in the signaling server. Typically, clients subscribe to projects (clients subscribed to the same project can share audio/video or applications), subscription and sharing actions are then picked up by the media server which will create the proper routing of the streams. The streams are recognized by their \gls{ssrc}, which is defined in the header packets of the media streams. All the SSRCs are registered in the signaling server. Communication between peers and the media server is done by opening up ports in the firewall to listen for incoming TCP and UDP connections. These ports are preconfigured manually for this application.
 
 \subsubsection{Transport}
 VA uses raw \gls{rtp} streams over UDP together with a \gls{rtcp} connection. This is basically the standard protocols used for transmitting real-time media in any communication system. RTCP is used for providing statistics and control information for the RTP flow. There will be more details about the RTP protocol in the upcoming sections.

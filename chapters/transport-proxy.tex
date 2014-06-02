@@ -13,7 +13,7 @@ The transport proxy's function is to negotiate and convert the media streams to 
 %not looking for multiplexing in web breaker -why? Wireshark does not have great handling show screenshot/no rtcp) was not able to resolve packets as one rtcp stream
 
 \section{ICE}
-We could either implement our own solution or re-use the RTCWeb Breaker mentioned in section~\ref{sec:webrtc2sip} for this component. If we create our own transport proxy, we could either use Google's libjingle open-source C++ library\footnote{https://code.google.com/p/libjingle/} for doing P2P applications, or implement our own solution for doing ICE negotiations. The point is we need to speak the STUN and TURN protocols. By testing ICE in RTCWeb Breaker, I can evaluate if we can use the component for the proposed transport proxy.
+We could either implement our own solution or re-use the RTCWeb Breaker mentioned in section~\ref{sec:webrtc2sip} for this component. If we create our own transport proxy, we could either use Google's libjingle open-source C++ library\footnote{https://code.google.com/p/libjingle/} for doing P2P applications, or implement our own solution for doing ICE negotiations. The point is we need to speak the STUN and TURN protocols. By testing ICE in RTCWeb Breaker, I can evaluate if we can use this component for the proposed transport proxy.
 
 Test setup is the same as in section \ref{sec:experiments} with Jitsi as the SIP client. In Wireshark I had to adjust a few settings to get all the RTP streams to show. In protocol preferences for RTP:
 \begin{itemize}
